@@ -29,7 +29,7 @@ Route::get('/',HomeComponent::class);
 
 Route::get('/Shop',ShopComponent::class);
 
-Route::get('/cart',cartComponent::class);
+Route::get('/cart',cartComponent::class)->name('product.cart');
 
 Route::get('/Checkout',CheckoutComponent::class);
 
