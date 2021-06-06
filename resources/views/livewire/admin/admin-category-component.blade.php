@@ -7,14 +7,21 @@
          display: block !important;
        }
 </style>
-    <div class="container" style="padding:30px 0;"></div>
+    <div class="container" style="padding:30px 0;">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panle-heading">
-                    All Categories
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-6">
+                            All Categories
+                        </div>
+                        <div class="col-md-6">
+                            <a href="{{route('admin.addcategory')}}" class="btn btn-success pull-right">Add New</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="panle-body">
+                <div class="panel-body">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -39,5 +46,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
