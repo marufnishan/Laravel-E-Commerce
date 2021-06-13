@@ -12,6 +12,7 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -36,25 +37,25 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/',HomeComponent::class);
+   Route::get('/',HomeComponent::class);
 
-Route::get('/Shop',ShopComponent::class);
+   Route::get('/Shop',ShopComponent::class);
 
-Route::get('/cart',CartComponent::class)->name('product.cart');
+   Route::get('/cart',CartComponent::class)->name('product.cart');
 
-Route::get('/Checkout',CheckoutComponent::class);
+   Route::get('/Checkout',CheckoutComponent::class);
 
-Route::get('/product/{slug}',DetailsComponent::class)->name('product.details');
+   Route::get('/product/{slug}',DetailsComponent::class)->name('product.details');
 
-Route::get('/product-category/{category_slug}',CategoryComponent::class)->name('product.category');
+   Route::get('/product-category/{category_slug}',CategoryComponent::class)->name('product.category');
 
-Route::get('/search',SearchComponent::class)->name('product.search');
+   Route::get('/search',SearchComponent::class)->name('product.search');
 
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-   // return view('dashboard');
-//})->name('dashboard');
+   //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+      // return view('dashboard');
+   //})->name('dashboard');
 
-Route::middleware(['auth:sanctum','verified'])->group(function(){
+   Route::middleware(['auth:sanctum','verified'])->group(function(){
    Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
 });
 
@@ -72,6 +73,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
    Route::get('/admin/slider',AdminHomeSliderComponent::class)->name('admin.homeslider');
    Route::get('/admin/slider/add',AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');
    Route::get('/admin/slider/edit/{slide_id}',AdminEditHomeSliderComponent::class)->name('admin.edithomeslider');
+
+   Route::get('/admin/home-categories',AdminHomeCategoryComponent::class)->name('admin.homecategories');
 
 });
 

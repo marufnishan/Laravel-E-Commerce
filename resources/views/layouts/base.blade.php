@@ -16,6 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css')}}">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
     @livewireStyles
 </head>
 <body class="home-page home-01 ">
@@ -83,6 +85,10 @@
  												 </li>
 												  <li class="menu-item">
 													<a title="Manage Home Slider" href="{{ route('admin.homeslider')}}">Manage Home Slider</a>
+												  </li>
+												  <li class="menu-item">
+													<a title="Manage Home Categories" href="{{ route('admin.homecategories')}}">Manage Home Categories</a>
+												  </li>
 												 <li class='menu-item'>
 												  		<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 												  </li>
@@ -123,7 +129,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="index.html" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
+							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
 						</div>
 
 						@livewire('header-search-component')
@@ -469,6 +475,9 @@
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
 	<script src="{{ asset('assets/js/functions.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     @livewireScripts
+
+	@stack('scripts')
 </body>
 </html>
