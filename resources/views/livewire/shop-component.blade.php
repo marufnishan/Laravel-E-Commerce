@@ -36,19 +36,19 @@
 
                     <div class="sort-item product-per-page">
                         <select name="post-per-page" class="use-chosen" wire:model="pagesize">
-                            <option value="12" selected="selected">12 per page</option>
-                            <option value="16">16 per page</option>
-                            <option value="18">18 per page</option>
-                            <option value="21">21 per page</option>
-                            <option value="24">24 per page</option>
-                            <option value="30">30 per page</option>
-                            <option value="32">32 per page</option>
+                            <option value="21" selected="selected">21 per page</option>
+                            <option value="26">26 per page</option>
+                            <option value="28">28 per page</option>
+                            <option value="31">31 per page</option>
+                            <option value="34">34 per page</option>
+                            <option value="40">40 per page</option>
+                            <option value="42">42 per page</option>
                         </select>
                     </div>
 
                     <div class="change-display-mode">
                         <a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
-                        <a href="list.html" class="list-mode display-mode"><i class="fa fa-th-list"></i>List</a>
+                        <a href="#" class="list-mode display-mode "><i class="fa fa-th-list"></i>List</a>
                     </div>
 
                 </div>
@@ -117,14 +117,9 @@
             </div><!-- brand widget-->
 
             <div class="widget mercado-widget filter-widget price-filter">
-                <h2 class="widget-title">Price</h2>
-                <div class="widget-content">
-                    <div id="slider-range"></div>
-                    <p>
-                        <label for="amount">Price:</label>
-                        <input type="text" id="amount" readonly>
-                        <button class="filter-submit">Filter</button>
-                    </p>
+                <h2 class="widget-title">Price <span class="text-info">${{$min_price}} - ${{$max_price}}</span></h2>
+                <div class="widget-content" style="padding:10px 5px 40px 5px;">
+                    <div id="slider" wire:ignore></div>
                 </div>
             </div><!-- Price-->
 
@@ -216,6 +211,146 @@
                                 </div>
                             </div>
                         </li>
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_1.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_1.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_17.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_18.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_20.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_17.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_18.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_20.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_18.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                        <figure><img src="{{ asset('assets/images/products/digital_20.jpg') }}" alt=""></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
+                                    <div class="wrap-price"><span class="product-price">$168.00</span></div>
+                                </div>
+                            </div>
+                        </li>
 
                     </ul>
                 </div>
@@ -228,3 +363,27 @@
 </div><!--end container-->
 
 </main>
+
+@push('scripts')
+    <script>
+        var slider = document.getElementById('slider');
+        noUiSlider.create(slider,{
+            start : [0,1000],
+            connect:true,
+            range :{
+                'min' : 0,
+                'max' : 1000
+            },
+            pips:{
+                mode:'steps',
+                stepped:true,
+                density:4
+            }
+        });
+
+        slider.noUiSlider.on('update',function(value){
+            @this.set('min_price',value[0]);
+            @this.set('max_price',value[1]);
+        });
+    </script>
+@endpush

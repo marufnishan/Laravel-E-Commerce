@@ -8,7 +8,7 @@
                 @foreach($sliders as $slide)
                 <div class="item-slide">
                     <img src="{{ asset('assets/images/sliders') }}/{{$slide->image}}" alt="" class="img-slide">
-                    <div class="slide-info slide-1">
+                    <div class="slide-info slide-3">
                         <h2 class="f-title"> <b>{{$slide->title}}</b></h2>
                         <span class="subtitle">{{$slide->subtitle}}</span>
                         <p class="sale-info">Only price: <span class="price">${{$slide->price}}</span></p>
@@ -92,6 +92,9 @@
                                                     src="{{ asset('assets/images/products') }}/{{$lproduct->image}}"
                                                     width="800" height="800" alt="{{$lproduct->name}}"></figure>
                                         </a>
+                                        <div class="group-flash">
+                                            <span class="flash-item new-label">new</span>
+                                        </div>
                                     </div>
                                     <div class="product-info">
                                         <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
