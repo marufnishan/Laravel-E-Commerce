@@ -50,7 +50,7 @@ use Illuminate\Support\Facades\Route;
 
    Route::get('/cart',CartComponent::class)->name('product.cart');
 
-   Route::get('/Checkout',CheckoutComponent::class);
+   Route::get('/Checkout',CheckoutComponent::class)->name('checkout');
 
    Route::get('/product/{slug}',DetailsComponent::class)->name('product.details');
 
