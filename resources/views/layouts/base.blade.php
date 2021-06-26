@@ -98,6 +98,9 @@
 													<a title="All Coupon" href="{{ route('admin.coupons')}}">All Coupon</a>
 												  </li>
 												  <li class="menu-item">
+													<a title="All Orders" href="{{ route('admin.orders')}}">All Orders</a>
+												  </li>
+												  <li class="menu-item">
 													<a title="Settings" href="{{ route('admin.settings')}}">Settings</a>
 												  </li>
 												 <li class='menu-item'>
