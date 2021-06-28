@@ -1,6 +1,41 @@
 <div>
     <div class="container" style="padding:30px 0;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-6">
+                                Ordered Details
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{route('admin.orders')}}" class="btn btn-success pull-right">All Orders</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <th>Order Id</th>
+                                <td>{{$order->id}}</td>
+                                <th>Order Date</th>
+                                <td>{{$order->created_at}}</td>
+                                <th>Status</th>
+                                <td>{{$order->status}}</td>
+                                @if($order->status == "delivered")
+                                <th>Delivery Date</th>
+                                <td>{{$order->delivered_date}}</td>
+                                @elseif($order->status == "canceled")
+                                <th>Cancellation Date</th>
+                                <td>{{$order->canceled_date}}</td>
+                                @endif
+                            </tr>
+                        </table>
+                    </div>
 
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">
@@ -11,7 +46,6 @@
                                 Ordered Items
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('admin.orders')}}" class="btn btn-success pull-right">All Orders</a>
                             </div>
                         </div>
                     </div>
@@ -50,8 +84,8 @@
                                         class="index">${{$order->subtotal}}</b></p>
                                 <p class="summary-info"><span class="title">Tax</span><b
                                         class="index">${{$order->tax}}</b></p>
-                                <p class="summary-info"><span class="title">Shipping</span><b
-                                        class="index">Free Shipping</b></p>
+                                <p class="summary-info"><span class="title">Shipping</span><b class="index">Free
+                                        Shipping</b></p>
                                 <p class="summary-info"><span class="title">Total</span><b
                                         class="index">${{$order->total}}</b></p>
                             </div>
@@ -100,7 +134,7 @@
                                 <th>Zipcode</th>
                                 <td>{{$order->zipcode}}</td>
                             </tr>
-                            
+
                         </table>
                     </div>
                 </div>
@@ -108,7 +142,7 @@
         </div>
 
         @if($order->is_shipping_different)
-            
+
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -147,13 +181,13 @@
                                 <th>Zipcode</th>
                                 <td>{{$order->shipping->zipcode}}</td>
                             </tr>
-                            
+
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         @endif
 
 
@@ -178,7 +212,7 @@
                                 <th>Transaction Date</th>
                                 <td>{{$order->transaction->created_at}}</td>
                             </tr>
-                            </table>
+                        </table>
                     </div>
                 </div>
             </div>
