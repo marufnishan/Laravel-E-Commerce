@@ -164,7 +164,7 @@
 								<a href="#" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">4 items</span>
+										<span class="index">0 items</span>
 										<span class="title">CART</span>
 									</div>
 								</a>
@@ -282,7 +282,7 @@
 										<ul>
 											<li>
 												<i class="fa fa-map-marker" aria-hidden="true"></i>
-												<p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+												<p class="contact-txt">Ashulia – Saver Dhaka, Bangladesh,Daffodil International University</p>
 											</li>
 											<li>
 												<i class="fa fa-phone" aria-hidden="true"></i>
@@ -290,7 +290,7 @@
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
-												<p class="contact-txt">Contact@yourcompany.com</p>
+												<p class="contact-txt">mdmarufnishan@gmail.com</p>
 											</li>											
 										</ul>
 									</div>
