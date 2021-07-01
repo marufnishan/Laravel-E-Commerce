@@ -23,6 +23,7 @@ use App\Http\Livewire\Admin\AdminAddCouponsComponent;
 use App\Http\Livewire\Admin\AdminEditCouponsComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
+use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminSettingComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\SearchComponent;
@@ -32,6 +33,7 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\WishlistComponent;
+use App\Http\Livewire\ContactComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,6 +68,7 @@ use Illuminate\Support\Facades\Route;
 
    Route::get('/wishlist',WishlistComponent::class)->name('product.wishlist');
    Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
+   Route::get('/contact-us',ContactComponent::class)->name('contact');
 
    //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
       // return view('dashboard');
@@ -106,7 +109,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
    Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
 
 
-
+   Route::get('/admin/contact-us',AdminContactComponent::class)->name('admin.contact');
    Route::get('admin/settings',AdminSettingComponent::class)->name('admin.settings');
 
 });
