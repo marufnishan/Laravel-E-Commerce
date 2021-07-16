@@ -92,7 +92,7 @@ public $images;
             {
                 $imgName = Carbon::now()->timestamp. $key. '.' . $image->extension();
                 $image->storeAs('products',$imgName);
-                $imagesname = $imagesname . ',' . $imgName;
+                $imagesname = $imagesname . $imgName. ',';
             }
             $product->images = $imagesname;
         }

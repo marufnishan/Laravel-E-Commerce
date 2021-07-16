@@ -6319,14 +6319,16 @@ background-color: #888888;
 	    margin: 0 10px;
 	}
 	.header .main-info-area .left-section.wrap-logo-top{
-		width: 25%;
+		width: 70%;
 	    order: 1;
+        margin: 0 auto;
         text-align: center;
         display: inline-block;  
 	}
 	.header .main-info-area .center-section{
 		width: 100%;
-	    order: 4;    
+	    order: 4; 
+        margin: 0 auto;   
         text-align: center;
         display: inline-block;
 	}
@@ -7210,3 +7212,18 @@ svg {
 .wrap-pagination-info .rounded-r-md {
     margin-left: 5px;
 }
+.translated-ltr{margin-top:-40px;}
+		.translated-ltr{margin-top:-40px;}
+		.goog-te-banner-frame {display: none;margin-top:-20px;} 
+		.goog-te-gadget-icon{
+			display:none !important;
+		}
+
+		.goog-te-gadget-simple {
+			background-color: #F9F9F9 !important;
+			border: 0px solid #F9F9F9 !important;
+			font-family: 'Open Sans', sans-serif !important;
+			font-size: 13px !important;
+			color: #444444 !important;
+		}
+        
