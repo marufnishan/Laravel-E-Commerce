@@ -1,0 +1,135 @@
+
+  .container-1{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+  .chat {
+      height: 300px;
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+      align-items: center;
+  } 
+  
+  ::-webkit-input-placeholder { 
+      color: .711 
+  }
+   
+  input { 
+      border: 0; 
+      padding: 15px; 
+      margin-left: auto;
+      border-radius: 10px; 
+  }
+  
+  .messages {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      height: 90%;
+      width: 100%;
+      background-color: yellowgreen;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 10px;
+  }
+  
+  #bot {
+      margin-left: auto;
+  }
+  
+  .bot {
+      font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,  
+      monospace;
+  }
+  .avatar {
+	height: 25px;
+}
+  /* Mobile */
+  
+  section.section-1{
+      display: flex;
+      position: relative;
+  }
+  .chat-us{
+     position: fixed;
+     z-index: 2;
+     right: 2rem;
+     bottom: 2rem;
+     background-color: #FF2832;
+     border-radius: 15px;
+     color: #fff;
+     padding: 1rem;
+  }
+  
+  .chat-us:hover{
+      background-color: black;
+  }
+  
+  .chat-header{
+      background-color: #FF2832;
+      color: #fff;
+      padding: .6rem;
+      border-radius: 1rem 1rem 0 0;
+  }
+  
+  .chat-box{
+      background-clip: content-box;
+      position: fixed;
+      z-index: 2;
+      right: 2rem;
+      bottom: 3rem;
+      display: none;
+      width: 28rem;
+  }
+  
+  .btn-send{
+      background-color: #FF2832;
+      color: #fff;
+      padding: 1rem;
+      margin-right: 1.5rem;
+      border-radius: .5rem;
+      text-align: center;
+  }
+  
+  .btn-leave{
+      background-color: #FF2832;
+      color: #fff;
+      padding: 1rem;
+      margin-right: 1.5rem;
+      border-radius: .5rem;
+      text-align: center;
+  }
+  
+  .btn{
+      display: flex;
+  }
+  
+  .sent-msg{
+     background-color:#fff;
+     color: rgb(0, 0, 0);
+     height: 30rem;
+     overflow-y: scroll;
+  }
+  
+  .msg{
+      padding: .7rem .5rem;
+      border-bottom: .5px solid rgb(206, 186, 186);
+  }
+  .text-content{
+      outline: none;
+      height: 5rem;
+      max-width: 114rem;
+      padding: 0 .6rem;
+      margin: 10px auto;
+  }
+  
+  
+  
+  
+  
