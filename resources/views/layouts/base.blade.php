@@ -228,14 +228,14 @@
 								<div class="text-content ">
 									<input id="input" type="text" placeholder="  Say something........           "  autocomplete="off" autofocus="true" />
 								</div>
-								
+								<div class="bot">
+									<div class="btn btn-outline-success"  id="send"  onclick="sendMsg()">Send</div>
+									<div class="btn btn-outline-success" id="clear" onclick="clearField()">Clear</div>
+									<div class="btn btn-outline-success" onclick="closeChat()">Close Chat</div>
+								</div>
 							</div>
 						</div>
-						<div class="btn">
-							<div class="btn-send"  id="send"  onclick="sendMsg()">Send</div>
-							<div class="btn-send" id="clear" onclick="clearField()">Clear</div>
-							<div class="btn-leave" onclick="closeChat()">Close Chat</div>
-						</div>
+						
 					</div>
 					<div class="chat-us" onclick="openChat()">
 						Chat

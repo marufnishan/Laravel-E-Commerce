@@ -8,25 +8,23 @@
     height: 100%;
 }
   .chat {
-      height: 300px;
-      width: 50vw;
+      height: 350px;
+      width: 88vw;
       display: flex;
       flex-direction: column;
-    justify-content: center;
+      justify-content: center;
       align-items: center;
   } 
   
   ::-webkit-input-placeholder { 
       color: .711 
+      
   }
    
-  input { 
-      border: 0; 
-      padding: 15px; 
-      margin-left: auto;
-      border-radius: 10px; 
-  }
-  
+input{
+    border: none;
+}
+ 
   .messages {
       display: flex;
       flex-direction: column;
@@ -41,9 +39,11 @@
   
   #bot {
       margin-left: auto;
+      border: none;
   }
   
   .bot {
+      margin-top: 10px;
       font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,  
       monospace;
   }
@@ -58,7 +58,7 @@
   }
   .chat-us{
      position: fixed;
-     z-index: 2;
+     z-index: 3;
      right: 2rem;
      bottom: 2rem;
      background-color: #FF2832;
@@ -81,55 +81,40 @@
   .chat-box{
       background-clip: content-box;
       position: fixed;
-      z-index: 2;
+      z-index: 3;
       right: 2rem;
       bottom: 3rem;
       display: none;
       width: 28rem;
   }
   
-  .btn-send{
-      background-color: #FF2832;
-      color: #fff;
-      padding: 1rem;
-      margin-right: 1.5rem;
-      border-radius: .5rem;
-      text-align: center;
-  }
-  
-  .btn-leave{
-      background-color: #FF2832;
-      color: #fff;
-      padding: 1rem;
-      margin-right: 1.5rem;
-      border-radius: .5rem;
-      text-align: center;
-  }
-  
-  .btn{
-      display: flex;
-  }
-  
-  .sent-msg{
-     background-color:#fff;
-     color: rgb(0, 0, 0);
-     height: 30rem;
-     overflow-y: scroll;
-  }
-  
-  .msg{
-      padding: .7rem .5rem;
-      border-bottom: .5px solid rgb(206, 186, 186);
-  }
-  .text-content{
-      outline: none;
-      height: 5rem;
-      max-width: 114rem;
-      padding: 0 .6rem;
-      margin: 10px auto;
-  }
-  
-  
-  
-  
-  
+  .btn-outline-success{
+    background-color: #FF2832 !important;
+    border-color: #FF2832 !important;
+    color: #fff !important;
+    padding: 1rem !important;
+    margin-right: 1.5rem !important; 
+    border-radius: .5rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+}
+.bot{
+    display: flex;
+}
+
+.sent-msg{
+    background-color:#fff;
+    color: rgb(0, 0, 0);
+    height: 30rem;
+    overflow-y: scroll;
+}
+
+.msg{
+    padding: .7rem .5rem;
+    border-bottom: .5px solid rgb(206, 186, 186);
+}
+
+
+

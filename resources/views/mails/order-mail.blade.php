@@ -11,7 +11,7 @@
     <p>Your order has been successfully placed.</p>
     <br/>
 
-    <table>
+    <table style="width: 600px; text-align:right">
         <thead>
             <tr>
                 <th>Image</th>
@@ -24,7 +24,7 @@
         <tbody>
             @foreach($order->orderItems as $item)
                 <tr>
-                    <td><img src="{{asset('assets/images/products')}}/{{$item->product->image}}" /></td>
+                    <td><img src="{{asset('assets/images/products')}}/{{$item->product->image}}" width="100" /></td>
                     <td>{{$item->product->name}}</td>
                     <td>{{$item->quantity}}</td>
                     <td>{{$item->price * $item->quantity}}</td>
