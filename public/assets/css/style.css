@@ -6304,6 +6304,8 @@ background-color: #888888;
     }
 }
 
+
+
 @media (max-width: 1024px){
     .sticky-wrapper{
         height: 0 !important;
@@ -6652,6 +6654,53 @@ background-color: #888888;
 }
 
 @media (max-width: 600px) {
+
+    .fa-heart:before {
+        color: white;
+    }
+    .fa-shopping-basket:before {
+        color: white;
+    }
+    
+    .header .main-info-area .right-section{
+    position: fixed;
+    background-color: #FF2832;
+    bottom: 0px;
+    z-index: 100;
+    padding: 10px;
+    width: 100%;
+    left: 0;
+    padding-left: 32px;}
+
+    img {
+        margin-bottom: 10px;
+    }
+
+    .chat-us {
+        margin-bottom: 50px;       
+    }
+    .coppy-right-box {
+        padding-bottom: 130px;
+    }
+    .header .main-info-area .right-section {
+        margin-bottom: 0px;
+    }
+    .bot{
+        margin-bottom: 10px;
+    }
+    .chat {
+        height: 350px;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        margin-bottom: 84px;
+      border-radius: 10px;
+    }
+        
+
     .wrap-main-slide-2 .wrap-banners.type-2,
     .wrap-main-slide-2 .wrap-banners.type-3{
         max-width: 290px !important;
