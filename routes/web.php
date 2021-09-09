@@ -34,6 +34,7 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ContactComponent;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +52,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-
+   Route::get('/cacheclear', function () {
+      return Artisan::call('cache:clear');
+   });
+   
+   Route::get('/configclear', function () {
+      return Artisan::call('config:cache');
+   });
    Route::get('/',HomeComponent::class);
 
    Route::get('/Shop',ShopComponent::class);

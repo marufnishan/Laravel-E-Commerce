@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeComponent extends Component
 {
+    protected $listeners = ['refreshComponent'=>'$refresh'];
     public function render()
     {
         $sliders = HomeSlider::where('status',1)->get();
@@ -27,6 +28,7 @@ class HomeComponent extends Component
         {
             Cart::instance('cart')->restore(Auth::user()->email);
             Cart::instance('wishlist')->restore(Auth::user()->email);
+            
         }
         return view('livewire.home-component',['sliders'=>$sliders,'lproducts'=>$lproducts,'categories'=>$categories,'no_of_products'=>$no_of_products,'sproducts'=>$sproducts,'sale'=>$sale])->layout('layouts.base');
     }

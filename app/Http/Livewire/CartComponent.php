@@ -168,6 +168,9 @@ class CartComponent extends Component
         if(Auth::check())
         {
             Cart::instance('cart')->store(Auth::user()->email);
+            Cart::instance('wishlist')->store(Auth::user()->email);
+            $this->emitTo('cart-count-component','refreshComponent');
+            $this->emitTo('wishlist-count-component','refreshComponent');
         }
 
         return view('livewire.cart-component')->layout("layouts.base");

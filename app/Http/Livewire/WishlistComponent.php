@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Cart;
 
@@ -32,6 +33,11 @@ class WishlistComponent extends Component
     
     public function render()
     {
+        if(Auth::check())
+        {
+            Cart::instance('wishlist')->store(Auth::user()->email);
+            $this->emitTo('wishlist-count-component','refreshComponent');
+        }
         return view('livewire.wishlist-component')->layout("layouts.base");
     }
 }
