@@ -79,6 +79,7 @@ class ShopComponent extends Component
             $this->emitTo('cart-count-component','refreshComponent');
             $this->emitTo('wishlist-count-component','refreshComponent');
         }
-        return view('livewire.shop-component',['products'=> $products,'categories'=>$categories])->layout("layouts.base");
+        $popular_products = Product::inRandomOrder()->limit(10)->get();
+        return view('livewire.shop-component',['products'=> $products,'popular_products'=>$popular_products,'categories'=>$categories])->layout("layouts.base");
     }
 }

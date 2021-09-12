@@ -150,7 +150,6 @@ class CartComponent extends Component
             ]);
         }
     }
-
     public function render()
     {
         if(session()->has('coupon'))
@@ -167,7 +166,7 @@ class CartComponent extends Component
 
         if(Auth::check())
         {
-            Cart::instance('cart')->store(Auth::user()->email);
+            Cart::instance('cart')->store(Auth::user()->email);           
             Cart::instance('wishlist')->store(Auth::user()->email);
             $this->emitTo('cart-count-component','refreshComponent');
             $this->emitTo('wishlist-count-component','refreshComponent');
