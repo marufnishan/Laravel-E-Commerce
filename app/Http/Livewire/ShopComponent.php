@@ -20,7 +20,7 @@ class ShopComponent extends Component
     public function mount()
     {
         $this->sorting = "default";
-        $this->pagesize = 21;
+        $this->pagesize = 15;
 
         $this->min_price = 0;
         $this->max_price = 1000;
@@ -79,7 +79,7 @@ class ShopComponent extends Component
             $this->emitTo('cart-count-component','refreshComponent');
             $this->emitTo('wishlist-count-component','refreshComponent');
         }
-        $popular_products = Product::inRandomOrder()->limit(10)->get();
+        $popular_products = Product::inRandomOrder()->limit(6)->get();
         return view('livewire.shop-component',['products'=> $products,'popular_products'=>$popular_products,'categories'=>$categories])->layout("layouts.base");
     }
 }

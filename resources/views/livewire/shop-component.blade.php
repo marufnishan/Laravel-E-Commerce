@@ -2,8 +2,8 @@
     <div class="container">
         <div class="wrap-breadcrumb">
             <ul>
-                <li class="item-link"><a href="#" class="link">home</a></li>
-                <li class="item-link"><span>Digital & Electronics</span></li>
+                <li class="item-link"><a href="/" class="link">home</a></li>
+                <li class="item-link"><span>All Products</span></li>
             </ul>
         </div>
         <div class="row">
@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="wrap-shop-control">
-                    <h1 class="shop-title">Digital & Electronics</h1>
+                    <h1 class="shop-title">All Products</h1>
                     <div class="wrap-right">
                         <div class="sort-item orderby ">
                             <select name="orderby" class="use-chosen" wire:model="sorting">
@@ -27,7 +27,7 @@
 
                         <div class="sort-item product-per-page">
                             <select name="post-per-page" class="use-chosen" wire:model="pagesize">
-                                <option value="21" selected="selected">21 per page</option>
+                                <option value="15" selected="selected">15 per page</option>
                                 <option value="26">26 per page</option>
                                 <option value="28">28 per page</option>
                                 <option value="31">31 per page</option>
