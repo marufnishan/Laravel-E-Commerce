@@ -133,8 +133,14 @@
                 <div class="widget-content">
                     <ul class="list-category">
                        @foreach ($categories as $category)
-                       <li class="category-item">
+                       <li class="category-item has-child-cate ">
                             <a href="{{route('product.category',['category_slug'=>$category->slug])}}" class="cate-link">{{$category->name}}</a>
+                            <span class="toggle-control">+</span>
+									<ul class="sub-cate">
+										<li class="category-item"><a href="#" class="cate-link">Batteries (22)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Headsets (16)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Screen (28)</a></li>
+									</ul>
                         </li>
                        @endforeach
                     </ul>

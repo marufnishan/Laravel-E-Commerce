@@ -720,7 +720,7 @@ li.menu-item .nav-label.sale-label::before{
 	background: transparent;
 }
 .header-style-1 .primary-nav-section{
-	background: #444444;
+	background: #4c1775;
 }
 .primary{
 	position: relative;
@@ -1155,7 +1155,7 @@ li.menu-item .nav-label.sale-label::before{
 .wrap-main-slide .slide-3 .sale-info .price{
     font-weight: 700;
     font-size: 25px;
-    color: #ff2832;
+    color: #4d1875;
 }
 
 /* main slide's animate */
@@ -1589,7 +1589,7 @@ li.menu-item .nav-label.sale-label::before{
     width: 100%;
     /*float: left;*/
     text-align: left;
-    background-color: #ff2832;
+    background-color: #4c1775;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 700;
@@ -1771,12 +1771,12 @@ li.menu-item .nav-label.sale-label::before{
     border-left-color: #365db5;
 }
 .product .product-thumnail .group-flash .flash-item.sale-label{
-    background-color: #ff2832;
+    background-color: #698818;
     margin-left: 8px;
 }
 .product .product-thumnail .group-flash .flash-item.sale-label::before{
-    border-top-color: #ff2832;
-    border-left-color: #ff2832;
+    border-top-color: #4c1775;
+    border-left-color: #4c1775;
 }
 .product .product-info .product-name span,
 .product-style-2 .product-info .product-name span{
@@ -1845,7 +1845,7 @@ li.menu-item .nav-label.sale-label::before{
 .product .product-info .wrap-price ins>p,
 .product-style-2 .product-info .wrap-price ins>p{
     font-weight: 600;
-    color: #ff2832;
+    color: #4c1775;
     text-align: left;
     padding-right: 8px;
 }
@@ -2189,7 +2189,7 @@ li.menu-item .nav-label.sale-label::before{
     -ms-transform: translateY(8.5px);
 }
 .coppy-right-box {
-    background: #2d2d2d;
+    background: #4c1775;
 }
 .coppy-right-box .coppy-right-item{
     display: inline-block;
@@ -2743,7 +2743,7 @@ li.menu-item .nav-label.sale-label::before{
 .ui-slider-horizontal .ui-slider-handle {
     top: -5px;
     margin-left: 0;
-    background-color: #ff2832;
+    background-color: #4c1775;
 }
 .ui-slider-horizontal .ui-slider-range {
     top: 0;
@@ -2866,7 +2866,7 @@ vertical-align: top;
     border-radius: 50%;
 }
 .product-list-style .product-attribute li .attr-red-color{
-    background-color: #ff2832;
+    background-color: #4c1775;
 }
 .product-list-style .product-attribute li .attr-yellow-color{
     background-color: #ecbf33;
@@ -2925,7 +2925,7 @@ vertical-align: top;
 }
 .product-list-style .advance-info .wrap-price ins>p{
     font-weight: 600;
-    color: #ff2832;
+    color: #4c1775;
     text-align: left;
     padding-right: 8px;
 }
@@ -3185,7 +3185,7 @@ vertical-align: top;
     font-weight: 400;
 }
 .wrap-contacts .contact-box label>span{
-    color: #ff2832;
+    color: #4c1775;
     margin: 0;
     padding: 0;
 }
@@ -4089,7 +4089,7 @@ article.single-post blockquote p:last-child::after{
     outline: none;
 }
 .wrap-iten-in-cart .products-cart .delete a.btn:hover i{
-    color: #ff2832;
+    color: #4c1775;
 }
 .shopping-cart .summary{
     display: inline-block;
@@ -4506,7 +4506,7 @@ article.single-post blockquote p:last-child::after{
     text-align: left;
 }
 .wrap-product-detail .detail-info .stock-info.in-stock b{
-    color: #ff2832;
+    color: #4c1775;
 }
 .wrap-product-detail .advance-info .tab-control,
 .wrap-product-detail .advance-info .tab-contents{
@@ -4843,7 +4843,7 @@ table.shop_attributes tbody{
     text-transform: uppercase;
 }
 .wrap-address-billing .row-in-form label span{
-    color: #ff2832;
+    color: #4c1775;
 }
 .wrap-address-billing .row-in-form input[type=email],
 .wrap-address-billing .row-in-form input[type=text],
@@ -5594,7 +5594,7 @@ table.shop_attributes tbody{
 }
 .wrap-footer-item .wrap-hotline-footer .phone-number,
 .topbar-menu-area .topbar-menu .label-before.fa-mobile{
-    color: #ff2832 !important;
+    color: #4c1775 !important;
 }
 .fill-color .header-nav-section ul li a{
     color: #ffffff;
@@ -6664,13 +6664,13 @@ background-color: #888888;
     
     .header .main-info-area .right-section{
     position: fixed;
-    background-color: #FF2832;
+    background-color: #698818;
     bottom: 0px;
     z-index: 100;
     padding: 10px;
     width: 100%;
     left: 0;
-    padding-left: 32px;}
+    padding-left: 50px;}
 
     img {
         margin-bottom: 10px;
@@ -7275,3 +7275,4 @@ svg {
 			font-size: 13px !important;
 			color: #444444 !important;
 		}
+        
