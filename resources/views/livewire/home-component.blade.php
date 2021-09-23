@@ -51,6 +51,9 @@
                             <figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}" width="800"
                                     height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
                         </a>
+                        <div class="wrap-btn">
+                            <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" class="function-link">quick view</a>
+                        </div>
                         <div class="group-flash">
                             <span class="flash-item sale-label">sale</span>
                         </div>
@@ -92,6 +95,9 @@
                                                     src="{{ asset('assets/images/products') }}/{{$lproduct->image}}"
                                                     width="800" height="800" alt="{{$lproduct->name}}"></figure>
                                         </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{route('product.details',['slug'=>$lproduct->slug])}}" class="function-link">quick view</a>
+                                        </div>
                                         <div class="group-flash">
                                             <span class="flash-item new-label">new</span>
                                         </div>
@@ -150,6 +156,9 @@
                                                     src="{{ asset('assets/images/products') }}/{{$c_product->image}}"
                                                     width="800" height="800" alt="{{$c_product->name}}"></figure>
                                         </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{route('product.details',['slug'=>$c_product->slug])}}" class="function-link">quick view</a>
+                                        </div>
                                     </div>
                                     <div class="product-info">
                                         <a href="{{route('product.details',['slug'=>$c_product->slug])}}"

@@ -161,7 +161,12 @@
 
 						@livewire('header-search-component')
 
-						<div class="wrap-icon right-section">
+						<div class="wrap-icon right-section ">
+							<div class="wrap-icon-section show-up-after-1024">
+								<a href="/" class="link-direction">
+									<i class="fa fa-home"></i>
+								</a>
+							</div>
 							@livewire('wishlist-count-component')
 
 							@livewire('cart-count-component')
@@ -173,6 +178,7 @@
 									<span></span>
 								</a>
 							</div>
+							
 						</div>
 
 					</div>

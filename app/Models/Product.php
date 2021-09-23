@@ -19,5 +19,10 @@ class Product extends Model
         {
             return $this->hasMany(OrderItem::class,'product_id');
         }
+
+        public function subcategories()
+        {
+            return $this->belongsTo(Subcategory::class,'subcategory_id');
+        }
     
 }
