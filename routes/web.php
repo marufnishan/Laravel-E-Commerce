@@ -34,6 +34,7 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ContactComponent;
+use App\Http\Livewire\User\UserProfileComponent;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -81,13 +82,14 @@ use Illuminate\Support\Facades\Route;
       // return view('dashboard');
    //})->name('dashboard');
 
+//For User
    Route::middleware(['auth:sanctum','verified'])->group(function(){
    Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
    Route::get('/user/orders',UserOrdersComponent::class)->name('user.orders');
    Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
    Route::get('/user/review/{order_item_id}',UserReviewComponent::class)->name('user.review');
    Route::get('/user/change-password',UserChangePasswordComponent::class)->name('user.changepassword');
-
+   Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
 });
 
 
