@@ -37,6 +37,7 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ContactComponent;
+use App\Http\Livewire\Seller\SellerDashboardComponent;
 use App\Http\Livewire\User\UserEditProfileComponent;
 use App\Http\Livewire\User\UserProfileComponent;
 use Illuminate\Support\Facades\Artisan;
@@ -130,6 +131,12 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
    Route::get('/admin/attribute/add',AdminAddAttributeComponent::class)->name('admin.add_attribute');
    Route::get('/admin/attribute/edit/{attribute_id}',AdminEditAttributeComponent::class)->name('admin.edit_attribute');
 
+});
+
+//For Seller
+Route::middleware(['auth:sanctum','verified','authvendor'])->group(function(){
+   Route::get('/seller/dashboard',SellerDashboardComponent::class)->name('seller.dashboard');
+   
 });
 
 

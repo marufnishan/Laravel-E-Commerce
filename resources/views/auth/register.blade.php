@@ -40,6 +40,17 @@
 										<label for="frm-reg-cfpass">Confirm Password *</label>
 										<input type="Password" id="frm-reg-cfpass" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
 									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-reg-phone">Phone</label>
+										<input type="text" id="frm-reg-phone" name="phone" placeholder="Phone" value="">
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-reg-registers">Register As</label>
+										<select name="registers" id="registers">
+											<option value="USR">Customer</option>
+											<option value="VNDR">Seller</option>
+										</select>
+									</fieldset>
 									<input type="submit" class="btn btn-sign" value="Register" name="register">
 								</form>
 							</div>											
