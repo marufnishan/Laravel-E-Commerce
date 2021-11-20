@@ -127,7 +127,7 @@
 											<a title="My Account" href="#">My Account ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 											   <ul class="submenu curency" >
 												 <li class="menu-item" >
-													 <a title="Dashboard" href="#">My Profile</a>
+													 <a title="Dashboard" href="{{ route('seller.profile')}}">My Profile</a>
 												  </li>
 												   <li class="menu-item" >
 													 <a title="Dashboard" href="{{ route('seller.dashboard')}}">Dashboard</a>
