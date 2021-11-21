@@ -17,7 +17,7 @@
                                 All Products
                             </div>
                             <div class="col-md-4">
-                                <a href="#" class="btn btn-success pull-right">Add New</a>
+                                <a href="{{route('seller.addproduct')}}" class="btn btn-success pull-right">Add New</a>
                             </div>
                             <div class="col-md-4">
                                 <input type="text" class="form-control" placeholder="Search...." wire:model="searchTerm"/>
