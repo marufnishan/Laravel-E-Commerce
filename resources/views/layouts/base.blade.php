@@ -133,7 +133,7 @@
 													 <a title="Dashboard" href="{{ route('seller.dashboard')}}">Dashboard</a>
 												  </li>
 												  <li class="menu-item" >
-													<a title="My Orders" href="#">All Products</a>
+													<a title="My Orders" href="{{route('seller.products')}}">All Products</a>
 												 </li>
 												  <li class="menu-item" >
 													 <a title="My Orders" href="#">All Orders</a>
