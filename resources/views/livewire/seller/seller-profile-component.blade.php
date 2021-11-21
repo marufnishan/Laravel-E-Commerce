@@ -14,9 +14,9 @@
                         @endif
                     </div>
                     <div class="col-md-8">
-                        <h3>Name : {{Auth::user()->name}}</h3>
-                        <p><b>Email : </b>{{Auth::user()->email}}</p>
-                        <p><b>Phone : </b>{{Auth::user()->phone}}</p>
+                        <h3>Name : {{$seller->name}}</h3>
+                        <p><b>Email : </b>{{$seller->email}}</p>
+                        <p><b>Phone : </b>{{$seller->phone}}</p>
                         <hr>
                         <p><b>NID : </b>{{$seller->seller->nid}}</p>
                         <p><b>Address : </b>{{$seller->seller->address}}</p>
@@ -25,7 +25,7 @@
                         <p><b>Country : </b>{{$seller->seller->country}}</p>
                         <p><b>Zip Code : </b>{{$seller->seller->zipcode}}</p>
                         <p><b>Service Location : </b>{{$seller->seller->service_location}}</p>
-                        <a href="#" class="btn btn-info pull-right">Update Profile</a>
+                        <a href="{{route('seller.editprofile')}}" class="btn btn-info pull-right">Update Profile</a>
                     </div>
                 </div>
             </div>

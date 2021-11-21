@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Seller extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['seller_id'];
+/* 
+    protected $fillable = ['seller_id']; */
 }
