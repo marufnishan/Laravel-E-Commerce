@@ -38,6 +38,7 @@ use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\Seller\SellerAddProductComponent;
+use App\Http\Livewire\Seller\SellerChangePasswordComponent;
 use App\Http\Livewire\Seller\SellerDashboardComponent;
 use App\Http\Livewire\Seller\SellerEditProductComponent;
 use App\Http\Livewire\Seller\SellerEditProfileComponent;
@@ -146,6 +147,7 @@ Route::middleware(['auth:sanctum','verified','authvendor'])->group(function(){
    Route::get('/seller/products',SellerProductComponent::class)->name('seller.products');
    Route::get('/seller/product/add',SellerAddProductComponent::class)->name('seller.addproduct');
    Route::get('/seller/product/edit/{product_slug}',SellerEditProductComponent::class)->name('seller.editproduct');
+   Route::get('/seller/change-password',SellerChangePasswordComponent::class)->name('seller.changepassword');
 });
 
 
