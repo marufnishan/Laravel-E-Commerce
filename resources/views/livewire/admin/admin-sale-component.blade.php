@@ -1,7 +1,21 @@
-<div>
-    <div class="container" style="padding:30px 0;">
-        <div class="row">
-            <div class="col-md-12">
+<div class="content">
+    <style>
+          .content {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        </style>
+    <div class="container-fluid" style="background: #FFFFFF;">
+        <div class="row ">
+            {{-- Sidebar Start --}}
+            <div class="col-md-2" style="background: rgb(68, 67, 67)">
+
+                <x-sidebar />
+
+            </div>
+            {{-- Sidebar End --}}
+
+            <div class="col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Sale Setting
