@@ -27,18 +27,18 @@
         }
 
     </style>
-    <div class="container-fluid" style="background: #008#FFFFFF3AB;">
+    <div class="container-fluid">
         <div class="row">
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: rgb(68, 67, 67)">
+            <div class="col-md-2" style="background: #467f47;">
 
                 <x-sidebar />
             </div>
 
             <div class="col-md-10 ">
                 <div class="panel panel-default">
-                    <div class="panel-heading ">
-                        <div class="row">
+                    <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
+                        <div class="row" >
                             <div class="col-md-6">
                                 All Categories
                             </div>
@@ -56,7 +56,7 @@
 
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr style="background:#009688;color: white;">
                                         <th>Id</th>
                                         <th>Category Name</th>
                                         <th>Slug</th>

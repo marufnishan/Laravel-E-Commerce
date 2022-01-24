@@ -25,7 +25,7 @@
     <div class="container-fluid" style="background: #FFFFFF;">
         <div class="row " >
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: rgb(68, 67, 67)">
+            <div class="col-md-2" style="background: #467f47;">
 
                 <x-sidebar />
                 
@@ -34,7 +34,7 @@
             
         <div class="col-md-10">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading"  style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                     <div class="row">
                         <div class="col-md-6">
                             All Attributes
@@ -45,12 +45,13 @@
                     </div>
                 </div>
                 <div class="panel-body">
+                <div class="table-responsive">
                     @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                     @endif
                     <table class="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style="background:#009688;color: white;">
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>Created At</th>
@@ -73,6 +74,7 @@
                     </table>
                     {{$pattributes->links()}}
                 </div>
+    </div>
             </div>
         </div>
     </div>
