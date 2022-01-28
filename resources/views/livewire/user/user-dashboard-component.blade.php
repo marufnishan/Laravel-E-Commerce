@@ -71,7 +71,7 @@
             {{-- Sidebar End --}}
 
             <div class="col-md-10" style="background: #46b974;">
-                <div class="row">
+                <div class="row" style="padding-top:20px">
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-stat">
                             <div class="row">
@@ -137,6 +137,7 @@
                         </div>
                     </div>
                 </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default">
