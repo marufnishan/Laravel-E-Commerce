@@ -6,7 +6,7 @@
         }
 
     </style>
-    <div class="container-fluid" style="background: #467f47;">
+    <div class="container-fluid" >
         <div class="row ">
             {{-- Sidebar Start --}}
             <div class="col-md-2" style="background: #467f47; ">
