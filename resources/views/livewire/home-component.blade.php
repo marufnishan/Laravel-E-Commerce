@@ -1,5 +1,5 @@
 <main id="main">
-    <div class="container">
+    <div class="container-fluid" id="banner">
 
         <!--MAIN SLIDE-->
         <div class="wrap-main-slide">
@@ -20,21 +20,53 @@
         </div>
 
         <!--BANNER-->
-        <div class="wrap-banner style-twin-default">
-            <div class="banner-item">
-                <a href="#" class="link-banner banner-effect-1">
-                    <figure><img src="{{ asset('assets/images/home-1-banner-1.jpg') }}" alt="" width="580" height="190">
-                    </figure>
-                </a>
-            </div>
-            <div class="banner-item">
-                <a href="#" class="link-banner banner-effect-1">
-                    <figure><img src="{{ asset('assets/images/home-1-banner-2.jpg') }}" alt="" width="580" height="190">
-                    </figure>
-                </a>
-            </div>
-        </div>
+ <div>
+    <footer id="footer">
+		<div class="wrap-footer-content footer-style-1">
 
+			<div class="wrap-function-info">
+				<div class="container">
+                    <div class="row">
+					<ul>
+						<li class="fc-info-item" >
+							<i class="fa fa-car" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Free Shipping</h4>
+								<p class="fc-desc">Free On Oder Over $99</p>
+							</div>
+
+						</li>
+						<li class="fc-info-item ml-3">
+							<i class="fa fa-usd" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Money Returns</h4>
+								<p class="fc-desc">30 Days money return</p>
+							</div>
+
+						</li>
+						<li class="fc-info-item">
+							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Safe Payment</h4>
+								<p class="fc-desc">Safe your online payment</p>
+							</div>
+
+						</li>
+						<li class="fc-info-item">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Online Suport</h4>
+								<p class="fc-desc">We Have Support 24/7</p>
+							</div>
+
+						</li>
+					</ul>
+                    </div>
+				</div>
+			</div> 
+    </footer>
+</div>
+<div class="container">
         <!--On Sale-->
         @if($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
             
@@ -175,5 +207,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </main>

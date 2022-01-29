@@ -38,8 +38,14 @@
                 style="background: #092f0d;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"></i>Settings</a>
 
             @elseif(Auth::user()->utype === 'VNDR')
-            <h1> vendor sidebar </h1>
-
+            <a href="{{ route('seller.dashboard')}}" class="list-group-item  second-text fw-bold"
+                style="background: #092f0d;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"></i>Dashboard</a>
+            <a href="{{ route('seller.profile')}}" class="list-group-item  second-text fw-bold"
+                style="background: #092f0d;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"></i>My
+                Profile</a>
+            <a href="{{route('seller.products')}}" class="list-group-item  second-text fw-bold"
+                style="background: #092f0d;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"></i>All Products</a>
+                
 
             @else
             <a href="{{ route('user.dashboard')}}" class="list-group-item  second-text fw-bold"
