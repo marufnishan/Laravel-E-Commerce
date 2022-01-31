@@ -7745,7 +7745,7 @@ table.shop_attributes tbody {
         color: #4c1775;
     }
 
-    .fa-heart:before {
+    .fa-shopping-bag:before {
         color: white;
     }
 
@@ -7753,7 +7753,7 @@ table.shop_attributes tbody {
         color: white;
     }
 
-    .fa-shopping-basket:before {
+    .fa-shopping-cart:before {
         color: white;
     }
 
