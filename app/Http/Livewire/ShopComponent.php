@@ -8,6 +8,7 @@ use Livewire\WithPagination;
 use Cart;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Sale;
 
 class ShopComponent extends Component
 {
@@ -16,14 +17,19 @@ class ShopComponent extends Component
 
     public $min_price;
     public $max_price;
+ 
+    public $sale_paginate;
 
     public function mount()
     {
         $this->sorting = "default";
         $this->pagesize = 15;
+        $this->sale_paginate = 4;
 
         $this->min_price = 0;
         $this->max_price = 1000;
+
+
     }
     public function store($product_id,$product_name,$product_price)
     {
@@ -72,6 +78,10 @@ class ShopComponent extends Component
         }
         $categories = Category::all();
 
+        $sale = Sale::find(1);
+        $sproducts = Product::where('sale_price','>',0)->paginate($this->sale_paginate);
+
+
         if(Auth::check())
         {
             Cart::instance('cart')->store(Auth::user()->email);
@@ -79,7 +89,7 @@ class ShopComponent extends Component
             $this->emitTo('cart-count-component','refreshComponent');
             $this->emitTo('wishlist-count-component','refreshComponent');
         }
-        $popular_products = Product::inRandomOrder()->limit(6)->get();
-        return view('livewire.shop-component',['products'=> $products,'popular_products'=>$popular_products,'categories'=>$categories])->layout("layouts.base");
+        $popular_products = Product::inRandomOrder()->limit(10)->get();
+        return view('livewire.shop-component',['products'=> $products,'popular_products'=>$popular_products,'categories'=>$categories,'sale'=>$sale,'sproducts'=>$sproducts])->layout("layouts.base");
     }
 }
