@@ -37,7 +37,7 @@
 	<!--header-->
 	<header id="header" class="header header-style-1">
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row" style="background-color:#4c1775;">
 				<div class="topbar-menu-area">
 					<div class="container">
 						<div class="topbar-menu left-menu">
@@ -177,9 +177,8 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
+							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" style="height:100px; width:100px margin-top:8px; margin-bottom:8px;" alt="mercado"></a>
 						</div>
-
 						@livewire('header-search-component')
 
 						<div class="wrap-icon right-section ">
@@ -206,7 +205,7 @@
 				</div>
 
 				<div class="nav-section header-sticky">
-					<div class="primary-nav-section">
+					<div class="primary-nav-section my-3">
 						<div class="container">
 							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
 								<li class="menu-item home-icon">

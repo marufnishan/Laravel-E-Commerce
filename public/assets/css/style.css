@@ -647,7 +647,7 @@ textarea {
 
 .center-section .wrap-search-form .wrap-list-cate .link-control {
     display: inline-block;
-    color: #999;
+    color: #4c1775;
     padding: 9px 15px;
     width: 100%;
     text-align: left;
@@ -658,7 +658,7 @@ textarea {
     float: left;
     font-size: 13px;
     color: #999999;
-    border: none;
+    border-radius: 25px;
     padding: 0 20px;
     height: 35px;
 }
@@ -677,11 +677,12 @@ textarea {
 }
 
 .center-section .wrap-search-form button {
-    width: 56px;
+    width: 90px;
     height: 35px;
-    border: none;
+    border-radius: 25px;
+    border: 1px solid #40b0b5;
     position: absolute;
-    right: 0;
+    right: -16px;
     top: 0;
 }
 
@@ -726,7 +727,7 @@ header.fill-color .main-info-area .right-section .wrap-icon-section .title {
 
 .main-info-area .right-section .wrap-icon-section .title {
     font-size: 12px;
-    color: #333333;
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: 600;
     display: block;
@@ -759,7 +760,7 @@ header.fill-color .main-info-area .right-section .wrap-icon-section .link-direct
     display: block;
     float: left;
     font-size: 25px;
-    color: #aaa;
+    color: #f8f8f8;
     margin: 7px 8px 0 0;
 }
 
@@ -868,7 +869,9 @@ li.menu-item .nav-label.sale-label::before {
 }
 
 .header-style-1 .primary-nav-section {
-    background: #4c1775;
+    background: #f5ebff;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .primary {
@@ -892,17 +895,17 @@ li.menu-item .nav-label.sale-label::before {
 
 .primary>.menu-item:not(.home-icon)>a {
     font-weight: 700;
-    color: #f1f1f1;
+    color: #4c1775;
     text-transform: uppercase;
     padding: 11px 23px;
 }
 
-.primary>.menu-item:not(first-child) {
+/* .primary>.menu-item:not(first-child) {
     border-right: 1px solid #555555;
-}
+} */
 
 .primary>.menu-item:not(.home-icon):hover {
-    background: #555555;
+    background: #40b0b5;
 }
 
 .primary .menu-item>a:focus,
@@ -1222,8 +1225,8 @@ li.menu-item .nav-label.sale-label::before {
 }
 
 .wrap-main-slide .slide-carousel .slide-info.slide-3 {
-    top: 20%;
-    left: 8%;
+    top: 16%;
+    left: 14%;
     max-width: 500px;
     transform: translate(7px, 4px);
     -ms-transform: translate(7px, 4px);
@@ -7739,6 +7742,16 @@ table.shop_attributes tbody {
 }
 
 @media (max-width: 600px) {
+
+    .center-section .wrap-search-form button {
+        width: 37px;
+        height: 35px;
+        border-radius: 30px;
+        border: 3px solid #40b0b5;
+        position: absolute;
+        right: 0px;
+        top: 0;
+    }
 
     .product-wish .fa {
         color: #4c1775;
