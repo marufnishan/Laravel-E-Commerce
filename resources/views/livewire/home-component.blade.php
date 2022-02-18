@@ -132,44 +132,76 @@
                     <div class="wrap-product-tab tab-style-1">
                         <div class="tab-contents">
                             <div class="tab-content-item active" id="digital_1a">
-                                <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container"
-                                    data-items="5" data-loop="false" data-nav="true" data-dots="false"
-                                    data-responsive='{"0":{"items":"2"},"480":{"items":"3"},"768":{"items":"4"},"992":{"items":"5"},"1200":{"items":"5"}}'>
 
-                                    @foreach($lproducts as $lproduct)
-                                    <div class="product product-style-2 equal-elem ">
-                                        <div class="product-thumnail">
+                                @foreach($lproducts as $lproduct)
+                                <div class="col-md-2 col-sm-6 product product-style-2 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
+                                            title="{{$lproduct->name}}">
+                                            <figure><img
+                                                    src="{{ asset('assets/images/products') }}/{{$lproduct->image}}"
+                                                    width="800" height="800" alt="{{$lproduct->name}}"></figure>
+                                        </a>
+                                        <div class="wrap-btn">
                                             <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
-                                                title="{{$lproduct->name}}">
-                                                <figure><img
-                                                        src="{{ asset('assets/images/products') }}/{{$lproduct->image}}"
-                                                        width="800" height="800" alt="{{$lproduct->name}}"></figure>
-                                            </a>
-                                            <div class="wrap-btn">
-                                                <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
-                                                    class="function-link">quick view</a>
-                                            </div>
-                                            <div class="group-flash">
-                                                <span class="flash-item new-label">new</span>
-                                            </div>
+                                                class="function-link">quick view</a>
                                         </div>
-                                        <div class="product-info">
-                                            <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
-                                                class="product-name"><span>{{$lproduct->name}}</span></a>
-                                            <div class="wrap-price"><span
-                                                    class="product-price">${{$lproduct->regular_price}}</span></div>
+                                        <div class="group-flash">
+                                            <span class="flash-item new-label">new</span>
                                         </div>
                                     </div>
-                                    @endforeach
-
+                                    <div class="product-info">
+                                        <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
+                                            class="product-name"><span>{{$lproduct->name}}</span></a>
+                                        <div class="wrap-price"><span
+                                                class="product-price">${{$lproduct->regular_price}}</span></div>
+                                    </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!--  End Latest product -->
 
+            <!-- Sale Product Start  -->
+            @if($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+
+            <div class="wrap-show-advance-info-box style-1 has-countdown">
+                <h3 class="title-box">On Sale</h3>
+                @foreach($sproducts as $sproduct)
+                <div class="col-md-2 col-sm-6 product product-style-2 equal-elem ">
+                    <div class="product-thumnail">
+                        <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" title="{{$sproduct->name}}">
+                            <figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}" width="800"
+                                    height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                            </figure>
+                        </a>
+                        <div class="wrap-btn">
+                            <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" class="function-link">quick
+                                view</a>
+                        </div>
+                        <div class="group-flash">
+                            <span class="flash-item sale-label">sale</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
+                            class="product-name"><span>{{$sproduct->name}}</span></a>
+                        <div class="wrap-price"><ins>
+                                <p class="product-price">${{$sproduct->sale_price}}</p>
+                            </ins> <del>
+                                <p class="product-price">${{$sproduct->regular_price}}</p>
+                            </del></div>
+                    </div>
+                </div>
+                @endforeach
+
+                @endif
+                
+
+            </div>
         </div>
-    </div>
 </main>

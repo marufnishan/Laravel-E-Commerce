@@ -55,6 +55,7 @@ body {
     font-size: 13px;
     color: #444444;
     overflow-x: hidden;
+   
 }
 
 img {
@@ -7335,7 +7336,7 @@ table.shop_attributes tbody {
     .main-info-area .right-section .wrap-icon-section {
         width: initial;
         max-width: 106px;
-        margin: 0 10px;
+        margin: 0 auto;
         order: 3;
         flex-grow: 1;
     }
@@ -7352,20 +7353,28 @@ table.shop_attributes tbody {
         width: 100%;
         order: 2;
         margin: 0 auto;
+        padding-bottom: 15px;
         text-align: center;
         display: inline-block;
     }
 
     .header .main-info-area .right-section {
-        order: 2;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 25px;
+        position: fixed;
+        background-color: #4c1775;
+        bottom: 0px;
+        z-index: 100;
+        padding: 10px;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-wrap: initial;
         flex-grow: 1;
+        justify-content: center;
     }
 
     .header .main-info-area .right-section .show-up-after-1024 {
         display: inline-block !important;
+        text-align: center;
     }
 
     .header .main-info-area .right-section .show-up-after-1024 a {
@@ -7468,7 +7477,7 @@ table.shop_attributes tbody {
     }
 
     .wrap-footer-content .wrap-function-info .fc-info-item {
-        width: 50%;
+        width: 48%;
     }
 
     .wrap-footer-content .wrap-function-info .fc-info-item:nth-child(2n+1) {
@@ -7505,6 +7514,7 @@ table.shop_attributes tbody {
 
     .coppy-right-box {
         padding: 15px 0;
+        padding-bottom: 90px !important;
     }
 
     .wrap-login-item .form-item.login-form {
@@ -7771,7 +7781,7 @@ table.shop_attributes tbody {
 
     .header .main-info-area .right-section {
         position: fixed;
-        background-color: #698818;
+        background-color: #4c1775;
         bottom: 0px;
         z-index: 100;
         padding: 10px;
@@ -7937,11 +7947,20 @@ table.shop_attributes tbody {
 
 @media (max-width: 550px) {
 
+    .main-info-area .right-section .wrap-icon-section {
+        width: initial;
+        max-width: 106px;
+        margin: 0 auto;
+        order: 3;
+        flex-grow: 1;
+    }
+
     .wrap-top-banner-3 .banner-style-vertical .banner-item:not(:first-child),
     .wrap-top-banner-3 .banner-style-vertical .banner-item {
         width: 100% !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+
     }
 
     .wrap-main-slide-2 .wrap-banners.type-3 .f-title {
@@ -7993,6 +8012,7 @@ table.shop_attributes tbody {
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 12px;
     }
 
     .center-section .wrap-search-form .wrap-list-cate {
@@ -8508,3 +8528,4 @@ svg {
     margin-top: -10px;
 
 }
+
