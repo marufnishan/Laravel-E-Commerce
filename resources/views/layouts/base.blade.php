@@ -69,7 +69,7 @@
 									 	         <li class="menu-item" >
 											        <a title="Dashboard" href="{{ route('admin.dashboard')}}">Dashboard</a>
 									             </li>
-												 <li class="menu-item">
+												<!--  <li class="menu-item">
 													<a title="Categories" href="{{ route('admin.categories')}}">Categories</a>
  												 </li>
 												  <li class="menu-item">
@@ -99,7 +99,7 @@
 												</li>
 												  <li class="menu-item">
 													<a title="Settings" href="{{ route('admin.settings')}}">Settings</a>
-												  </li>
+												  </li> -->
 												 <li class='menu-item'>
 												  		<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 												  </li>
@@ -119,12 +119,12 @@
 												   <li class="menu-item" >
 													 <a title="Dashboard" href="{{ route('seller.dashboard')}}">Dashboard</a>
 												  </li>
-												  <li class="menu-item" >
+												 <!--  <li class="menu-item" >
 													<a title="My Orders" href="{{route('seller.products')}}">All Products</a>
 												 </li>
 												  <li class="menu-item" >
 													 <a title="My Orders" href="#">All Orders</a>
-												  </li>
+												  </li> -->
 												  <li class="menu-item" >
 													 <a title="Change Password" href="{{route('seller.changepassword')}}">Change Password</a>
 												  </li>

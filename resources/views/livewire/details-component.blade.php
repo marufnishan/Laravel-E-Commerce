@@ -31,15 +31,15 @@
                                         alt="{{$product->name}}" />
                                 </li>
                                 @php
-                                    $images = explode(",",$product->images);
+                                $images = explode(",",$product->images);
                                 @endphp
                                 @foreach($images as $image)
-                                    @if($image)
-                                    <li data-thumb="{{ asset('assets/images/products' ) }}/{{$image}}">
-                                        <img src="{{ asset('assets/images/products') }}/{{$image}}"
-                                            alt="{{$product->name}}" />
-                                    </li>
-                                    @endif
+                                @if($image)
+                                <li data-thumb="{{ asset('assets/images/products' ) }}/{{$image}}">
+                                    <img src="{{ asset('assets/images/products') }}/{{$image}}"
+                                        alt="{{$product->name}}" />
+                                </li>
+                                @endif
                                 @endforeach
                             </ul>
                         </div>
@@ -47,36 +47,32 @@
                     <div class="detail-info">
                         <div class="product-rating">
                             <style>
-                                .color-gray{
+                                .color-gray {
                                     color: #e6e6e6 !important;
                                 }
+
                             </style>
                             @php
-                             $avgrating = 0;
+                            $avgrating = 0;
                             @endphp
                             @foreach($product->orderItems->where('rstatus',1) as $orderItem)
-                                @php
-                                    $avgrating = $avgrating + $orderItem->review->rating;
-                                @endphp
+                            @php
+                            $avgrating = $avgrating + $orderItem->review->rating;
+                            @endphp
                             @endforeach
-                            @for($i = 1; $i <=5; $i++) 
-                                @if($i<=$avgrating) 
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                            @for($i = 1; $i <=5; $i++) @if($i<=$avgrating) <i class="fa fa-star" aria-hidden="true"></i>
                                 @else
-                                    <i class="fa fa-star color-gray" aria-hidden="true"></i>
+                                <i class="fa fa-star color-gray" aria-hidden="true"></i>
                                 @endif
-                            @endfor
-                                <a href="#" class="count-review">({{$product->orderItems->where('rstatus',1)->count()}} review)</a>
+                                @endfor
+                                <a href="#" class="count-review">({{$product->orderItems->where('rstatus',1)->count()}}
+                                    review)</a>
 
 
                         </div>
                         <h2 class="product-name">{{$product->name}}</h2>
                         <div class="short-desc">
                             {!! $product->short_description !!}
-                        </div>
-                        <div class="wrap-social">
-                            <a class="link-socail" href="#"><img src="{{ asset('assets/images/social-list.png' ) }}"
-                                    alt=""></a>
                         </div>
                         @if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
                         <div class="wrap-price">
@@ -92,18 +88,20 @@
 
                         <div>
                             @foreach($product->attributeValues->unique('product_attribute_id') as $av)
-                                <div class="row" style="margin-top: 20px">
-                                    <div class="col-xs-2">
-                                        <p>{{$av->productAttribute->name}}</p>
-                                    </div>
-                                    <div class="col-xs-10">
-                                        <select class="form-control" style="width: 200px" wire:model="satt.{{$av->productAttribute->name}}">
-                                            @foreach($av->productAttribute->attributeValues->where('product_id',$product->id) as $pav)
-                                                <option value="{{$pav->value}}">{{$pav->value}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                            <div class="row" style="margin-top: 20px">
+                                <div class="col-xs-2">
+                                    <p>{{$av->productAttribute->name}}</p>
                                 </div>
+                                <div class="col-xs-10">
+                                    <select class="form-control" style="width: 200px"
+                                        wire:model="satt.{{$av->productAttribute->name}}">
+                                        @foreach($av->productAttribute->attributeValues->where('product_id',$product->id)
+                                        as $pav)
+                                        <option value="{{$pav->value}}">{{$pav->value}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                             @endforeach
                         </div>
 
@@ -128,7 +126,6 @@
                                 to Cart</a>
                             @endif
                             <div class="wrap-btn">
-                                <a href="#" class="btn btn-compare">Add Compare</a>
                                 <a href="#" class="btn btn-wishlist">Add Wishlist</a>
                             </div>
                         </div>
@@ -143,65 +140,75 @@
                             <div class="tab-content-item active" id="description">
                                 {!! $product->description !!}
                             </div>
+
                             <div class="tab-content-item " id="add_infomation">
                                 <table class="shop_attributes">
                                     <tbody>
+                                        @foreach($product->attributeValues->unique('product_attribute_id') as $av)
                                         <tr>
-                                            <th>Weight</th>
-                                            <td class="product_weight">1 kg</td>
+                                            <th>{{$av->productAttribute->name}}</th>
+                                            @foreach($av->productAttribute->attributeValues->where('product_id',$product->id)
+                                            as $pav)
+                                            <td class="product_weight">{{$pav->value}}</td>
+                                            @endforeach
                                         </tr>
-                                        <tr>
-                                            <th>Dimensions</th>
-                                            <td class="product_dimensions">12 x 15 x 23 cm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Color</th>
-                                            <td>
-                                                <p>Black, Blue, Grey, Violet, Yellow</p>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
+
                             <div class="tab-content-item " id="review">
 
                                 <div class="wrap-review-form">
                                     <style>
-                                        .width-0-percent{
+                                        .width-0-percent {
                                             width: 0%;
                                         }
-                                        .width-20-percent{
+
+                                        .width-20-percent {
                                             width: 20%;
                                         }
-                                        .width-40-percent{
+
+                                        .width-40-percent {
                                             width: 40%;
                                         }
-                                        .width-60-percent{
+
+                                        .width-60-percent {
                                             width: 60%;
                                         }
-                                        .width-80-percent{
+
+                                        .width-80-percent {
                                             width: 80%;
                                         }
-                                        .width-100-percent{
+
+                                        .width-100-percent {
                                             width: 100%;
                                         }
+
                                     </style>
                                     <div id="comments">
-                                        <h2 class="woocommerce-Reviews-title">{{$product->orderItems->where('rstatus',1)->count()}} review for <span>{{$product->name}}</span></h2>
+                                        <h2 class="woocommerce-Reviews-title">
+                                            {{$product->orderItems->where('rstatus',1)->count()}} review for
+                                            <span>{{$product->name}}</span></h2>
                                         <ol class="commentlist">
                                             @foreach($product->orderItems->where('rstatus',1) as $orderItem)
                                             <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1"
                                                 id="li-comment-20">
                                                 <div id="comment-20" class="comment_container">
-                                                    <img alt="{{$orderItem->order->user->name}}" src="{{ asset('assets/images/profile' ) }}/{{$orderItem->order->user->profile->image}}"
+                                                    <img alt="{{$orderItem->order->user->name}}"
+                                                        src="{{ asset('assets/images/profile' ) }}/{{$orderItem->order->user->profile->image}}"
                                                         height="80" width="80">
                                                     <div class="comment-text">
                                                         <div class="star-rating">
-                                                            <span class="width-{{$orderItem->review->rating * 20}}-percent">Rated <strong
-                                                                    class="rating">{{$orderItem->review->rating}}</strong> out of 5</span>
+                                                            <span
+                                                                class="width-{{$orderItem->review->rating * 20}}-percent">Rated
+                                                                <strong
+                                                                    class="rating">{{$orderItem->review->rating}}</strong>
+                                                                out of 5</span>
                                                         </div>
                                                         <p class="meta">
-                                                            <strong class="woocommerce-review__author">{{$orderItem->order->user->name}}</strong>
+                                                            <strong
+                                                                class="woocommerce-review__author">{{$orderItem->order->user->name}}</strong>
                                                             <span class="woocommerce-review__dash">–</span>
                                                             <time class="woocommerce-review__published-date"
                                                                 datetime="2008-02-14 20:00">{{Carbon\Carbon::parse($orderItem->review->created_at)->format('d F g:i A')}}</time>
@@ -216,7 +223,7 @@
                                         </ol>
                                     </div><!-- #comments -->
 
-                                    
+
 
                                 </div>
                             </div>
@@ -227,46 +234,6 @@
             <!--end main products area-->
 
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
-                <div class="widget widget-our-services ">
-                    <div class="widget-content">
-                        <ul class="our-services">
-
-                            <li class="service">
-                                <a class="link-to-service" href="#">
-                                    <i class="fa fa-truck" aria-hidden="true"></i>
-                                    <div class="right-content">
-                                        <b class="title">Free Shipping</b>
-                                        <span class="subtitle">On Oder Over $99</span>
-                                        <p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="service">
-                                <a class="link-to-service" href="#">
-                                    <i class="fa fa-gift" aria-hidden="true"></i>
-                                    <div class="right-content">
-                                        <b class="title">Special Offer</b>
-                                        <span class="subtitle">Get a gift!</span>
-                                        <p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="service">
-                                <a class="link-to-service" href="#">
-                                    <i class="fa fa-reply" aria-hidden="true"></i>
-                                    <div class="right-content">
-                                        <b class="title">Order Return</b>
-                                        <span class="subtitle">Return within 7 days</span>
-                                        <p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- Categories widget-->
-
                 <div class="widget mercado-widget widget-product">
                     <h2 class="widget-title">Popular Products</h2>
                     <div class="widget-content">

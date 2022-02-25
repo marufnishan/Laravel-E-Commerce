@@ -21,45 +21,45 @@
                     </div>
                     <div class="wrap-countdown mercado-countdown"
                         data-expire="{{ Carbon\Carbon::parse($sale->sale_date)->format('Y/m/d h:m:s')}}"></div>
-                        @foreach($sproducts as $sproduct)
-                        <div class="col-md-3  product product-style-2 equal-elem ">
-                            <div class="product-thumnail">
+                    @foreach($sproducts as $sproduct)
+                    <div class="col-md-3  product product-style-2 equal-elem ">
+                        <div class="product-thumnail">
+                            <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
+                                title="{{$sproduct->name}}">
+                                <figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}"
+                                        width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                </figure>
+                            </a>
+                            <div class="wrap-btn">
                                 <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
-                                    title="{{$sproduct->name}}">
-                                    <figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}"
-                                            width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                    </figure>
-                                </a>
-                                <div class="wrap-btn">
-                                    <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
-                                        class="function-link">quick view</a>
-                                </div>
-                                <div class="group-flash">
-                                    <span class="flash-item sale-label">sale</span>
-                                </div>
+                                    class="function-link">quick view</a>
                             </div>
-                            <div class="product-info">
-                                <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
-                                    class="product-name"><span>{{$sproduct->name}}</span></a>
-                                <div class="wrap-price"><ins>
-                                        <p class="product-price">${{$sproduct->sale_price}}</p>
-                                    </ins> <del>
-                                        <p class="product-price">${{$sproduct->regular_price}}</p>
-                                    </del></div>
+                            <div class="group-flash">
+                                <span class="flash-item sale-label">sale</span>
                             </div>
                         </div>
-                        @endforeach
+                        <div class="product-info">
+                            <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
+                                class="product-name"><span>{{$sproduct->name}}</span></a>
+                            <div class="wrap-price"><ins>
+                                    <p class="product-price">${{$sproduct->sale_price}}</p>
+                                </ins> <del>
+                                    <p class="product-price">${{$sproduct->regular_price}}</p>
+                                </del></div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
                 <div class="pull-right">
                     {{$sproducts->links()}}
                     <hr>
                 </div>
                 @endif
-             
+
             </div>
-          
-           
-            
+
+
+
             <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
                 <div class="banner-shop">
 
@@ -143,6 +143,31 @@
                                         class="product-name"><span>{{$product->name}}</span></a>
                                     <div class="wrap-price"><span
                                             class="product-price">${{$product->regular_price}}</span></div>
+                                    <div class="product-rating">
+                                        <style>
+                                            .color-gray {
+                                                color: #e6e6e6 !important;
+                                            }
+
+                                        </style>
+                                        @php
+                                        $avgrating = 0;
+                                        @endphp
+                                        @foreach($product->orderItems->where('rstatus',1) as $orderItem)
+                                        @php
+                                        $avgrating = $avgrating + $orderItem->review->rating;
+                                        @endphp
+                                        @endforeach
+                                        @for($i = 1; $i <=5; $i++) @if($i<=$avgrating) <i class="fa fa-star"
+                                            aria-hidden="true"></i>
+                                            @else
+                                            <i class="fa fa-star color-gray" aria-hidden="true"></i>
+                                            @endif
+                                            @endfor
+                                            <a href="#"
+                                                class="count-review">({{$product->orderItems->where('rstatus',1)->count()}}
+                                                review)</a>
+                                    </div>
                                     <a href="#" class="btn add-to-cart"
                                         wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add
                                         To Cart</a>

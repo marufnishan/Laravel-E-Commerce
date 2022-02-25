@@ -1,7 +1,7 @@
 <div>
     <div id="sidebar-wrapper">
         <div class="list-group  my-3 mt-5">
-            <div class="list-group" style="margin-top:20px;background: #dd1313;border: 1px;
+            <div class="list-group" style="margin-top:20px;background: #40b0b5; border: 1px;
             border-radius: 4px;">
                 <a href="#" style="color:white;font-size:30px;padding:20px;"><b>Dashboard</b> </a>
             </div>
