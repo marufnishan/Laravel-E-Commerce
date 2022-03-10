@@ -95,6 +95,7 @@
                                 <div class="col-xs-10">
                                     <select class="form-control" style="width: 200px"
                                         wire:model="satt.{{$av->productAttribute->name}}">
+                                        <option>Select An Option</option>
                                         @foreach($av->productAttribute->attributeValues->where('product_id',$product->id)
                                         as $pav)
                                         <option value="{{$pav->value}}">{{$pav->value}}</option>

@@ -2083,14 +2083,14 @@ li.menu-item .nav-label.sale-label::before {
 .product-style-2 .product-info .wrap-price span.product-price {
     font-family: 'Lato', san-serif;
     font-weight: 700;
-    color: #222222;
+    color: #40b0b5;
 }
 
 .wrap-product-detail .detail-info .wrap-price ins>p,
 .product .product-info .wrap-price ins>p,
 .product-style-2 .product-info .wrap-price ins>p {
     font-weight: 600;
-    color: #4c1775;
+    color: #40b0b5;
     text-align: left;
     padding-right: 8px;
 }

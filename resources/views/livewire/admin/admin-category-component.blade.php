@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <div class="row">
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #467f47;">
+            <div class="col-md-2" style="background: #009688;">
 
                 <x-sidebar />
             </div>
