@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Livewire\Seller;
+
+use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class SellerOrderComponent extends Component
 {
-    /* public function updateOrderStatus($order_id,$status)
+    public function updateOrderStatus($order_id,$status)
     {
-        $order = Order::find($order_id);
+        $order = OrderItem::find($order_id);
         $order->status =$status;
         if($status == "delivered")
         {
@@ -21,7 +23,7 @@ class SellerOrderComponent extends Component
         }
         $order->save();
         session()->flash('order_message','Order status has been updated successfully!');
-    }*/
+    }
     
     public function render()
     {
