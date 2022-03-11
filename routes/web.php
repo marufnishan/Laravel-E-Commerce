@@ -43,6 +43,7 @@ use App\Http\Livewire\Seller\SellerDashboardComponent;
 use App\Http\Livewire\Seller\SellerEditProductComponent;
 use App\Http\Livewire\Seller\SellerEditProfileComponent;
 use App\Http\Livewire\Seller\SellerProductComponent;
+use App\Http\Livewire\Seller\SellerOrderComponent;
 use App\Http\Livewire\Seller\SellerProfileComponent;
 use App\Http\Livewire\User\UserEditProfileComponent;
 use App\Http\Livewire\User\UserProfileComponent;
@@ -148,6 +149,7 @@ Route::middleware(['auth:sanctum','verified','authvendor'])->group(function(){
    Route::get('/seller/product/add',SellerAddProductComponent::class)->name('seller.addproduct');
    Route::get('/seller/product/edit/{product_slug}',SellerEditProductComponent::class)->name('seller.editproduct');
    Route::get('/seller/change-password',SellerChangePasswordComponent::class)->name('seller.changepassword');
+   Route::get('/seller/orders',SellerOrderComponent::class)->name('seller.orders');
 });
 
 

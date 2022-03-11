@@ -1,48 +1,57 @@
-<div>
-    <div class="container" style="padding:30px 0;">
-        <style>
-            nav svg{
-               height: 20px;
-             }
-            nav .hidden{
-               display: block !important;
-             }
-      </style>
-        <div class="row">
-            <div class="col-md-12">
+<div class="content">
+    <style>
+        .content {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+    </style>
+    <div class="container-fluid" style="background: #FFFFFF;">
+        <div class="row ">
+            {{-- Sidebar Start --}}
+            <div class="col-md-2" style="background: #467f47;">
+
+                <x-sidebar />
+
+            </div>
+            {{-- Sidebar End --}}
+
+            <div class="col-md-10">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         Contact Message
                     </div>
                     <div class="panel-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Comment</th>
-                                    <th>Created At</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr style="background:#009688;color: white;">
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Comment</th>
+                                        <th>Created At</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
                                     $i = 1;
-                                @endphp
-                                @foreach($contacts as $contact)
+                                    @endphp
+                                    @foreach($contacts as $contact)
                                     <tr>
                                         <td>{{$i++}}</td>
                                         <td>{{$contact->name}}</td>
                                         <td>{{$contact->email}}</td>
                                         <td>{{$contact->phone}}</td>
                                         <td>{{$contact->comment}}</td>
-                                        <td>{{$contact->created_at}}</td>                                       
+                                        <td>{{$contact->created_at}}</td>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        {{$contacts->links()}}
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            {{$contacts->links()}}
+                        </div>
                     </div>
                 </div>
             </div>

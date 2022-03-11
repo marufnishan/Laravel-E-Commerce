@@ -22,7 +22,7 @@ class HomeComponent extends Component
         $cats = explode(',',$category->sel_categories);
         $categories = Category::whereIn('id',$cats)->get();
         $no_of_products = $category->no_of_products;
-        $sproducts = Product::where('sale_price','>',0)->inRandomOrder()->get()->take(8);
+        $sproducts = Product::where('sale_price','>',0)->orderBy('created_at','ASC')->get()->take(12);
         $sale = Sale::find(1);
         if(Auth::check())
         {

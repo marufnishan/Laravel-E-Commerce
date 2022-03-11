@@ -37,7 +37,7 @@
 	<!--header-->
 	<header id="header" class="header header-style-1">
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row" style="background-color:#4c1775;">
 				<div class="topbar-menu-area">
 					<div class="container">
 						<div class="topbar-menu left-menu">
@@ -59,20 +59,7 @@
                                    
 								</li>
 								
-								<li class="menu-item menu-item-has-children parent" >
-									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-									<ul class="submenu curency" >
-										<li class="menu-item" >
-											<a title="Pound (GBP)" href="#">Pound (GBP)</a>
-										</li>
-										<li class="menu-item" >
-											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
-										</li>
-										<li class="menu-item" >
-											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
-										</li>
-									</ul>
-								</li>
+							
 								@if(Route::has('login'))
 								        @auth
 										@if(Auth::user()->utype === 'ADM')
@@ -82,7 +69,7 @@
 									 	         <li class="menu-item" >
 											        <a title="Dashboard" href="{{ route('admin.dashboard')}}">Dashboard</a>
 									             </li>
-												 <li class="menu-item">
+												<!--  <li class="menu-item">
 													<a title="Categories" href="{{ route('admin.categories')}}">Categories</a>
  												 </li>
 												  <li class="menu-item">
@@ -112,7 +99,7 @@
 												</li>
 												  <li class="menu-item">
 													<a title="Settings" href="{{ route('admin.settings')}}">Settings</a>
-												  </li>
+												  </li> -->
 												 <li class='menu-item'>
 												  		<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 												  </li>
@@ -132,12 +119,12 @@
 												   <li class="menu-item" >
 													 <a title="Dashboard" href="{{ route('seller.dashboard')}}">Dashboard</a>
 												  </li>
-												  <li class="menu-item" >
+												 <!--  <li class="menu-item" >
 													<a title="My Orders" href="{{route('seller.products')}}">All Products</a>
 												 </li>
 												  <li class="menu-item" >
 													 <a title="My Orders" href="#">All Orders</a>
-												  </li>
+												  </li> -->
 												  <li class="menu-item" >
 													 <a title="Change Password" href="{{route('seller.changepassword')}}">Change Password</a>
 												  </li>
@@ -190,9 +177,8 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
+							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" style="height:100px; width:100px margin-top:8px; margin-bottom:8px;" alt="mercado"></a>
 						</div>
-
 						@livewire('header-search-component')
 
 						<div class="wrap-icon right-section ">
@@ -219,14 +205,14 @@
 				</div>
 
 				<div class="nav-section header-sticky">
-					<div class="primary-nav-section">
+					<div class="primary-nav-section my-3">
 						<div class="container">
 							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
 								<li class="menu-item home-icon">
-									<a href="/" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
+									<a href="/" class="link-term mercado-item-title"><i class="fa fa-truck" aria-hidden="true"></i></a>
 								</li>
 								<li class="menu-item">
-									<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+									<a href="about-us.html" class="link-term mercado-item-title">Dashboard</a>
 								</li>
 								<li class="menu-item">
 									<a href="/Shop" class="link-term mercado-item-title">Shop</a>

@@ -72,7 +72,7 @@
 .summary-item .btn,
 .choose-payment-methods .payment-method input[type=radio]:checked + span::before,
 .main-info-area .right-section .wrap-icon-section.minicart .index{
-	background: #4c1775;
+	background: #40b0b5;
 }
 .has-child-cate .toggle-control:hover::after,
 .has-child-cate .toggle-control:hover::before,
@@ -106,5 +106,9 @@
 	border-color: #4c1775 !important;
 }
 .wrap-footer-content .wrap-function-info .fc-info-item .wrap-left-info .fc-desc{
-	color: #eee7e8 !important;
+	color: #4c1775 !important;
+}
+
+.wrap-footer-content .wrap-function-info{
+	background-color: #FFFF;
 }

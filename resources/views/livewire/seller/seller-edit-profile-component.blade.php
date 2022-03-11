@@ -2,7 +2,7 @@
     <div class="container" style="padding: 30px 0">
         <div class="row">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                     Update Profile
                 </div>
                 <div class="panel-body">
@@ -33,8 +33,11 @@
                             <p><b>Zip Code : </b><input type="text" class="form-control" wire:model="zipcode"></p>
                             <p><b>Service Location : </b><input type="text" class="form-control" wire:model="service_location"></p>
                             <button type="submit" class="btn btn-info pull-right">Update</button>
+                            
+
                         </div>
                     </form>
+                    <a href="{{ route('seller.profile')}}"><button class="btn btn-danger pull-left">Cancle</button></a>
                 </div>
             </div>
         </div>
