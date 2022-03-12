@@ -14,7 +14,7 @@ class SellerEditProfileComponent extends Component
     use WithFileUploads;
     public $name;
     public $email;
-    public $phone;
+    public $mobile;
     public $nid;
     public $image;
     public $address;
@@ -37,7 +37,7 @@ class SellerEditProfileComponent extends Component
         $seller = User::find(Auth::user()->id);
         $this->name = $seller->name;
         $this->email = $seller->email;
-        $this->phone = $seller->phone;
+        $this->mobile = $seller->mobile;
         $this->nid = $seller->seller->nid;
         $this->image = $seller->seller->image;
         $this->address = $seller->seller->address;
@@ -59,7 +59,7 @@ class SellerEditProfileComponent extends Component
         }
         $seller = User::find(Auth::user()->id);
         $seller->name = $this->name;
-        $seller->phone = $this->phone;
+        $seller->phone = $this->mobile;
         $seller->save();
 
         if($this->newimage)
@@ -73,6 +73,7 @@ class SellerEditProfileComponent extends Component
             $seller->seller->image = $imageName;
         }
         $seller->seller->nid = $this->nid;
+        $seller->seller->mobile = $this->mobile;
         $seller->seller->address = $this->address;
         $seller->seller->city = $this->city;
         $seller->seller->province = $this->province;

@@ -9,6 +9,10 @@
             @auth
             @if(Auth::user()->utype === 'ADM')
             <hr>
+            <a href="{{ route('admin.show_users')}}" class="list-group-item  second-text fw-bold"
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-home" aria-hidden="true" style="font-size:24px; padding-right:10px;" ></i>All Users</a>
+            <a href="{{ route('admin.show_sellers')}}" class="list-group-item  second-text fw-bold"
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-home" aria-hidden="true" style="font-size:24px; padding-right:10px;" ></i>Sellers</a>
             <a href="{{ route('admin.categories')}}" class="list-group-item  second-text fw-bold"
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-home" aria-hidden="true" style="font-size:24px; padding-right:10px;" ></i>Categories</a>
             <a href="{{ route('admin.attributes')}}" class="list-group-item  second-text fw-bold"
@@ -47,6 +51,14 @@
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">All Products</a>
                 <a href="{{route('seller.orders')}}" class="list-group-item  second-text fw-bold"
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">All Orders</a>
+                <a href="{{route('seller.changepassword')}}" class="list-group-item  second-text fw-bold"
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Change Password</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="list-group-item  second-text fw-bold"
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Logout</a>
+                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    
+                   </form>
                 
 
             @else

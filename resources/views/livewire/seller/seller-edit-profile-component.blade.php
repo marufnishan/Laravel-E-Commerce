@@ -23,7 +23,7 @@
                         <div class="col-md-8">
                             <h3>Name : <input type="text" class="form-control" wire:model="name"></h3>
                             <p><b>Email : </b>{{$email}}</p>
-                            <p><b>Phone : </b><input type="text" class="form-control" wire:model="phone"></p>
+                            <p><b>Phone : </b><input type="text" class="form-control" wire:model="mobile"></p>
                             <hr>
                             <p><b>NID : </b><input type="text" class="form-control" wire:model="nid"></p>
                             <p><b>Address : </b><input type="text" class="form-control" wire:model="address"></p>
