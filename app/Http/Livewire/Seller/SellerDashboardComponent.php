@@ -31,7 +31,7 @@ class SellerDashboardComponent extends Component
     {
         $orders = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
         ->where('products.seller_id',Auth::user()->id)
-        ->get()/* ->where('created_at',Carbon::today()) */->take(10);
+        ->get()/* ->whereDate('order_items.created_at',Carbon::today()) */->take(10);
 
         $totalProduct = Product::where('seller_id', Auth::user()->id)->sum('quantity');
         $totalSale = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
@@ -40,14 +40,14 @@ class SellerDashboardComponent extends Component
 
         $todaysSale = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
         ->where('products.seller_id',Auth::user()->id)
-        ->get()->where('delivered_date',Carbon::today())->sum('price');
+        ->whereDate('order_items.delivered_date',Carbon::today())->get()->sum('order_items.price');
         
         $totalOrders = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
         ->where('products.seller_id',Auth::user()->id)
         ->get()->sum('quantity');
         $todayOrders = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
         ->where('products.seller_id',Auth::user()->id)
-        ->get()->where('created_at',Carbon::today())->count();
+        ->whereDate('order_items.created_at',Carbon::today())->get()->count();
 
         $deliveredOrders = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
         ->where('products.seller_id',Auth::user()->id)
