@@ -16,6 +16,8 @@ class HomeComponent extends Component
     protected $listeners = ['refreshComponent'=>'$refresh'];
     public function render()
     {
+        
+        $pproducts = Product::popularThisWeek()->orderBy('created_at','ASC')->get()->take(12);
         $sliders = HomeSlider::where('status',1)->get();
         $lproducts = Product::orderBy('created_at','DESC')->get()->take(12);
         $category = HomeCategory::find(1);
@@ -30,6 +32,6 @@ class HomeComponent extends Component
             Cart::instance('wishlist')->restore(Auth::user()->email);
             
         }
-        return view('livewire.home-component',['sliders'=>$sliders,'lproducts'=>$lproducts,'categories'=>$categories,'no_of_products'=>$no_of_products,'sproducts'=>$sproducts,'sale'=>$sale])->layout('layouts.base');
+        return view('livewire.home-component',['sliders'=>$sliders,'lproducts'=>$lproducts,'pproducts'=>$pproducts,'categories'=>$categories,'no_of_products'=>$no_of_products,'sproducts'=>$sproducts,'sale'=>$sale])->layout('layouts.base');
     }
 }

@@ -165,6 +165,52 @@
             </div>
 
             <!--  End Latest product -->
+            
+            <!--popular Products-->
+            <div class="wrap-show-advance-info-box style-1">
+                <h3 class="title-box">Popular Products</h3>
+                <div class="wrap-top-banner">
+                    <a href="#" class="link-banner banner-effect-2">
+                        <figure><img src="{{ asset('assets/images/shop-banner.jpg') }}" width="1170" height="240"
+                                alt=""></figure>
+                    </a>
+                </div>
+                <div class="wrap-products">
+                    <div class="wrap-product-tab tab-style-1">
+                        <div class="tab-contents">
+                            <div class="tab-content-item active" id="digital_1a">
+
+                                @foreach($pproducts as $pproduct)
+                                <div class="col-md-2 col-sm-6 product product-style-2 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
+                                            title="{{$pproduct->name}}">
+                                            <figure><img
+                                                    src="{{ asset('assets/images/products') }}/{{$pproduct->image}}"
+                                                    width="800" height="800" alt="{{$pproduct->name}}"></figure>
+                                        </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
+                                                class="function-link">quick view</a>
+                                        </div>
+                                        <div class="group-flash">
+                                            <span class="flash-item new-label">populer</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
+                                            class="product-name"><span>{{$pproduct->name}}</span></a>
+                                        <div class="wrap-price"><span
+                                                class="product-price">${{$pproduct->regular_price}}</span></div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End popular product -->
 
             <!-- Sale Product Start  -->
             @if($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())

@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Coderflex\Laravisit\Concerns\CanVisit;
+use Coderflex\Laravisit\Concerns\HasVisits;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Product extends Model implements CanVisit
 {
     use HasFactory;
+    use HasVisits;
     protected $table="products";
 
         public function category()
