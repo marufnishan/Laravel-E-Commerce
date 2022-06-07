@@ -7084,6 +7084,9 @@ table.shop_attributes tbody {
 }
 
 @media (min-width: 991px) {
+    .cate-link{
+        display: none !important;
+    }
     .container {
         padding: 0;
     }
