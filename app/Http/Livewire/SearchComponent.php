@@ -12,6 +12,8 @@ class SearchComponent extends Component
 {
     public $sorting;
     public $pagesize;
+    public $min_price;
+    public $max_price;
 
     public $search;
     public $product_cat;
@@ -21,6 +23,8 @@ class SearchComponent extends Component
     {
         $this->sorting = "default";
         $this->pagesize = 12;
+        $this->min_price = 0;
+        $this->max_price = 1000;
         $this->fill(request()->only('search','product_cat','product_cat_id'));
     }
     public function store($product_id,$product_name,$product_price)
@@ -47,9 +51,10 @@ class SearchComponent extends Component
         }
         else
         {
-            $products = Product::where('name','like','%'.$this->search .'%')->where('category_id','like','%'.$this->product_cat_id.'%')->paginate($this->pagesize);
+            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->where('name','like','%'.$this->search .'%')->where('category_id','like','%'.$this->product_cat_id.'%')->paginate($this->pagesize);
         }
         $categories = Category::all();
-        return view('livewire.search-component',['products'=> $products,'categories'=>$categories])->layout("layouts.base");
+        $popular_products = Product::inRandomOrder()->limit(10)->get();
+        return view('livewire.search-component',['products'=> $products,'popular_products'=>$popular_products,'categories'=>$categories])->layout("layouts.base");
     }
 }
