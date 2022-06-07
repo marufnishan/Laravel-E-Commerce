@@ -191,18 +191,21 @@
                                     <a href="/" class="link-term mercado-item-title"><i class="fa fa-truck"
                                             aria-hidden="true"></i></a>
                                 </li>
+                               
                                 <li class="menu-item">
                                     @if(Route::has('login'))
                                     @auth
                                     @if(Auth::user()->utype === 'ADM')
-                                    <a href="{{ route('admin.dashboard')}}" class="link-term mercado-item-title">Dashboard</a>
+                                    <a href="{{ route('admin.dashboard')}}"
+                                        class="link-term mercado-item-title">Dashboard</a>
 
                                     @elseif(Auth::user()->utype === 'VNDR')
                                     <a href="{{ route('seller.dashboard')}}"
-									class="link-term mercado-item-title">Dashboard</a>
+                                        class="link-term mercado-item-title">Dashboard</a>
 
                                     @else
-                                    <a href="{{ route('user.dashboard')}}" class="link-term mercado-item-title">Dashboard</a>
+                                    <a href="{{ route('user.dashboard')}}"
+                                        class="link-term mercado-item-title">Dashboard</a>
 
 
                                     @endif
@@ -224,6 +227,12 @@
                                 <li class="menu-item">
                                     <a href="/contact-us" class="link-term mercado-item-title">Contact Us</a>
                                 </li>
+                            </ul>
+                            <ul class="nav primary clone-main-menu" data-menuname="All Category">
+                                
+                            @livewire('mo-category-component')
+
+
                             </ul>
                         </div>
                     </div>
