@@ -256,7 +256,7 @@
                             @endforeach
                         </ul>
                     </div>
-                </div><!-- brand widget-->
+                </div>
 
             </div>
             <!--end sitebar-->
