@@ -156,6 +156,7 @@ Route::middleware(['auth:sanctum','verified','authvendor'])->group(function(){
    Route::get('/seller/product/edit/{product_slug}',SellerEditProductComponent::class)->name('seller.editproduct');
    Route::get('/seller/change-password',SellerChangePasswordComponent::class)->name('seller.changepassword');
    Route::get('/seller/orders',SellerOrderComponent::class)->name('seller.orders');
+   Route::get('/seller/orderpdf',[SellerOrderComponent::class,'AllOrderPDF'])->name('seller.allorderpdf');
 });
 
 

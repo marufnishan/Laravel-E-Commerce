@@ -6,6 +6,7 @@ use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class SellerOrderComponent extends Component
 {
@@ -23,6 +24,16 @@ class SellerOrderComponent extends Component
         }
         $order->save();
         session()->flash('order_message','Order status has been updated successfully!');
+    }
+
+    public function AllOrderPDF(){
+        $orders =  DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
+        ->where('products.seller_id',Auth::user()->id)->get();
+        $pdf = PDF::loadView('Pdf.sellerAllOrderpdfgenerate',[
+            'orders' => $orders
+        ])->setPaper('A4');
+        return $pdf->download('allorders.pdf');
+        
     }
     
     public function render()
