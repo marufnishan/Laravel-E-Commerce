@@ -13,6 +13,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         All Orders
+                        <a href="{{route('seller.allorderpdf')}}" style="margin-left: 5px;" class="btn btn-danger">Download PDF</a>
                     </div>
                     <div class="panel-body">
                         {{-- @if(Session::has('order_message'))
