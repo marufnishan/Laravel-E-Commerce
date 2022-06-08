@@ -132,6 +132,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
 
    Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
    Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
+   Route::get('/admin/orders/invoice/{order_id}',[AdminOrderDetailsComponent::class,'OrderDetailsPDF'])->name('admin.invoice');
 
 
    Route::get('/admin/contact-us',AdminContactComponent::class)->name('admin.contact');
