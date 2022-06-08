@@ -16,6 +16,7 @@
                                 @if($order->status == 'ordered')
                                 <a href="#" wire:click.prevent="cancelOrder" style="margin-right: 20px" class="btn btn-warning pull-right">Cancel Order</a>
                                 @endif
+                                <a href="{{route('user.invoice',['order_id'=>$order->id])}}" style="margin-right: 10px;" class="btn btn-danger pull-right">Download Invoice</a>
                             </div>
                         </div>
                     </div>
