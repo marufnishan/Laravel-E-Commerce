@@ -12,7 +12,7 @@ class AdminOrderDetailsComponent extends Component
 
     public function OrderDetailsPDF($order_id){
         $order = Order::find($order_id);
-        $pdf = PDF::loadView('adminOrderDetailspdfgenerate',[
+        $pdf = PDF::loadView('Pdf.adminOrderDetailspdfgenerate',[
             'order' => $order
         ])->setPaper('A4');
         return $pdf->download('invoice.pdf');
