@@ -28,6 +28,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         All Orders
+                        <a href="{{route('admin.allorderpdf')}}" style="margin-left: 5px;" class="btn btn-danger">Download PDF</a>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
