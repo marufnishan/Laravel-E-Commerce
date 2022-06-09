@@ -43,7 +43,7 @@ class AdminOrderComponent extends Component
         $orders = Order::where('mobile','LIKE',$this->searchTerm)
         ->orwhere('email','LIKE',$this->searchTerm)
         ->orwhere('id','LIKE',$this->searchTerm)
-        ->orwhere('id','DESC',$this->searchTerm)->orderBy('created_at','DESC')->paginate(10);
+        ->orderBy('created_at','DESC')->paginate(10);
         return view('livewire.admin.admin-order-component',['orders'=>$orders])->layout('layouts.base');
     }
 }
