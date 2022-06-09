@@ -4,9 +4,13 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ShowAllUsersComponent extends Component
 {
+    use WithPagination;
+    public $searchTerm;
+
     public function deleteUser($user_id)
     {
         $user = User::find($user_id);
@@ -24,7 +28,11 @@ class ShowAllUsersComponent extends Component
 
     public function render()
     {
-        $users = User::all();
+        $users = User::where('name','LIKE',$this->searchTerm)
+        ->orwhere('email','LIKE',$this->searchTerm)
+        ->orwhere('phone','LIKE',$this->searchTerm)
+        ->orwhere('id','LIKE',$this->searchTerm)
+        ->orderBy('created_at','DESC')->paginate(10);
         return view('livewire.admin.show-all-users-component',['users'=>$users])->layout('layouts.base');
     }
 }
