@@ -27,8 +27,17 @@
             <div class="col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
-                        All Orders
-                        <a href="{{route('admin.allorderpdf')}}" style="margin-left: 5px;" class="btn btn-danger">Download PDF</a>
+                        <div class="row">
+                        <div class="col-md-4">
+                            All Orders
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{route('admin.allorderpdf')}}" style="margin-left: 5px;" class="btn btn-danger pull-right">Download PDF</a>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Search...." wire:model="searchTerm" />
+                        </div>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
