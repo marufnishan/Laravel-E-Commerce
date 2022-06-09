@@ -27,7 +27,15 @@
             <div class="col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
-                        All Users
+                        <div class="row">
+                            <div class="col-md-8">
+                                All Users
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Search...."
+                                    wire:model="searchTerm" />
+                            </div>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -76,7 +84,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{-- {{$orders->links()}} --}}
+                            {{$users->links()}}
                         </div>
                     </div>
                 </div>
