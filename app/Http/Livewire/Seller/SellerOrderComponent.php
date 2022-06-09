@@ -6,10 +6,14 @@ use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\WithPagination;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class SellerOrderComponent extends Component
 {
+    use WithPagination;
+    public $searchTerm;
+
     public function updateOrderStatus($order_id,$status)
     {
         $order = OrderItem::find($order_id);
@@ -40,7 +44,8 @@ class SellerOrderComponent extends Component
     {
         $orders = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
         ->where('products.seller_id',Auth::user()->id)
-        ->paginate(12);
+        ->where('order_id','LIKE',$this->searchTerm)
+        ->orderBy('order_items.created_at','DESC')->paginate(12);
     return view('livewire.seller.seller-order-component',['orders'=>$orders])->layout('layouts.base');
     }
 }
