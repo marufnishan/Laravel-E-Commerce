@@ -42,10 +42,17 @@ class SellerOrderComponent extends Component
     
     public function render()
     {
+        $search = '%' . $this->searchTerm . '%';
         $orders = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
         ->where('products.seller_id',Auth::user()->id)
-        ->where('order_id','LIKE',$this->searchTerm)
-        ->orderBy('order_items.created_at','DESC')->paginate(12);
+        ->where('status','LIKE',$search)
+        ->orWhere('products.seller_id',Auth::user()->id)
+        ->where('order_items.order_id','LIKE',$search)
+        ->orWhere('products.seller_id',Auth::user()->id)
+        ->where('products.name','LIKE',$search)
+        ->orWhere('products.seller_id',Auth::user()->id)
+        ->where('products.id','LIKE',$search)
+        ->orderBy('order_items.created_at','DESC')->paginate(10);
     return view('livewire.seller.seller-order-component',['orders'=>$orders])->layout('layouts.base');
     }
 }

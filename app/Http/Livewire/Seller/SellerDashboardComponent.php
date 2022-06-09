@@ -32,7 +32,9 @@ class SellerDashboardComponent extends Component
         public function render()
     {
         $orders = DB::table('products')->join('order_items','products.id',"=",'order_items.product_id')
-        ->where('products.seller_id',Auth::user()->id)->get()->take(10);
+        ->where('products.seller_id',Auth::user()->id)
+        ->whereDate('order_items.created_at',Carbon::today())
+        ->get()->take(10);
 
         $totalProduct = Product::where('seller_id', Auth::user()->id)->sum('quantity');
 

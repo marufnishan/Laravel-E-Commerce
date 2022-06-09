@@ -28,10 +28,11 @@ class ShowAllUsersComponent extends Component
 
     public function render()
     {
-        $users = User::where('name','LIKE',$this->searchTerm)
-        ->orwhere('email','LIKE',$this->searchTerm)
-        ->orwhere('phone','LIKE',$this->searchTerm)
-        ->orwhere('id','LIKE',$this->searchTerm)
+        $search = '%' . $this->searchTerm . '%';
+        $users = User::where('name','LIKE',$search)
+        ->orwhere('email','LIKE',$search)
+        ->orwhere('phone','LIKE',$search)
+        ->orwhere('id','LIKE',$search)
         ->orderBy('created_at','DESC')->paginate(10);
         return view('livewire.admin.show-all-users-component',['users'=>$users])->layout('layouts.base');
     }

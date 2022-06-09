@@ -12,11 +12,12 @@ class AdminShowAllSellersComponent extends Component
     public $searchTerm;
 
     public function render()
-    {   
-        $sellers = Seller::where('service_location','LIKE',$this->searchTerm)
-        ->orwhere('nid','LIKE',$this->searchTerm)
-        ->orwhere('mobile','LIKE',$this->searchTerm)
-        ->orwhere('seller_id','LIKE',$this->searchTerm)
+    {
+        $search = '%' . $this->searchTerm . '%';   
+        $sellers = Seller::where('service_location','LIKE',$search)
+        ->orwhere('nid','LIKE',$search)
+        ->orwhere('mobile','LIKE',$search)
+        ->orwhere('seller_id','LIKE',$search)
         ->orderBy('created_at','DESC')->paginate(10);
         return view('livewire.admin.admin-show-all-sellers-component',['sellers'=>$sellers])->layout('layouts.base');
     }
