@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Seller;
+use App\Models\User;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -10,6 +11,8 @@ use Livewire\WithFileUploads;
 class AdminEditSellerComponent extends Component
 {
     use WithFileUploads;
+    public $name;
+    public $email;
     public $image;
     public $mobile;
     public $nid;
@@ -28,17 +31,19 @@ class AdminEditSellerComponent extends Component
 
     public function mount($seller_id)
     {
-        $seller = Seller::where('seller_id',$seller_id)->first();
-        $this->seller_id = $seller->seller_id;
-        $this->image = $seller->image;
-        $this->mobile = $seller->mobile;
-        $this->nid = $seller->nid;
-        $this->address = $seller->address;
-        $this->city = $seller->city;
-        $this->province = $seller->province;
-        $this->country = $seller->country;
-        $this->zipcode = $seller->zipcode;
-        $this->service_location = $seller->service_location;
+        $seller = User::where('id',$seller_id)->first();
+        $this->seller_id = $seller->seller->seller_id;
+        $this->name = $seller->name;
+        $this->email = $seller->email;
+        $this->mobile = $seller->phone;
+        $this->nid = $seller->seller->nid;
+        $this->image = $seller->seller->image;
+        $this->address = $seller->seller->address;
+        $this->city = $seller->seller->city;
+        $this->province = $seller->seller->province;
+        $this->country = $seller->seller->country;
+        $this->zipcode = $seller->seller->zipcode;
+        $this->service_location = $seller->seller->service_location;
     }
 
     public function updated($fields)

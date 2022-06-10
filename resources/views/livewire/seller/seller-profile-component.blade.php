@@ -16,9 +16,13 @@
                             Profile
                         </div>
                         <div class="panel-body">
+
+                            @if(Session::has('update_message'))
+                            <div class="alert alert-success" role="alert">{{Session::get('update_message')}}</div>
+                            @endif
                             <div class="col-md-4">
                                 @if($seller->seller->image)
-                                <img src="{{asset('assets/images/profile')}}/{{$seller->seller->image}}" width="100%" />
+                                <img src="{{asset('assets/images/sellers')}}/{{$seller->seller->image}}" width="100%" />
                                 @else
                                 <img src="{{asset('assets/images/profile/profile.png')}}" width="100%" />
                                 @endif
@@ -43,4 +47,4 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>

@@ -42,11 +42,16 @@
                             @if(Session::has('update_message'))
                             <div class="alert alert-success" role="alert">{{Session::get('update_message')}}</div>
                             @endif
+                            @if(Session::has('message'))
+                            <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
+                            @endif
                             <table class="table table-striped">
                                 <thead>
                                     <tr style="background:#009688;color: white;">
                                         <th>SellerId</th>
+                                        <th>Name</th>
                                         <th>Image</th>
+                                        <th>Email</th>
                                         <th>Mobile</th>
                                         <th>NID</th>
                                         <th>Address</th>
@@ -63,7 +68,9 @@
                                     @foreach($sellers as $seller)
                                     <tr>
                                         <td>{{$seller->seller_id}}</td>
+                                        <td>{{$seller->user->name}}</td>
                                         <td><img src="{{asset('assets/images/sellers')}}/{{$seller->image}}" width="60" /></td>
+                                        <td>{{$seller->user->email}}</td>
                                         <td>{{$seller->mobile}}</td>
                                         <td>{{$seller->nid}}</td>
                                         <td>{{$seller->address}}</td>
@@ -73,13 +80,13 @@
                                         <td>{{$seller->zipcode}}</td>
                                         <td>{{$seller->service_location}}</td>
                                         <td>{{$seller->created_at}}</td>
-                                        <td>
-                                            <a
+                                        <td style="display: inline-block;width: 100px;">
+                                            <a 
                                                 href="{{route('admin.edit_seller',['seller_id'=>$seller->seller_id])}}"><i
                                                     class="fa fa-edit fa-2x"></i></a>
                                             <a href="#"
-                                                {{-- onclick="confirm('Are you sure,You want to delete this category ?') || event.stopImmediatePropagation()"
-                                                wire:click.prevent="deleteCategory({{$category->id}})" --}}
+                                                onclick="confirm('Are you sure,You want to delete this seller profile ?') || event.stopImmediatePropagation()"
+                                                wire:click.prevent="deleteProfile({{$seller->seller_id}})"
                                                 style="margin-left:10px;"><i
                                                     class="fa fa-times fa-2x text-danger"></i></a>
                                         </td>
