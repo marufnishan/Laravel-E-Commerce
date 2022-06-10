@@ -27,6 +27,7 @@ use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminEditAttributeComponent;
+use App\Http\Livewire\Admin\AdminEditSellerComponent;
 use App\Http\Livewire\Admin\AdminEditUsersComponent;
 use App\Http\Livewire\Admin\AdminSettingComponent;
 use App\Http\Livewire\Admin\AdminShowAllSellersComponent;
@@ -142,7 +143,10 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
    Route::get('/admin/attributes',AdminAttributeComponent::class)->name('admin.attributes');
    Route::get('/admin/attribute/add',AdminAddAttributeComponent::class)->name('admin.add_attribute');
    Route::get('/admin/attribute/edit/{attribute_id}',AdminEditAttributeComponent::class)->name('admin.edit_attribute');
+
    Route::get('/admin/show/sellers',AdminShowAllSellersComponent::class)->name('admin.show_sellers');
+   Route::get('/admin/edit/seller/{seller_id}',AdminEditSellerComponent::class)->name('admin.edit_seller');
+
    Route::get('/admin/show/users',ShowAllUsersComponent::class)->name('admin.show_users');
    Route::get('/admin/edit/user/{user_id}',AdminEditUsersComponent::class)->name('admin.edit_user');
 });
