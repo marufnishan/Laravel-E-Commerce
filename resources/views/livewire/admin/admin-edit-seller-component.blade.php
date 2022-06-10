@@ -18,6 +18,9 @@
                         <input type="file" class="form-control" wire:model="newimage">
                     </div>
                     <div class="col-md-8">
+                        <h3>Name : {{$name}}</h3>
+                            <p><b>Email : </b>{{$email}}</p>
+                            <hr>
                         <label>Phone</label>
                         <input type="text" placeholder="Phone" class="form-control" wire:model="mobile" />
                         @error('mobile') 

@@ -11,6 +11,13 @@ class AdminShowAllSellersComponent extends Component
     use WithPagination;
     public $searchTerm;
 
+    public function deleteProfile($seller_id)
+    {
+        $sellerprofile = Seller::where('seller_id',$seller_id)->first();
+        $sellerprofile->delete();;
+        session()->flash('message','Profile has been deleted successfully!');
+    }
+
     public function render()
     {
         $search = '%' . $this->searchTerm . '%';   

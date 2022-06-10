@@ -6,15 +6,12 @@
                     Update Profile
                 </div>
                 <div class="panel-body">
-                    @if(Session::has('message'))
-                        <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
-                    @endif 
                     <form wire:submit.prevent="updateProfile">
                         <div class="col-md-4">
                             @if($newimage)
                             <img src="{{$newimage->temporaryUrl()}}" width="100%" />
                             @elseif($image)
-                                <img src="{{asset('assets/images/profile')}}/{{$image}}" width="100%" />
+                                <img src="{{asset('assets/images/sellers')}}/{{$image}}" width="100%" />
                             @else
                                 <img src="{{asset('assets/images/profile/profile.png')}}" width="100%" />
                             @endif
@@ -24,20 +21,41 @@
                             <h3>Name : <input type="text" class="form-control" wire:model="name"></h3>
                             <p><b>Email : </b>{{$email}}</p>
                             <p><b>Phone : </b><input type="text" class="form-control" wire:model="mobile"></p>
+                            @error('mobile') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <hr>
                             <p><b>NID : </b><input type="text" class="form-control" wire:model="nid"></p>
+                            @error('nid') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <p><b>Address : </b><input type="text" class="form-control" wire:model="address"></p>
+                            @error('address') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <p><b>City : </b><input type="text" class="form-control" wire:model="city"></p>
+                            @error('city') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <p><b>Province : </b><input type="text" class="form-control" wire:model="province"></p>
+                            @error('province') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <p><b>Country : </b><input type="text" class="form-control" wire:model="country"></p>
+                            @error('country') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <p><b>Zip Code : </b><input type="text" class="form-control" wire:model="zipcode"></p>
+                            @error('zipcode') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <p><b>Service Location : </b><input type="text" class="form-control" wire:model="service_location"></p>
+                            @error('service_location') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
                             <button type="submit" class="btn btn-info pull-right">Update</button>
-                            
-
                         </div>
                     </form>
-                    <a href="{{ route('seller.profile')}}"><button class="btn btn-danger pull-left">Cancle</button></a>
                 </div>
             </div>
         </div>

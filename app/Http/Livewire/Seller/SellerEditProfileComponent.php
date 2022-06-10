@@ -37,7 +37,7 @@ class SellerEditProfileComponent extends Component
         $seller = User::find(Auth::user()->id);
         $this->name = $seller->name;
         $this->email = $seller->email;
-        $this->mobile = $seller->mobile;
+        $this->mobile = $seller->phone;
         $this->nid = $seller->seller->nid;
         $this->image = $seller->seller->image;
         $this->address = $seller->seller->address;
@@ -48,8 +48,37 @@ class SellerEditProfileComponent extends Component
         $this->service_location = $seller->seller->service_location;
     }
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields,[
+            'name' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
+            'nid' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'country' => 'required',
+            'zipcode' => 'required',
+            'service_location' => 'required'
+        ]);
+    }
+
     public function updateProfile()
     {
+        $this->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
+            'nid' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'country' => 'required',
+            'zipcode' => 'required',
+            'service_location' => 'required'
+        ]);
+
         $sellerProfile = Seller::where('seller_id',Auth::user()->id)->first();
         if(!$sellerProfile)
         {
@@ -66,10 +95,10 @@ class SellerEditProfileComponent extends Component
         {
             if($this->image)
             {
-                unlink('assets/images/profile/'.$this->image);
+                unlink('assets/images/sellers/'.$this->image);
             }
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();
-            $this->newimage->storeAs('profile',$imageName);
+            $this->newimage->storeAs('sellers',$imageName);
             $seller->seller->image = $imageName;
         }
         $seller->seller->nid = $this->nid;
@@ -81,7 +110,7 @@ class SellerEditProfileComponent extends Component
         $seller->seller->zipcode = $this->zipcode;
         $seller->seller->service_location = $this->service_location;
         $seller->seller->save();
-        session()->flash('message','Profile has been updated successfully!');
+        return redirect()->route('seller.profile')->with('update_message','Your Profile has been updated successfully!');
     }
     
     public function render()
