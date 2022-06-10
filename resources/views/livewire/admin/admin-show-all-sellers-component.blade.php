@@ -39,9 +39,9 @@
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            {{-- @if(Session::has('order_message'))
-                            <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
-                            @endif --}}
+                            @if(Session::has('update_message'))
+                            <div class="alert alert-success" role="alert">{{Session::get('update_message')}}</div>
+                            @endif
                             <table class="table table-striped">
                                 <thead>
                                     <tr style="background:#009688;color: white;">
@@ -63,7 +63,7 @@
                                     @foreach($sellers as $seller)
                                     <tr>
                                         <td>{{$seller->seller_id}}</td>
-                                        <td><img src="{{asset('assets/images/profile')}}/{{$seller->image}}" width="60" /></td>
+                                        <td><img src="{{asset('assets/images/sellers')}}/{{$seller->image}}" width="60" /></td>
                                         <td>{{$seller->mobile}}</td>
                                         <td>{{$seller->nid}}</td>
                                         <td>{{$seller->address}}</td>
@@ -73,20 +73,16 @@
                                         <td>{{$seller->zipcode}}</td>
                                         <td>{{$seller->service_location}}</td>
                                         <td>{{$seller->created_at}}</td>
-                                        {{-- <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-success btn-sm dropdown-toggle" type="button"
-                                                    data-toggle="dropdown">Status <span class="caret"></span></button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#"
-                                                            wire:click.prevent="updateOrderStatus({{$order->id}},'delivered')">Delivered</a>
-                                                    </li>
-                                                    <li><a href="#"
-                                                            wire:click.prevent="updateOrderStatus({{$order->id}},'canceled')">Canceled</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td> --}}
+                                        <td>
+                                            <a
+                                                href="{{route('admin.edit_seller',['seller_id'=>$seller->seller_id])}}"><i
+                                                    class="fa fa-edit fa-2x"></i></a>
+                                            <a href="#"
+                                                {{-- onclick="confirm('Are you sure,You want to delete this category ?') || event.stopImmediatePropagation()"
+                                                wire:click.prevent="deleteCategory({{$category->id}})" --}}
+                                                style="margin-left:10px;"><i
+                                                    class="fa fa-times fa-2x text-danger"></i></a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -70,6 +70,15 @@
             <a href="{{ route('user.orders')}}" class="list-group-item  second-text fw-bold"
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">My
                 Orders</a> 
+            <a href="{{ route('user.changepassword')}}" class="list-group-item  second-text fw-bold"
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Change
+                Password</a> 
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="list-group-item  second-text fw-bold"
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Logout</a>
+                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    
+                   </form>
 
             @endif
             @else
