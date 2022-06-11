@@ -145,8 +145,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12" style="background: #46b974">
+                <div class="row" style="background: #46b974">
+                    <div class="col-md-12" >
                         <div class="panel panel-default">
                             <div class="panel-heading"  style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                                 Latest Order
@@ -195,8 +195,9 @@
                                 </div>
                             </div>
                         </div>
-                        @livewire('chart-component')
                     </div>
+                    <div class="col-md-6">@livewire('chart-component')</div>
+                    <div class="col-md-6">@livewire('order-bar-chart-component')</div>
                 </div>
             </div>
         </div>

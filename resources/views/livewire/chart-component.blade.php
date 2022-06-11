@@ -2,17 +2,18 @@
     <div id="container"></div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
-    var userData = <?php echo json_encode($userData)?>;
+    var userData = <?php echo json_encode($datas)?>;
     Highcharts.chart('container', {
         title: {
-            text: 'New User Growth, 2022'
+            text: 'New User Growth, <?php echo date("Y"); ?>'
         },
         subtitle: {
             text: 'Source: shop.nishanbd.com'
         },
         xAxis: {
-            categories: ['June', 'July', 'August', 'September',
-                'October', 'November', 'December','January', 'February', 'March', 'April', 'May'
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+                            'Sep',
+                            'Oct', 'Nov', 'Dec'
             ]
         },
         yAxis: {
