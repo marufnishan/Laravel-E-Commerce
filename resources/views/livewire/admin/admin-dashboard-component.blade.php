@@ -1,6 +1,13 @@
 
 <div class="content">
     <style>
+        #dashboard::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
         .content {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -64,14 +71,14 @@
     <div class="container-fluid" style="background: #009688;">
         <div class="row ">
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #009688;">
+            <div class="col-md-2" id="sidebar" style="background: #009688;height:100vh; overflow-y: scroll;">
 
                 <x-sidebar />
 
             </div>
             {{-- Sidebar End --}}
 
-            <div class="col-md-10">
+            <div class="col-md-10" id="dashboard" style="height:100vh; overflow-y: scroll;">
                 <div class="row" style="background: #46b974;padding-top:20px">
                     <div class="col-md-3 col-sm-6 ">
                         <div class="icon-stat">
@@ -188,6 +195,7 @@
                                 </div>
                             </div>
                         </div>
+                        @livewire('chart-component')
                     </div>
                 </div>
             </div>
