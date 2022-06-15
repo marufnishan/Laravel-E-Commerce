@@ -94,7 +94,7 @@ class CategoryComponent extends Component
             $products = Product::where($filter.'category_id',$category_id)->whereBetween('regular_price',[$this->min_price,$this->max_price])->paginate($this->pagesize);
         }
         $categories = Category::all();
-        $popular_products = Product::inRandomOrder()->limit(6)->get();
+        $popular_products = Product::popularThisWeek()->orderBy('created_at','ASC')->get()->take(6);;
         return view('livewire.category-component',['products'=> $products,'categories'=>$categories,'category_name'=>$category_name,'popular_products'=>$popular_products])->layout("layouts.base");
     }
 }
