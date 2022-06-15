@@ -159,46 +159,6 @@
             </div>
 
             <!--  End Latest product -->
-            
-            <!--popular Products-->
-            <div class="wrap-show-advance-info-box style-1">
-                <h3 class="title-box">Popular Products</h3>
-                <div class="wrap-products">
-                    <div class="wrap-product-tab tab-style-1">
-                        <div class="tab-contents">
-                            <div class="tab-content-item active" id="digital_1a">
-
-                                @foreach($pproducts as $pproduct)
-                                <div class="col-md-2 col-sm-6 product product-style-2 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
-                                            title="{{$pproduct->name}}">
-                                            <figure><img
-                                                    src="{{ asset('assets/images/products') }}/{{$pproduct->image}}"
-                                                    width="800" height="800" alt="{{$pproduct->name}}"></figure>
-                                        </a>
-                                        <div class="wrap-btn">
-                                            <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
-                                                class="function-link">quick view</a>
-                                        </div>
-                                        <div class="group-flash">
-                                            <span class="flash-item new-label">populer</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
-                                            class="product-name"><span>{{$pproduct->name}}</span></a>
-                                        <div class="wrap-price"><span
-                                                class="product-price">${{$pproduct->regular_price}}</span></div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--  End popular product -->
 
             <!-- Sale Product Start  -->
             @if($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
@@ -234,8 +194,71 @@
                 @endforeach
 
                 @endif
-                
+
 
             </div>
+
+            <!--popular Products-->
+            <div class="wrap-show-advance-info-box style-1">
+                <h3 class="title-box">Popular Products</h3>
+                <div class="wrap-products" wire:loading.delay.class="opacity-50">
+                    <div class="wrap-product-tab tab-style-1">
+                        <div class="tab-contents">
+                            <div class="tab-content-item active" id="digital_1a">
+
+                                @foreach($pproducts as $pproduct)
+                                <div class="col-md-4 col-sm-6 product product-style-2 equal-elem " @if ($loop->last)
+                                    id="last_record" @endif>
+                                    <div class="product-thumnail">
+                                        <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
+                                            title="{{$pproduct->name}}">
+                                            <figure><img
+                                                    src="{{ asset('assets/images/products') }}/{{$pproduct->image}}"
+                                                    width="800" height="800" alt="{{$pproduct->name}}"></figure>
+                                        </a>
+                                        <div class="wrap-btn">
+                                            <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
+                                                class="function-link">quick view</a>
+                                        </div>
+                                        <div class="group-flash">
+                                            <span class="flash-item new-label">populer</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
+                                            class="product-name"><span>{{$pproduct->name}}</span></a>
+                                        <div class="wrap-price"><span
+                                                class="product-price">${{$pproduct->regular_price}}</span></div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            
+                            <script>
+                                const lastRecord = document.getElementById('last_record');
+                                const options = {
+                                    root: null,
+                                    threshold: 1,
+                                    rootMargin: '0px'
+                                }
+                                const observer = new IntersectionObserver((entries, observer) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting) {
+                                            @this.loadMore()
+                                        }
+                                    });
+                                });
+                                observer.observe(lastRecord);
+
+                            </script>
+                        </div>
+                        
+                        @if ($loadAmount >= $totalRecords)
+                        <h1 class="text-warning font-bold text-center my-10">No Remaining Records!</h1>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <!--  End popular product -->
         </div>
 </main>
