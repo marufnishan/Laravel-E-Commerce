@@ -54,7 +54,7 @@ class SearchComponent extends Component
             $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->where('name','like','%'.$this->search .'%')->where('category_id','like','%'.$this->product_cat_id.'%')->paginate($this->pagesize);
         }
         $categories = Category::all();
-        $popular_products = Product::inRandomOrder()->limit(10)->get();
+        $popular_products = Product::popularThisWeek()->orderBy('created_at','ASC')->get()->take(10);
         return view('livewire.search-component',['products'=> $products,'popular_products'=>$popular_products,'categories'=>$categories])->layout("layouts.base");
     }
 }
