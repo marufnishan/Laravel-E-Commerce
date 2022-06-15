@@ -13,11 +13,26 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeComponent extends Component
 {
+    public $totalRecords;
+    public $loadAmount = 2;
+
+    public function loadMore()
+    {
+        $this->loadAmount += 2;
+    }
+
+    public function mount()
+    {
+        $this->totalRecords = Product::popularThisWeek()->count();
+    }
+
     protected $listeners = ['refreshComponent'=>'$refresh'];
     public function render()
     {
         
-        $pproducts = Product::popularThisWeek()->orderBy('created_at','ASC')->get()->take(12);
+        $pproducts = Product::popularThisWeek()->orderBy('created_at', 'desc')
+        ->limit($this->loadAmount)
+        ->get();
         $sliders = HomeSlider::where('status',1)->get();
         $lproducts = Product::orderBy('created_at','DESC')->get()->take(12);
         $category = HomeCategory::find(1);

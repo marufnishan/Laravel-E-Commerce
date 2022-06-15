@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
-use Livewire\WithPagination;
+/* use Livewire\WithPagination; */
 use Cart;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
@@ -13,17 +13,23 @@ use App\Models\Sale;
 class ShopComponent extends Component
 {
     public $sorting;
-    public $pagesize;
+    public $totalRecords;
+    public $loadAmount = 2;
 
     public $min_price;
     public $max_price;
  
     public $sale_paginate;
 
+    public function loadMore()
+    {
+        $this->loadAmount += 2;
+    }
+
     public function mount()
     {
         $this->sorting = "default";
-        $this->pagesize = 15;
+        $this->totalRecords = Product::count();
         $this->sale_paginate = 4;
 
         $this->min_price = 0;
@@ -57,24 +63,28 @@ class ShopComponent extends Component
         }
     }
 
-    use WithPagination;
     public function render()
     {
         if($this->sorting == 'date')
         {
-            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->orderBy('created_at','DESC')->paginate($this->pagesize);
+            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->orderBy('created_at','DESC')->limit($this->loadAmount)
+                    ->get();
         }
         else if($this->sorting == "price")
         {
-            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->orderBy('regular_price','ASC')->paginate($this->pagesize);
+            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->orderBy('regular_price','ASC')->limit($this->loadAmount)
+                    ->get();
         }
         else if($this->sorting == "price-desc")
         {
-            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->orderBy('regular_price','DESC')->paginate($this->pagesize);
+            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->orderBy('regular_price','DESC')->limit($this->loadAmount)
+                    ->get();
         }
         else
         {
-            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->paginate($this->pagesize);
+            $products = Product::whereBetween('regular_price',[$this->min_price,$this->max_price])->orderBy('created_at', 'desc')
+            ->limit($this->loadAmount)
+            ->get();
         }
         $categories = Category::all();
 

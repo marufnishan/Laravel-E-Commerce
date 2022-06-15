@@ -59,142 +59,6 @@
             </div>
 
 
-
-            <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
-                <div class="banner-shop">
-
-                </div>
-                <div class="wrap-shop-control">
-                    <h1 class="shop-title">All Products</h1>
-                    <div class="wrap-right">
-                        <div class="sort-item orderby ">
-                            <select name="orderby" class="use-chosen" wire:model="sorting">
-                                <option value="default" selected="selected">Default sorting</option>
-                                <option value="date">Sort by newness</option>
-                                <option value="price">Sort by price: low to high</option>
-                                <option value="price-desc">Sort by price: high to low</option>
-                            </select>
-                        </div>
-
-                        <div class="sort-item product-per-page">
-                            <select name="post-per-page" class="use-chosen" wire:model="pagesize">
-                                <option value="15" selected="selected">15 per page</option>
-                                <option value="26">26 per page</option>
-                                <option value="28">28 per page</option>
-                                <option value="31">31 per page</option>
-                                <option value="34">34 per page</option>
-                                <option value="40">40 per page</option>
-                                <option value="42">42 per page</option>
-                            </select>
-                        </div>
-
-                        <div class="change-display-mode">
-                            <a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
-                            <a href="#" class="list-mode display-mode "><i class="fa fa-th-list"></i>List</a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!--end wrap shop control-->
-
-                <style>
-                    .product-wish {
-                        position: absolute;
-                        top: 10%;
-                        left: 0;
-                        z-index: 99;
-                        right: 30px;
-                        text-align: right;
-                        padding-top: 0;
-                    }
-
-                    .product-wish .fa {
-                        color: #cbcbcb;
-                    }
-
-                    .product-wish .fa:hover {
-                        color: #ff7007;
-                    }
-
-                    .fill-heart {
-                        color: #ff7007 !important;
-                    }
-
-                </style>
-                <div class="row">
-
-                    <ul class="product-list grid-products equal-container">
-                        @php
-                        $witems = Cart::instance('wishlist')->content()->pluck('id') ;
-                        @endphp
-                        @foreach ($products as $product)
-                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                            <div class="product product-style-3 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="{{route('product.details',['slug'=>$product->slug])}}"
-                                        title="{{$product->name}}">
-                                        <figure><img src="{{ asset('assets/images/products') }}/{{$product->image}}"
-                                                alt="{{$product->name}}"></figure>
-                                    </a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="{{route('product.details',['slug'=>$product->slug])}}"
-                                        class="product-name"><span>{{$product->name}}</span></a>
-                                    <div class="wrap-price"><span
-                                            class="product-price">${{$product->regular_price}}</span></div>
-                                    <div class="product-rating">
-                                        <style>
-                                            .color-gray {
-                                                color: #e6e6e6 !important;
-                                            }
-
-                                        </style>
-                                        @php
-                                        $avgrating = 0;
-                                        @endphp
-                                        @foreach($product->orderItems->where('rstatus',1) as $orderItem)
-                                        @php
-                                        $avgrating = $avgrating + $orderItem->review->rating;
-                                        @endphp
-                                        @endforeach
-                                        @for($i = 1; $i <=5; $i++) @if($i<=$avgrating) <i class="fa fa-star"
-                                            aria-hidden="true"></i>
-                                            @else
-                                            <i class="fa fa-star color-gray" aria-hidden="true"></i>
-                                            @endif
-                                            @endfor
-                                            <a href="#"
-                                                class="count-review">({{$product->orderItems->where('rstatus',1)->count()}}
-                                                review)</a>
-                                    </div>
-                                    <a href="#" class="btn add-to-cart"
-                                        wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add
-                                        To Cart</a>
-                                    <div class="product-wish">
-                                        @if($witems->contains($product->id))
-                                        <a href="#" wire:click.prevent="removeFromWishlist({{$product->id}})"><i
-                                                class="fa fa-heart fill-heart"></i></a>
-                                        @else
-                                        <a href="#"
-                                            wire:click.prevent="addToWishlist({{$product->id}},'{{$product->name}}',{{$product->regular_price}})"><i
-                                                class="fa fa-heart"></i></a>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
-
-                </div>
-
-                <div class="wrap-pagination-info">
-                    {{$products->links()}}
-                </div>
-            </div>
-            <!--end main products area-->
-
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
                 <div class="widget mercado-widget categories-widget">
                     <h2 class="widget-title">All Categories</h2>
@@ -260,6 +124,154 @@
 
             </div>
             <!--end sitebar-->
+            <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
+                <div class="banner-shop">
+
+                </div>
+                <div class="wrap-shop-control">
+                    <h1 class="shop-title">All Products</h1>
+                    <div class="wrap-right">
+                        <div class="sort-item orderby ">
+                            <select name="orderby" class="use-chosen" wire:model="sorting">
+                                <option value="default" selected="selected">Default sorting</option>
+                                <option value="date">Sort by newness</option>
+                                <option value="price">Sort by price: low to high</option>
+                                <option value="price-desc">Sort by price: high to low</option>
+                            </select>
+                        </div>
+
+                        <div class="sort-item product-per-page">
+                            <select name="post-per-page" class="use-chosen"{{--  wire:model="pagesize" --}}>
+                                <option value="15" selected="selected">15 per page</option>
+                                <option value="26">26 per page</option>
+                                <option value="28">28 per page</option>
+                                <option value="31">31 per page</option>
+                                <option value="34">34 per page</option>
+                                <option value="40">40 per page</option>
+                                <option value="42">42 per page</option>
+                            </select>
+                        </div>
+
+                        <div class="change-display-mode">
+                            <a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
+                            <a href="#" class="list-mode display-mode "><i class="fa fa-th-list"></i>List</a>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--end wrap shop control-->
+
+                <style>
+                    .product-wish {
+                        position: absolute;
+                        top: 10%;
+                        left: 0;
+                        z-index: 99;
+                        right: 30px;
+                        text-align: right;
+                        padding-top: 0;
+                    }
+
+                    .product-wish .fa {
+                        color: #cbcbcb;
+                    }
+
+                    .product-wish .fa:hover {
+                        color: #ff7007;
+                    }
+
+                    .fill-heart {
+                        color: #ff7007 !important;
+                    }
+
+                </style>
+                <div class="row">
+
+                    <ul class="product-list grid-products equal-container">
+                        @php
+                        $witems = Cart::instance('wishlist')->content()->pluck('id') ;
+                        @endphp
+                        @foreach ($products as $product)
+                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 " @if ($loop->last) id="last_record" @endif>
+                            <div class="product product-style-3 equal-elem ">
+                                <div class="product-thumnail">
+                                    <a href="{{route('product.details',['slug'=>$product->slug])}}"
+                                        title="{{$product->name}}">
+                                        <figure><img src="{{ asset('assets/images/products') }}/{{$product->image}}"
+                                                alt="{{$product->name}}"></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="{{route('product.details',['slug'=>$product->slug])}}"
+                                        class="product-name"><span>{{$product->name}}</span></a>
+                                    <div class="wrap-price"><span
+                                            class="product-price">${{$product->regular_price}}</span></div>
+                                    <div class="product-rating">
+                                        <style>
+                                            .color-gray {
+                                                color: #e6e6e6 !important;
+                                            }
+
+                                        </style>
+                                        @php
+                                        $avgrating = 0;
+                                        @endphp
+                                        @foreach($product->orderItems->where('rstatus',1) as $orderItem)
+                                        @php
+                                        $avgrating = $avgrating + $orderItem->review->rating;
+                                        @endphp
+                                        @endforeach
+                                        @for($i = 1; $i <=5; $i++) @if($i<=$avgrating) <i class="fa fa-star"
+                                            aria-hidden="true"></i>
+                                            @else
+                                            <i class="fa fa-star color-gray" aria-hidden="true"></i>
+                                            @endif
+                                            @endfor
+                                            <a href="#"
+                                                class="count-review">({{$product->orderItems->where('rstatus',1)->count()}}
+                                                review)</a>
+                                    </div>
+                                    <a href="#" class="btn add-to-cart"
+                                        wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add
+                                        To Cart</a>
+                                    <div class="product-wish">
+                                        @if($witems->contains($product->id))
+                                        <a href="#" wire:click.prevent="removeFromWishlist({{$product->id}})"><i
+                                                class="fa fa-heart fill-heart"></i></a>
+                                        @else
+                                        <a href="#"
+                                            wire:click.prevent="addToWishlist({{$product->id}},'{{$product->name}}',{{$product->regular_price}})"><i
+                                                class="fa fa-heart"></i></a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+                @if ($loadAmount >= $totalRecords)
+                <h1 class="text-warning font-bold text-center my-10">No Remaining Records!</h1>
+            @endif
+            <script>
+                const lastRecord = document.getElementById('last_record');
+                const options = {
+                    root: null,
+                    threshold: 1,
+                    rootMargin: '0px'
+                }
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            @this.loadMore()
+                        }
+                    });
+                });
+                observer.observe(lastRecord);
+            </script>
+            </div>
+            <!--end main products area-->
 
         </div>
         <!--end row-->
