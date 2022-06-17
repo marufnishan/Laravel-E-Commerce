@@ -201,14 +201,13 @@
             <!--popular Products-->
             <div class="wrap-show-advance-info-box style-1">
                 <h3 class="title-box">Popular Products</h3>
-                <div class="wrap-products" wire:loading.delay.class="opacity-50">
+                <div class="wrap-products">
                     <div class="wrap-product-tab tab-style-1">
                         <div class="tab-contents">
                             <div class="tab-content-item active" id="digital_1a">
 
                                 @foreach($pproducts as $pproduct)
-                                <div class="col-md-4 col-sm-6 product product-style-2 equal-elem " @if ($loop->last)
-                                    id="last_record" @endif>
+                                <div class="col-md-2 col-sm-6 product product-style-2 equal-elem ">
                                     <div class="product-thumnail">
                                         <a href="{{route('product.details',['slug'=>$pproduct->slug])}}"
                                             title="{{$pproduct->name}}">
@@ -233,29 +232,7 @@
                                 </div>
                                 @endforeach
                             </div>
-                            
-                            <script>
-                                const lastRecord = document.getElementById('last_record');
-                                const options = {
-                                    root: null,
-                                    threshold: 1,
-                                    rootMargin: '0px'
-                                }
-                                const observer = new IntersectionObserver((entries, observer) => {
-                                    entries.forEach(entry => {
-                                        if (entry.isIntersecting) {
-                                            @this.loadMore()
-                                        }
-                                    });
-                                });
-                                observer.observe(lastRecord);
-
-                            </script>
                         </div>
-                        
-                        @if ($loadAmount >= $totalRecords)
-                        <h1 class="text-warning font-bold text-center my-10">No Remaining Records!</h1>
-                        @endif
                     </div>
                 </div>
             </div>
