@@ -12,6 +12,70 @@
     </div>
     <div class="row">
 
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
+            <div class="widget mercado-widget categories-widget">
+                <h2 class="widget-title">All Categories</h2>
+                <div class="widget-content">
+                    <ul class="list-category">
+                        @foreach ($categories as $category)
+                        <li class="category-item {{count($category->subCategories) > 0 ? 'has-child-cate':''}} ">
+                            <a href="{{route('product.category',['category_slug'=>$category->slug])}}"
+                                class="cate-link">{{$category->name}}</a>
+                                @if(count($category->subCategories) > 0)
+                                    <span class="toggle-control">+</span>
+                                    <ul class="sub-cate">
+                                        @foreach ($category->subCategories as $scategory)
+                                        <li class="category-item">
+                                            <a href="{{route('product.category',['category_slug'=>$category->slug,'scategory_slug'=>$scategory->slug])}}" class="cate-link"><i class="fa fa-caret-right"></i>{{$scategory->name}}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div><!-- Categories widget-->
+           
+
+            <div class="widget mercado-widget filter-widget price-filter">
+                <h2 class="widget-title">Price <span class="text-info">${{$min_price}} - ${{$max_price}}</span></h2>
+                <div class="widget-content" style="padding:10px 5px 40px 5px;">
+                    <div id="slider" wire:ignore></div>
+                </div>
+            </div><!-- Price-->
+
+            <div class="widget mercado-widget widget-product">
+                <h2 class="widget-title">Popular Products</h2>
+                <div class="widget-content">
+                    <ul class="products">
+                        @foreach ($popular_products as $p_product)
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                <div class="thumbnnail">
+                                    <a href="{{route('product.details',['slug'=>$p_product->slug])}}"
+                                        title="{{$p_product->name}}">
+                                        <figure><img
+                                            src="{{ asset('assets/images/products' ) }}/{{$p_product->image}}"
+                                            alt="{{$p_product->name}}"></figure>
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="{{route('product.details',['slug'=>$p_product->slug])}}"
+                                        title="{{$p_product->name}}"
+                                        class="product-name"><span>{{$p_product->name}}</span></a>
+                                    <div class="wrap-price"><span
+                                            class="product-price">${{$p_product->regular_price}}</span></div>
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div><!-- end popular product-->
+
+        </div><!--end sitebar-->
+
         <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
             <div class="banner-shop">
@@ -45,11 +109,6 @@
                             <option value="30">30 per page</option>
                             <option value="32">32 per page</option>
                         </select>
-                    </div>
-
-                    <div class="change-display-mode">
-                        <a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
-                        <a href="list.html" class="list-mode display-mode"><i class="fa fa-th-list"></i>List</a>
                     </div>
 
                 </div>
@@ -126,70 +185,6 @@
                {{$products->links()}}
             </div>
         </div><!--end main products area-->
-
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
-            <div class="widget mercado-widget categories-widget">
-                <h2 class="widget-title">All Categories</h2>
-                <div class="widget-content">
-                    <ul class="list-category">
-                        @foreach ($categories as $category)
-                        <li class="category-item {{count($category->subCategories) > 0 ? 'has-child-cate':''}} ">
-                            <a href="{{route('product.category',['category_slug'=>$category->slug])}}"
-                                class="cate-link">{{$category->name}}</a>
-                                @if(count($category->subCategories) > 0)
-                                    <span class="toggle-control">+</span>
-                                    <ul class="sub-cate">
-                                        @foreach ($category->subCategories as $scategory)
-                                        <li class="category-item">
-                                            <a href="{{route('product.category',['category_slug'=>$category->slug,'scategory_slug'=>$scategory->slug])}}" class="cate-link"><i class="fa fa-caret-right"></i>{{$scategory->name}}</a>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div><!-- Categories widget-->
-           
-
-            <div class="widget mercado-widget filter-widget price-filter">
-                <h2 class="widget-title">Price <span class="text-info">${{$min_price}} - ${{$max_price}}</span></h2>
-                <div class="widget-content" style="padding:10px 5px 40px 5px;">
-                    <div id="slider" wire:ignore></div>
-                </div>
-            </div><!-- Price-->
-
-            <div class="widget mercado-widget widget-product">
-                <h2 class="widget-title">Popular Products</h2>
-                <div class="widget-content">
-                    <ul class="products">
-                        @foreach ($popular_products as $p_product)
-                        <li class="product-item">
-                            <div class="product product-widget-style">
-                                <div class="thumbnnail">
-                                    <a href="{{route('product.details',['slug'=>$p_product->slug])}}"
-                                        title="{{$p_product->name}}">
-                                        <figure><img
-                                            src="{{ asset('assets/images/products' ) }}/{{$p_product->image}}"
-                                            alt="{{$p_product->name}}"></figure>
-                                    </a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="{{route('product.details',['slug'=>$p_product->slug])}}"
-                                        title="{{$p_product->name}}"
-                                        class="product-name"><span>{{$p_product->name}}</span></a>
-                                    <div class="wrap-price"><span
-                                            class="product-price">${{$p_product->regular_price}}</span></div>
-                                </div>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div><!-- brand widget-->
-
-        </div><!--end sitebar-->
 
     </div><!--end row-->
 

@@ -95,24 +95,7 @@
                                 <i class="fa fa-clock-o"></i> Updated Now
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="icon-stat">
-                            <div class="row">
-                                <div class="col-xs-8 text-left">
-                                    <span class="icon-stat-label">Total Sales</span>
-                                    <span class="icon-stat-value">{{$totalSales}}</span>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
-                                </div>
-                            </div>
-                            <div class="icon-stat-footer">
-                                <i class="fa fa-clock-o"></i> Updated Now
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
+                    </div> <div class="col-md-3 col-sm-6">
                         <div class="icon-stat">
                             <div class="row">
                                 <div class="col-xs-8 text-left">
@@ -132,8 +115,154 @@
                         <div class="icon-stat">
                             <div class="row">
                                 <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Tax Return</span>
+                                    <span class="icon-stat-value">${{$taxReturn}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-dollar icon-stat-visual bg-primary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Total Order</span>
+                                    <span class="icon-stat-value">{{$totalOrder}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Total Sales</span>
+                                    <span class="icon-stat-value">{{$totalSales}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
                                     <span class="icon-stat-label">Today Sales</span>
                                     <span class="icon-stat-value">{{$todaySales}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Pending Order</span>
+                                    <span class="icon-stat-value">{{$pendingorder}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Cancel Order</span>
+                                    <span class="icon-stat-value">{{$canceledOrder}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Totel Product</span>
+                                    <span class="icon-stat-value">{{$totalProduct}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Totel User</span>
+                                    <span class="icon-stat-value">{{$totalUser}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Totel Seller</span>
+                                    <span class="icon-stat-value">{{$totalSeller}}</span>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
+                                </div>
+                            </div>
+                            <div class="icon-stat-footer">
+                                <i class="fa fa-clock-o"></i> Updated Now
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="icon-stat">
+                            <div class="row">
+                                <div class="col-xs-8 text-left">
+                                    <span class="icon-stat-label">Product Visits</span>
+                                    <span class="icon-stat-value">{{$productVisits}}</span>
                                 </div>
                                 <div class="col-xs-4 text-center">
                                     <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
