@@ -1,5 +1,12 @@
 <div class="content">
-    <style>
+<style>
+        #dashboard::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
         .content {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -60,17 +67,18 @@
 
     </style>
 
-    <div class="container-fluid" style="background: rgb(68, 67, 67);">
-        <div class="row " >
+<div class="container-fluid" style="background: #FFFFFF;">
+        <div class="row ">
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: rgb(68, 67, 67)">
+            <div class="col-md-2" id="sidebar" style="background: #009688;height:80vh; overflow-y: scroll;">
 
                 <x-sidebar />
-                
+
             </div>
             {{-- Sidebar End --}}
-            <div class="col-md-10">
-                <div class="row" style="background: #0083AB;padding-top:20px">
+
+            <div class="col-md-10" id="dashboard" style="background: #46B974;height:80vh; overflow-y: scroll; ">
+                <div class="row" style="padding-top:20px">
                     <div class="col-md-3 col-sm-6 ">
                         <div class="icon-stat">
                             <div class="row">
@@ -200,10 +208,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12" style="background: #0083AB">
+                <div class="row" style="background: #46b974">
+                    <div class="col-md-12" >
                         <div class="panel panel-default">
-                            <div class="panel-heading">
+                            <div class="panel-heading"  style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                                 Latest Order
                             </div>
                             <div class="panel-body">
