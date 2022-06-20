@@ -1,33 +1,91 @@
 <div>
-    <div id="sidebar-wrapper">
-        <div class="list-group  my-3 mt-5">
-            <div class="list-group" style="margin-top:20px;background: #40b0b5; border: 1px;
-            border-radius: 4px;">
-                <a href="#" style="color:white;font-size:30px;padding:20px;"><b>Dashboard</b> </a>
-            </div>
-            @if(Route::has('login'))
+<style>
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.sidebar {
+  height: 59%;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  background-color: #009688;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: relative;
+  top: 0;
+  right: 25px;
+  margin-left: 150px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+.list-group-item {
+  margin: 5px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times fa-2x"></i></a>
+  @if(Route::has('login'))
             @auth
             @if(Auth::user()->utype === 'ADM')
             <hr>
             <a href="{{ route('admin.show_users')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-home" aria-hidden="true" style="font-size:24px; padding-right:10px;" ></i>All Users</a>
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">All Users</a>
             <a href="{{ route('admin.show_sellers')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-home" aria-hidden="true" style="font-size:24px; padding-right:10px;" ></i>Sellers</a>
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Sellers</a>
             <a href="{{ route('admin.categories')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-home" aria-hidden="true" style="font-size:24px; padding-right:10px;" ></i>Categories</a>
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Categories</a>
             <a href="{{ route('admin.attributes')}}" class="list-group-item  second-text fw-bold"
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Attributes</a>
             <a href="{{ route('admin.products')}}" class="list-group-item  second-text fw-bold"
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">All
                 Products</a>
             <a href="{{ route('admin.homeslider')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Manage
-                Home Slider</a>
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Home Slider</a>
             <a href="{{ route('admin.homecategories')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-sliders" style="font-size:24px; padding-right:10px;"></i>Manage
-                Home Categories</a>
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Home Categories</a>
             <a href="{{ route('admin.sale')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-hammer"></i>Sale
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Sale
                 Setting</a>
             <a href="{{ route('admin.coupons')}}" class="list-group-item  second-text fw-bold"
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">All
@@ -36,10 +94,10 @@
                 style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">All
                 Orders</a>
             <a href="{{ route('admin.contact')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-address-book"></i>Contact
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Contact
                 Messages</a>
             <a href="{{ route('admin.settings')}}" class="list-group-item  second-text fw-bold"
-                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;"><i class="fa fa-gears"></i>Settings</a>
+                style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Settings</a>
 
             @elseif(Auth::user()->utype === 'VNDR')
             <a href="{{ route('seller.dashboard')}}" class="list-group-item  second-text fw-bold"
@@ -86,6 +144,19 @@
 
             @endif
             @endif
-        </div>
-    </div>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
 </div>
