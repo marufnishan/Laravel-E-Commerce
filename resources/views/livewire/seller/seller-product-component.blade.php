@@ -1,5 +1,12 @@
 <div>
-    <style>
+<style>
+        #dashboard::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
         nav svg {
             height: 20px;
         }
@@ -9,17 +16,17 @@
         }
 
     </style>
-    <div class="container-fluid" style="background: #467f47;">
-        <div class="row ">
+   <div class="container-fluid" style="background: #FFFFFF;">
+        <div class="row " >
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #467f47;">
+            <div class="col-md-2" id="sidebar" style="background: #009688;height:80vh; overflow-y: scroll;">
+
 
                 <x-sidebar />
-
+                
             </div>
             {{-- Sidebar End --}}
-
-            <div class="col-md-10" style="background: #46b974;">
+            <div class="col-md-10" id="dashboard"style="height:80vh; overflow-y: scroll; ">
                 <div class="row" style="padding-top:20px">
                     <div class="col-md-12">
                         <div class="panel panel-default">

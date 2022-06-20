@@ -8,7 +8,7 @@
     <div class="container-fluid" style="background: #FFFFFF;">
         <div class="row ">
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #467f47;">
+            <div class="col-md-2" style="background: #009688;">
 
                 <x-sidebar />
 
@@ -41,6 +41,7 @@
                                     <th>Subtitle</th>
                                     <th>Price</th>
                                     <th>Link</th>
+                                    <th>Status</th>
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>

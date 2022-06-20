@@ -1,9 +1,27 @@
 <div>
-    <div class="container" style="padding:30px 0;">
+<style>
+        #dashboard::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
+</style>
+
+<div class="container-fluid" style="background: #FFFFFF;">
         <div class="row">
-            <div class="col-md-12">
+        {{-- Sidebar Start --}}
+        <div class="col-md-2" id="sidebar" style="background: #009688;height:80vh; overflow-y: scroll;">
+
+
+                <x-sidebar />
+                
+            </div>
+            {{-- Sidebar End --}}
+            <div class="col-md-10" id="dashboard" style="background: #FFFF;height:80vh; overflow-y: scroll; margin-top:20px ">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading"style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         Change Password
                     </div>
                     <div class="panel-body">

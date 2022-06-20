@@ -19,7 +19,7 @@ class HomeComponent extends Component
         
         $pproducts = Product::popularThisWeek()->orderBy('created_at','ASC')->get()->take(12);
         $sliders = HomeSlider::where('status',1)->get();
-        $lproducts = Product::orderBy('created_at','DESC')->get()->take(12);
+        $lproducts = Product::get()->take(12);
         $category = HomeCategory::find(1);
         $cats = explode(',',$category->sel_categories);
         $categories = Category::whereIn('id',$cats)->get();

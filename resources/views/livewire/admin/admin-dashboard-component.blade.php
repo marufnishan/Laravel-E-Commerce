@@ -275,6 +275,11 @@
                     </div>
                 </div>
                 <div class="row" style="background: #46b974">
+                    <div class="col-md-12" style="padding-bottom:10px;">
+                        <div class="col-md-6" style="margin: 0;padding:0;">@livewire('chart-component')</div>
+                        <div class="col-md-6" style="margin: 0;padding:0;">@livewire('order-bar-chart-component')</div>
+                    </div>
+                    
                     <div class="col-md-12" >
                         <div class="panel panel-default">
                             <div class="panel-heading"  style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
@@ -325,8 +330,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">@livewire('chart-component')</div>
-                    <div class="col-md-6">@livewire('order-bar-chart-component')</div>
                 </div>
             </div>
         </div>

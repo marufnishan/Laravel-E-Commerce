@@ -9,14 +9,14 @@
     <div class="container-fluid" style="background: #FFFFFF;">
         <div class="row ">
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #467f47;">
+            <div class="col-md-2" style="background: #009688;">
 
                 <x-sidebar />
 
             </div>
             {{-- Sidebar End --}}
 
-            <div class="col-md-10">
+            <div class="col-md-10" style="background: #FFFFFF;">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         <div class="row">

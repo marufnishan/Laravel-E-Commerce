@@ -1,5 +1,13 @@
+
 <div class="content">
     <style>
+        #dashboard::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
         .content {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -60,17 +68,18 @@
 
     </style>
 
-    <div class="container-fluid" style="background: #467f47;">
+
+<div class="container-fluid" style="background: #FFFFFF;">
         <div class="row ">
             {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #467f47;">
+            <div class="col-md-2" id="sidebar" style="background: #009688;height:80vh; overflow-y: scroll;">
 
                 <x-sidebar />
 
             </div>
             {{-- Sidebar End --}}
 
-            <div class="col-md-10" style="background: #46b974;">
+            <div class="col-md-10" id="dashboard" style="background: #46B974;height:80vh; overflow-y: scroll; ">
                 <div class="row" style="padding-top:20px">
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-stat">
