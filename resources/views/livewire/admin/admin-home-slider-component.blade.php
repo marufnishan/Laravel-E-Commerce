@@ -41,6 +41,7 @@
                                     <th>Subtitle</th>
                                     <th>Price</th>
                                     <th>Link</th>
+                                    <th>Status</th>
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>
