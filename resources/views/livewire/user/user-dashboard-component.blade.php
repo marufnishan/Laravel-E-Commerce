@@ -66,21 +66,26 @@
             border-top: 1px solid #eee;
         }
 
+        .sidebar {
+            height: 87vh;
+        }
+
+        @media screen and (max-height: 700px) {
+            .sidebar {
+                height: 92vh !important;
+            }
+        }
+
     </style>
 
-
-<div class="container-fluid" style="background: #FFFFFF;">
+    <div class="container-fluid">
         <div class="row ">
-            {{-- Sidebar Start --}}
-            <div class="col-md-2" id="sidebar" style="background: #009688;height:80vh; overflow-y: scroll;">
-
+            <div id="main">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
+                        onclick="openNav()">☰ DASHBOARD</button></div>
                 <x-sidebar />
-
-            </div>
-            {{-- Sidebar End --}}
-
-            <div class="col-md-10" id="dashboard" style="background: #46B974;height:80vh; overflow-y: scroll; ">
-                <div class="row" style="padding-top:20px">
+                <div class="col-md-12" id="dashboard" style="background:#46B974;height:80vh; overflow-y: scroll; ">
+                    <div class="row" style="padding-top:20px">
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-stat">
                             <div class="row">
