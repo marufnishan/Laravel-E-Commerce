@@ -12,26 +12,29 @@
         nav .hidden {
             display: block !important;
         }
+        .sidebar {
+            height: 80vh;
+        }
+        @media screen and (max-height: 700px) {
+            .sidebar {
+            height: 80vh !important;
+        }
+        }
 
     </style>
-    <div class="container-fluid"  style="background: #FFFFFF;">
+    <div class="container-fluid" style="background: #FFFFFF;height: 80vh;">
         <div class="row ">
-            {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #009688;">
-
+            <div id="main">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
+                        onclick="openNav()">☰ DASHBOARD</button></div>
                 <x-sidebar />
-
-            </div>
-            {{-- Sidebar End --}}
-
-            <div class="col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-8" style="padding-top: 10px ;">
                                 All Sellers
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4" style="padding-top: 10px">
                                 <input type="text" class="form-control" placeholder="Search...."
                                     wire:model="searchTerm" />
                             </div>

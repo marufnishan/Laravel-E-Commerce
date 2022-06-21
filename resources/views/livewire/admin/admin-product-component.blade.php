@@ -11,19 +11,22 @@
         nav .hidden {
             display: block !important;
         }
+        .sidebar {
+            height: 100vh;
+        }
+        #dashboard::-webkit-scrollbar {
+            display: none;
+        }
 
     </style>
-    <div class="container-fluid" style="background: #FFFFFF;">
+
+    <div class="container-fluid">
         <div class="row ">
-            {{-- Sidebar Start --}}
-            <div class="col-md-2" style="background: #009688;">
-
+            <div id="main">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
+                        onclick="openNav()">☰ DASHBOARD</button></div>
                 <x-sidebar />
-
-            </div>
-            {{-- Sidebar End --}}
-
-            <div class="col-md-10">
+            <div class="col-md-12" id="dashboard" style="height:100vh; overflow-y: scroll;margin:0;padding:0">
                 <div class="panel panel-default">
                     <div class="panel-heading"  style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         <div class="row">
