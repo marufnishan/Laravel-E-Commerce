@@ -1,13 +1,13 @@
-
 <div class="content">
     <style>
         #dashboard::-webkit-scrollbar {
-  display: none;
-}
+            display: none;
+        }
 
-#sidebar::-webkit-scrollbar {
-  display: none;
-}
+        #sidebar::-webkit-scrollbar {
+            display: none;
+        }
+
         .content {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -66,13 +66,18 @@
             border-top: 1px solid #eee;
         }
 
+        .sidebar {
+            height: 107vh;
+        }
+
     </style>
 
     <div class="container-fluid">
         <div class="row ">
             <div id="main">
-                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn" onclick="openNav()">☰ DASHBOARD</button></div>
-                    <x-sidebar />
+                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
+                        onclick="openNav()">☰ DASHBOARD</button></div>
+                <x-sidebar />
                 <div class="col-md-12" id="dashboard" style="height:100vh; overflow-y: scroll;">
                     <div class="row" style="background: #46b974;padding-top:20px">
                         <div class="col-md-3 col-sm-6 ">
@@ -90,7 +95,8 @@
                                     <i class="fa fa-clock-o"></i> Updated Now
                                 </div>
                             </div>
-                        </div> <div class="col-md-3 col-sm-6">
+                        </div>
+                        <div class="col-md-3 col-sm-6">
                             <div class="icon-stat">
                                 <div class="row">
                                     <div class="col-xs-8 text-left">
@@ -154,7 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-3 col-sm-6">
                             <div class="icon-stat">
                                 <div class="row">
@@ -187,7 +193,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-3 col-sm-6">
                             <div class="icon-stat">
                                 <div class="row">
@@ -272,18 +278,20 @@
                     <div class="row" style="background: #46b974">
                         <div class="col-md-12" style="padding-bottom:10px;">
                             <div class="col-md-6" style="margin: 0;padding:0;">@livewire('chart-component')</div>
-                            <div class="col-md-6" style="margin: 0;padding:0;">@livewire('order-bar-chart-component')</div>
+                            <div class="col-md-6" style="margin: 0;padding:0;">@livewire('order-bar-chart-component')
+                            </div>
                         </div>
-                        
-                        <div class="col-md-12" >
+
+                        <div class="col-md-12">
                             <div class="panel panel-default">
-                                <div class="panel-heading"  style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
+                                <div class="panel-heading"
+                                    style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                                     Latest Order
                                 </div>
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                         <table class="table table-striped">
-                                            <thead >
+                                            <thead>
                                                 <tr style="background:#009688;color: white;">
                                                     <th>OrderId</th>
                                                     <th>Subtotal</th>
@@ -327,10 +335,9 @@
                         </div>
                     </div>
                 </div>
-              </div>
-            
+            </div>
+
         </div>
     </div>
 
 </div>
-
