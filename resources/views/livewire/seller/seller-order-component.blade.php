@@ -82,7 +82,7 @@
                                             <td>{{$order->name}}</td>
                                             <td>{{$order->order_id }}</td>
                                             <td>{{$order->quantity}}</td>
-                                            <td>{{$order->price}}</td>
+                                            <td>৳{{$order->price}}</td>
                                             <td>@foreach(unserialize($order->options) as $key => $value)
                                                 <p><b>{{$key}}:{{$value}}</b></p>
                                                 @endforeach</td>

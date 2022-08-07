@@ -108,7 +108,7 @@
                                 <div class="row">
                                     <div class="col-xs-8 text-left">
                                         <span class="icon-stat-label">Total Revenue</span>
-                                        <span class="icon-stat-value">${{$totalSale}}</span>
+                                        <span class="icon-stat-value">৳{{$totalSale}}</span>
                                     </div>
                                     <div class="col-xs-4 text-center">
                                         <i class="fa fa-dollar icon-stat-visual bg-primary"></i>
@@ -124,7 +124,7 @@
                                 <div class="row">
                                     <div class="col-xs-8 text-left">
                                         <span class="icon-stat-label">Today's Revenue</span>
-                                        <span class="icon-stat-value">${{$todaysSale}}</span>
+                                        <span class="icon-stat-value">৳{{$todaysSale}}</span>
                                     </div>
                                     <div class="col-xs-4 text-center">
                                         <i class="fa fa-dollar icon-stat-visual bg-primary"></i>
@@ -252,7 +252,7 @@
                                                     <td>{{$order->name}}</td>
                                                     <td>{{$order->order_id }}</td>
                                                     <td>{{$order->quantity}}</td>
-                                                    <td>{{$order->price}}</td>
+                                                    <td>৳{{$order->price}}</td>
                                                     <td>@foreach(unserialize($order->options) as $key => $value)
                                                         <p><b>{{$key}}:{{$value}}</b></p>
                                                         @endforeach</td>

@@ -22,7 +22,7 @@
                     <div class="wrap-countdown mercado-countdown"
                         data-expire="{{ Carbon\Carbon::parse($sale->sale_date)->format('Y/m/d h:m:s')}}"></div>
                     @foreach($sproducts as $sproduct)
-                    <div class="col-md-3  product product-style-2 equal-elem ">
+                    <div class="mcol-6 col-md-2 col-sm-3  product product-style-2 equal-elem ">
                         <div class="product-thumnail">
                             <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
                                 title="{{$sproduct->name}}">
@@ -42,9 +42,9 @@
                             <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
                                 class="product-name"><span>{{$sproduct->name}}</span></a>
                             <div class="wrap-price"><ins>
-                                    <p class="product-price">${{$sproduct->sale_price}}</p>
+                                    <p class="product-price">৳{{$sproduct->sale_price}}</p>
                                 </ins> <del>
-                                    <p class="product-price">${{$sproduct->regular_price}}</p>
+                                    <p class="product-price">৳{{$sproduct->regular_price}}</p>
                                 </del></div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
     
     
                     <div class="widget mercado-widget filter-widget price-filter">
-                        <h2 class="widget-title">Price <span class="text-info">${{$min_price}} - ${{$max_price}}</span></h2>
+                        <h2 class="widget-title">Price <span class="text-info">৳{{$min_price}} - ৳{{$max_price}}</span></h2>
                         <div class="widget-content" style="padding:10px 5px 40px 5px;">
                             <div id="slider" wire:ignore></div>
                         </div>
@@ -113,7 +113,7 @@
                                                 title="{{$p_product->name}}"
                                                 class="product-name"><span>{{$p_product->name}}</span></a>
                                             <div class="wrap-price"><span
-                                                    class="product-price">${{$p_product->regular_price}}</span></div>
+                                                    class="product-price">৳{{$p_product->regular_price}}</span></div>
                                         </div>
                                     </div>
                                 </li>
@@ -176,8 +176,8 @@
                             $witems = Cart::instance('wishlist')->content()->pluck('id') ;
                             @endphp
                             @foreach ($products as $product)
-                            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 " @if ($loop->last) id="last_record" @endif>
-                                <div class="product product-style-3 equal-elem ">
+                            <li class="smcol-6 col-lg-4 col-md-4 col-sm-6 col-xs-6 " @if ($loop->last) id="last_record" @endif>
+                                <div class="product product-style-3 equal-elem " style="height: 500px;">
                                     <div class="product-thumnail">
                                         <a href="{{route('product.details',['slug'=>$product->slug])}}"
                                             title="{{$product->name}}">
@@ -189,7 +189,7 @@
                                         <a href="{{route('product.details',['slug'=>$product->slug])}}"
                                             class="product-name"><span>{{$product->name}}</span></a>
                                         <div class="wrap-price"><span
-                                                class="product-price">${{$product->regular_price}}</span></div>
+                                                class="product-price">৳{{$product->regular_price}}</span></div>
                                         <div class="product-rating">
                                             <style>
                                                 .color-gray {

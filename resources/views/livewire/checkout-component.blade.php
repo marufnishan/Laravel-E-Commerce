@@ -59,15 +59,15 @@
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Line1:</label>
-                                    <input type="text" name="add" value="" placeholder="Street at apartment number"
+                                    <label for="add">Address :</label>
+                                    <input type="text" name="add" value="" placeholder="Address"
                                         wire:model="line1">
                                     @error('line1')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Line2:</label>
+                                    <label for="add">Street at Apartment Number:</label>
                                     <input type="text" name="add" value="" placeholder="Street at apartment number"
                                         wire:model="line2">
                                 </p>
@@ -153,15 +153,15 @@
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Line1:</label>
-                                    <input type="text" name="add" value="" placeholder="Street at apartment number"
+                                    <label for="add">Address:</label>
+                                    <input type="text" name="add" value="" placeholder="Address"
                                         wire:model="s_line1">
                                     @error('s_line1')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Line2:</label>
+                                    <label for="add">Street-Appertment Number:</label>
                                     <input type="text" name="add" value="" placeholder="Street at apartment number"
                                         wire:model="s_line2">
                                 </p>
@@ -276,7 +276,7 @@
                         </div>
                         @if(Session::has('checkout'))
                         <p class="summary-info grand-total"><span>Grand Total</span> <span
-                                class="grand-total-price">${{Session::get('checkout')['total']}}</span></p>
+                                class="grand-total-price">৳{{Session::get('checkout')['total']}}</span></p>
                         @endif
 
                         @if($errors->isEmpty())
@@ -291,7 +291,7 @@
                     <div class="summary-item shipping-method">
                         <h4 class="title-box f-title">Shipping method</h4>
                         <p class="summary-info"><span class="title">Flat Rate</span></p>
-                        <p class="summary-info"><span class="title">Fixed $0</span></p>
+                        <p class="summary-info"><span class="title">Fixed ৳0</span></p>
 
                     </div>
                 </div>

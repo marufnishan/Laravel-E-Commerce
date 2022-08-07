@@ -70,11 +70,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
    Route::get('/cacheclear', function () {
-      return Artisan::call('cache:clear');
-   });
-   
-   Route::get('/configclear', function () {
-      return Artisan::call('config:cache');
+      return Artisan::call('optimize:clear');
    });
    Route::get('/',HomeComponent::class);
 
