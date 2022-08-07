@@ -45,6 +45,8 @@
                             </div>
                             <div class="col-md-8">
                                 <h3>Name : {{$seller->name}}</h3>
+                                <p><b>Shop Name : </b>{{$seller->seller->shop_name}}</p>
+                                <img src="{{asset('assets/images/shops')}}/{{$seller->seller->shop_thumbnail}}" width="120" height="120" class="my-3"  />
                                 <p><b>Email : </b>{{$seller->email}}</p>
                                 <p><b>Phone : </b>{{$seller->phone}}</p>
                                 <hr>

@@ -7414,6 +7414,8 @@ table.shop_attributes tbody {
 
     .wrap-footer-content .wrap-function-info .fc-info-item {
         width: 48%;
+        height: 158px;
+        display: inline-table;
     }
 
     .wrap-footer-content .wrap-function-info .fc-info-item:nth-child(2n+1) {
