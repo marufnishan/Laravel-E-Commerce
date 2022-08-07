@@ -47,8 +47,8 @@
                                         <p><b>Email : </b>{{$user->email}}</p>
                                         <p><b>Phone : </b>{{$user->profile->mobile}}</p>
                                         <hr>
-                                        <p><b>Line1 : </b>{{$user->profile->line1}}</p>
-                                        <p><b>Line2 : </b>{{$user->profile->line2}}</p>
+                                        <p><b>Address : </b>{{$user->profile->line1}}</p>
+                                        <p><b>Street-House No : </b>{{$user->profile->line2}}</p>
                                         <p><b>City : </b>{{$user->profile->city}}</p>
                                         <p><b>Province : </b>{{$user->profile->province}}</p>
                                         <p><b>Country : </b>{{$user->profile->country}}</p>

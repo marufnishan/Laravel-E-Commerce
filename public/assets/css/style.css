@@ -7712,6 +7712,7 @@ table.shop_attributes tbody {
 
     .fa-home:before {
         color: white;
+        font-size: 32px;
     }
 
     .fa-shopping-cart:before {

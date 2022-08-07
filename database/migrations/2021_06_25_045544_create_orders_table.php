@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('tax');
             $table->decimal('total');
             $table->string('firstname');
-            $table->string('lastname');
+            $table->string('lastname')->nullable();
             $table->string('mobile');
             $table->string('email');
             $table->string('line1');

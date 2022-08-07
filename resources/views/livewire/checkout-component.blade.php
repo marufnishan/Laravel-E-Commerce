@@ -27,7 +27,7 @@
                             <h3 class="box-title">Billing Address</h3>
                             <div class="billing-address">
                                 <p class="row-in-form">
-                                    <label for="fname">first name<span>*</span></label>
+                                    <label for="fname">First name<span>*</span></label>
                                     <input type="text" name="fname" value="" placeholder="Your name"
                                         wire:model="firstname">
                                     @error('firstname')
@@ -35,7 +35,7 @@
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="lname">last name<span>*</span></label>
+                                    <label for="lname">Last name</label>
                                     <input type="text" name="lname" value="" placeholder="Your last name"
                                         wire:model="lastname">
                                     @error('lastname')
@@ -43,7 +43,7 @@
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="email">Email Addreess:</label>
+                                    <label for="email">Email Addreess <span>*</span></label>
                                     <input type="email" name="email" value="" placeholder="Type your email"
                                         wire:model="email">
                                     @error('email')
@@ -59,7 +59,7 @@
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Address :</label>
+                                    <label for="add">Address <span>*</span></label>
                                     <input type="text" name="add" value="" placeholder="Address"
                                         wire:model="line1">
                                     @error('line1')
@@ -67,7 +67,7 @@
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Street at Apartment Number:</label>
+                                    <label for="add">Street at Apartment Number<span>*</span></label>
                                     <input type="text" name="add" value="" placeholder="Street at apartment number"
                                         wire:model="line2">
                                 </p>
@@ -95,7 +95,7 @@
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="zip-code">Postcode / ZIP:</label>
+                                    <label for="zip-code">Postcode / ZIP<span>*</span></label>
                                     <input type="number" name="zip-code" value="" placeholder="Your postal code"
                                         wire:model="zipcode">
                                     @error('zipcode')
@@ -263,13 +263,13 @@
                                 <span class="payment-desc">There are many variations of passages of Lorem Ipsum
                                     available</span>
                             </label>
-                            <label class="payment-method">
+                            {{-- <label class="payment-method">
                                 <input name="payment-method" id="payment-method-paypal" value="paypal" type="radio"
                                     wire:model="paymentmode">
                                 <span>Paypal</span>
                                 <span class="payment-desc">You can pay with your credit</span>
                                 <span class="payment-desc">card if you don't have a paypal account</span>
-                            </label>
+                            </label> --}}
                             @error('paymentmode')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
