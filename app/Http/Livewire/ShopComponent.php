@@ -14,7 +14,7 @@ class ShopComponent extends Component
 {
     public $sorting;
     public $totalRecords;
-    public $loadAmount = 2;
+    public $loadAmount = 10;
 
     public $min_price;
     public $max_price;
@@ -23,14 +23,14 @@ class ShopComponent extends Component
 
     public function loadMore()
     {
-        $this->loadAmount += 2;
+        $this->loadAmount += 10;
     }
 
     public function mount()
     {
         $this->sorting = "default";
         $this->totalRecords = Product::count();
-        $this->sale_paginate = 4;
+        $this->sale_paginate = 12;
 
         $this->min_price = 0;
         $this->max_price = 1000;

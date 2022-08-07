@@ -5,8 +5,10 @@ namespace App\Http\Livewire;
 use App\Mail\OrderMail;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Profile;
 use App\Models\Shipping;
 use App\Models\Transaction;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Cart;
@@ -48,12 +50,26 @@ class CheckoutComponent extends Component
     public $exp_year;
     public $cvc;
 
+    public function mount(){
+        $user = User::find(Auth::user()->id);
+        $this->firstname = $user->name;
+        $this->email = $user->email;
+        $this->mobile = $user->phone;
+
+        $profile = Profile::where('user_id',Auth::user()->id)->first();
+        $this->line1 = $profile->line1;
+        $this->line2 = $profile->line2;
+        $this->city = $profile->city;
+        $this->province = $profile->province;
+        $this->country = $profile->country;
+        $this->zipcode = $profile->zipcode;
+
+    }
 
     public function updated($fields)
     {
         $this->validateOnly($fields,[
             'firstname' =>'required',
-            'lastname' =>'required',
             'email' =>'required|email',
             'mobile' =>'required|numeric',
             'line1' =>'required',
@@ -68,7 +84,6 @@ class CheckoutComponent extends Component
         {
             $this->validateOnly($fields,[
                 's_firstname' =>'required',
-                's_lastname' =>'required',
                 's_email' =>'required|email',
                 's_mobile' =>'required|numeric',
                 's_line1' =>'required',
@@ -93,7 +108,6 @@ class CheckoutComponent extends Component
     {
         $this->validate([
             'firstname' =>'required',
-            'lastname' =>'required',
             'email' =>'required|email',
             'mobile' =>'required|numeric',
             'line1' =>'required',
@@ -152,7 +166,6 @@ class CheckoutComponent extends Component
         {
             $this->validate([
                 's_firstname' =>'required',
-                's_lastname' =>'required',
                 's_email' =>'required|email',
                 's_mobile' =>'required|numeric',
                 's_line1' =>'required',

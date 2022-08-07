@@ -7,21 +7,28 @@
 #sidebar::-webkit-scrollbar {
   display: none;
 }
-</style>
+.sidebar {
+            height: 82vh;
+        }
 
-<div class="container-fluid" style="background: #FFFFFF;">
-        <div class="row">
-        {{-- Sidebar Start --}}
-        <div class="col-md-2" id="sidebar" style="background: #009688;height:80vh; overflow-y: scroll;">
+        @media screen and (max-height: 700px) {
+            .sidebar {
+                height: 82vh !important;
+            }
+        }
 
+    </style>
 
+    <div class="container-fluid">
+        <div class="row ">
+            <div id="main">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
+                        onclick="openNav()">☰ DASHBOARD</button></div>
                 <x-sidebar />
-                
-            </div>
-            {{-- Sidebar End --}}
-            <div class="col-md-10" id="dashboard" style="background: #FFFF;height:80vh; overflow-y: scroll; margin-top:20px ">
+
+                <div class="col-md-12" id="dashboard" style="height:80vh; overflow-y: scroll; padding:0px; margin:0; ">
                 <div class="panel panel-default">
-                    <div class="panel-heading"style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
+                    <div class="panel-heading"style="background: linear-gradient(to right, #74ebd5, #acb6e5); padding: 13px 31px;">
                         Change Password
                     </div>
                     <div class="panel-body">

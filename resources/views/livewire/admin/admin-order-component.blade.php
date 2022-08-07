@@ -77,10 +77,10 @@
                                         @foreach($orders as $order)
                                         <tr>
                                             <td>{{$order->id}}</td>
-                                            <td>${{$order->subtotal}}</td>
-                                            <td>${{$order->discount}}</td>
-                                            <td>${{$order->tax}}</td>
-                                            <td>${{$order->total}}</td>
+                                            <td>৳{{$order->subtotal}}</td>
+                                            <td>৳{{$order->discount}}</td>
+                                            <td>৳{{$order->tax}}</td>
+                                            <td>৳{{$order->total}}</td>
                                             <td>{{$order->firstname}}</td>
                                             <td>{{$order->lastname}}</td>
                                             <td>{{$order->mobile}}</td>

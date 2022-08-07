@@ -76,11 +76,11 @@
                         </div>
                         @if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
                         <div class="wrap-price">
-                            <span class="product-price">${{$product->sale_price}}</span>
-                            <del><span class="product-price regprice">${{$product->regular_price}}</span></del>
+                            <span class="product-price">৳{{$product->sale_price}}</span>
+                            <del><span class="product-price regprice">৳{{$product->regular_price}}</span></del>
                         </div>
                         @else
-                        <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
+                        <div class="wrap-price"><span class="product-price">৳{{$product->regular_price}}</span></div>
                         @endif
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: <b>{{$product->stock_status}}</b></p>
@@ -255,7 +255,7 @@
                                             title="{{$p_product->name}}"
                                             class="product-name"><span>{{$p_product->name}}</span></a>
                                         <div class="wrap-price"><span
-                                                class="product-price">${{$p_product->regular_price}}</span></div>
+                                                class="product-price">৳{{$p_product->regular_price}}</span></div>
                                     </div>
                                 </div>
                             </li>
@@ -293,7 +293,7 @@
                                     <a href="{{route('product.details',['slug'=>$r_product->slug])}}"
                                         class="product-name"><span>{{$r_product->name}}</span></a>
                                     <div class="wrap-price"><span
-                                            class="product-price">${{$r_product->regular_price}}</span></div>
+                                            class="product-price">৳{{$r_product->regular_price}}</span></div>
                                 </div>
                             </div>
                             @endforeach

@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>{{ config('app.name', 'nishanbd.com') }}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo-top-1.png">
     <link
         href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
         rel="stylesheet">
@@ -21,7 +21,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bot.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet"
@@ -219,6 +218,9 @@
                                     <a href="/Shop" class="link-term mercado-item-title">Shop</a>
                                 </li>
                                 <li class="menu-item">
+                                    <a href="{{route('AllShop')}}" class="link-term mercado-item-title">All Shops</a>
+                                </li>
+                                <li class="menu-item">
                                     <a href="/cart" class="link-term mercado-item-title">Cart</a>
                                 </li>
                                 <li class="menu-item">
@@ -239,31 +241,6 @@
                 </div>
             </div>
         </div>
-        <section class="section-1">
-            <div class="wrapper">
-                <div class="chat-box" id="chat-box">
-                    <div class="chat-header">NishanBD</div>
-                    <div id="container-1" class="container-1">
-                        <div id="chat" class="chat">
-                            <div id="messages" class="messages"></div>
-                            <div class="text-content ">
-                                <input id="input" type="text" placeholder="  Say something........           "
-                                    autocomplete="off" autofocus="true" />
-                            </div>
-                            <div class="bot">
-                                <div class="btn btn-outline-success" id="send" onclick="sendMsg()">Send</div>
-                                <div class="btn btn-outline-success" id="clear" onclick="clearField()">Clear</div>
-                                <div class="btn btn-outline-success" onclick="closeChat()">Close Chat</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="chat-us" onclick="openChat()">
-                    Chat
-                </div>
-            </div>
-        </section>
     </header>
 
     {{$slot}}
@@ -280,9 +257,6 @@
     <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('assets/js/functions.js') }}"></script>
     <script src="{{ asset('assets/js/translate.js') }}"></script>
-    <script src="{{ asset('assets/js/index.js') }}"></script>
-    <script src="{{ asset('assets/js/constants.js') }}"></script>
-    <script src="{{ asset('assets/js/speech.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
@@ -299,6 +273,20 @@
     @livewireScripts
 
     @stack('scripts')
+    
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/61410a3a25797d7a89fefb53/1ffj0vtqc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 
 </html>

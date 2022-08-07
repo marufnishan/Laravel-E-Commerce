@@ -25,6 +25,19 @@
                             <p class="text-danger">{{$message}}</p>
                             @enderror
                             <hr>
+                            <p><b>Shop Name : </b><input type="text" class="form-control" wire:model="shop_name"></p>
+                            @error('shop_name') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
+                            <p><b>Shop Thumbnail : </b><input type="file" class="form-control" wire:model="newshop_thumbnail"></p>
+                            @error('newshop_thumbnail') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
+                            @if($newshop_thumbnail)
+                                <img src="{{$newshop_thumbnail->temporaryUrl()}}" width="120" height="120" class="my-3" />
+                            @elseif($shop_thumbnail)
+                                <img src="{{asset('assets/images/shops')}}/{{$shop_thumbnail}}" width="120" height="120" class="my-3"  />
+                            @endif
                             <p><b>NID : </b><input type="text" class="form-control" wire:model="nid"></p>
                             @error('nid') 
                             <p class="text-danger">{{$message}}</p>

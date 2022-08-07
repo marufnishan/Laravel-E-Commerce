@@ -32,6 +32,7 @@ use App\Http\Livewire\Admin\AdminEditUsersComponent;
 use App\Http\Livewire\Admin\AdminSettingComponent;
 use App\Http\Livewire\Admin\AdminShowAllSellersComponent;
 use App\Http\Livewire\Admin\ShowAllUsersComponent;
+use App\Http\Livewire\AllShopsComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -49,6 +50,7 @@ use App\Http\Livewire\Seller\SellerEditProfileComponent;
 use App\Http\Livewire\Seller\SellerProductComponent;
 use App\Http\Livewire\Seller\SellerOrderComponent;
 use App\Http\Livewire\Seller\SellerProfileComponent;
+use App\Http\Livewire\SellerShopComponent;
 use App\Http\Livewire\User\UserEditProfileComponent;
 use App\Http\Livewire\User\UserProfileComponent;
 use Illuminate\Support\Facades\Artisan;
@@ -70,15 +72,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
    Route::get('/cacheclear', function () {
-      return Artisan::call('cache:clear');
-   });
-   
-   Route::get('/configclear', function () {
-      return Artisan::call('config:cache');
+      return Artisan::call('optimize:clear');
    });
    Route::get('/',HomeComponent::class);
 
    Route::get('/Shop',ShopComponent::class);
+   Route::get('/AllShop',AllShopsComponent::class)->name('AllShop');
+   Route::get('/sellerShop/{id}',SellerShopComponent::class)->name('sellerShop');
 
    Route::get('/cart',CartComponent::class)->name('product.cart');
 

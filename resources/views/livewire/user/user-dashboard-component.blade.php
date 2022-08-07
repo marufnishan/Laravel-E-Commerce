@@ -66,27 +66,32 @@
             border-top: 1px solid #eee;
         }
 
+        .sidebar {
+            height: 87vh;
+        }
+
+        @media screen and (max-height: 700px) {
+            .sidebar {
+                height: 92vh !important;
+            }
+        }
+
     </style>
 
-
-<div class="container-fluid" style="background: #FFFFFF;">
+    <div class="container-fluid">
         <div class="row ">
-            {{-- Sidebar Start --}}
-            <div class="col-md-2" id="sidebar" style="background: #009688;height:80vh; overflow-y: scroll;">
-
+            <div id="main">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
+                        onclick="openNav()">☰ DASHBOARD</button></div>
                 <x-sidebar />
-
-            </div>
-            {{-- Sidebar End --}}
-
-            <div class="col-md-10" id="dashboard" style="background: #46B974;height:80vh; overflow-y: scroll; ">
-                <div class="row" style="padding-top:20px">
+                <div class="col-md-12" id="dashboard" style="background:#46B974;height:80vh; overflow-y: scroll; ">
+                    <div class="row" style="padding-top:20px">
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-stat">
                             <div class="row">
                                 <div class="col-xs-8 text-left">
                                     <span class="icon-stat-label">Total Cost</span>
-                                    <span class="icon-stat-value">${{$totalCost}}</span>
+                                    <span class="icon-stat-value">৳{{$totalCost}}</span>
                                 </div>
                                 <div class="col-xs-4 text-center">
                                     <i class="fa fa-dollar icon-stat-visual bg-primary"></i>
@@ -177,10 +182,10 @@
                                         @foreach($orders as $order)
                                         <tr>
                                             <td>{{$order->id}}</td>
-                                            <td>${{$order->subtotal}}</td>
-                                            <td>${{$order->discount}}</td>
-                                            <td>${{$order->tax}}</td>
-                                            <td>${{$order->total}}</td>
+                                            <td>৳{{$order->subtotal}}</td>
+                                            <td>৳{{$order->discount}}</td>
+                                            <td>৳{{$order->tax}}</td>
+                                            <td>৳{{$order->total}}</td>
                                             <td>{{$order->firstname}}</td>
                                             <td>{{$order->lastname}}</td>
                                             <td>{{$order->mobile}}</td>

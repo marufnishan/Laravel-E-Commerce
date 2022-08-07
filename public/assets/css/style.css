@@ -604,6 +604,7 @@ textarea {
     float: left;
     font-size: 13px;
     color: #999999;
+    border: 5px solid white;
     border-radius: 25px;
     padding: 0 20px;
     height: 35px;
@@ -7413,6 +7414,8 @@ table.shop_attributes tbody {
 
     .wrap-footer-content .wrap-function-info .fc-info-item {
         width: 48%;
+        height: 158px;
+        display: inline-table;
     }
 
     .wrap-footer-content .wrap-function-info .fc-info-item:nth-child(2n+1) {
@@ -7660,7 +7663,7 @@ table.shop_attributes tbody {
     .product-style-2 .product-thumnail .wrap-btn .function-link {
         opacity: 1;
         filter: alpha(opacity=100);
-        visibility: visible;
+        visibility: none;
         transform: translateX(0);
         -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -7711,6 +7714,7 @@ table.shop_attributes tbody {
 
     .fa-home:before {
         color: white;
+        font-size: 32px;
     }
 
     .fa-shopping-cart:before {
@@ -7995,6 +7999,14 @@ table.shop_attributes tbody {
 }
 
 @media (max-width: 500px) {
+    .mcol-6{
+        width: 50% !important;
+        height: 250px !important;
+    }
+    .smcol-6{
+        width: 50% !important;
+        height: 350px !important;
+    }
     .coppy-right-box .coppy-right-item {
         padding-bottom: 0;
     }
@@ -8039,20 +8051,6 @@ table.shop_attributes tbody {
     .tab-style-1 .tab-control .tab-control-item:last-child.active,
     .tab-style-1 .tab-control .tab-control-item:last-child:hover {
         border-bottom: 1px solid #e6e6e6;
-    }
-
-    .wrap-footer-content .wrap-function-info .fc-info-item:not(:last-child) {
-        width: 100% !important;
-        border: 1px solid;
-        margin-top: 15px;
-        margin-bottom: 7.5px;
-    }
-
-    .wrap-footer-content .wrap-function-info .fc-info-item:last-child {
-        width: 100% !important;
-        border: 1px solid;
-        margin-top: 7.5px;
-        margin-bottom: 15px;
     }
 
     .wrap-footer-content .wrap-function-info .fc-info-item i {
@@ -8362,7 +8360,7 @@ table.shop_attributes tbody {
 }
 
 .btn-submitx {
-    background: #ff2832;
+    background: #40b0b5;
     font-size: 17px;
     color: #ffffff;
     line-height: 19px;

@@ -67,13 +67,13 @@
                                             href="{{route('product.details',['slug'=>$item->product->slug])}}">{{$item->product->name}}</a>
                                     </div>
                                     <div class="price-field produtc-price">
-                                        <p class="price">${{$item->price}}</p>
+                                        <p class="price">৳{{$item->price}}</p>
                                     </div>
                                     <div class="quantity">
                                         <h5>{{$item->quantity}}</h5>
                                     </div>
                                     <div class="price-field sub-total">
-                                        <p class="price">${{$item->price * $item->quantity}}</p>
+                                        <p class="price">৳{{$item->price * $item->quantity}}</p>
                                     </div>
                                 </li>
                                 @endforeach
@@ -83,13 +83,13 @@
                             <div class="order-summary">
                                 <h4 class="title-box">Order Summary</h4>
                                 <p class="summary-info"><span class="title">Subtotal</span><b
-                                        class="index">${{$order->subtotal}}</b></p>
+                                        class="index">৳{{$order->subtotal}}</b></p>
                                 <p class="summary-info"><span class="title">Tax</span><b
-                                        class="index">${{$order->tax}}</b></p>
+                                        class="index">৳{{$order->tax}}</b></p>
                                 <p class="summary-info"><span class="title">Shipping</span><b class="index">Free
                                         Shipping</b></p>
                                 <p class="summary-info"><span class="title">Total</span><b
-                                        class="index">${{$order->total}}</b></p>
+                                        class="index">৳{{$order->total}}</b></p>
                             </div>
                         </div>
                     </div>
@@ -119,9 +119,9 @@
                                 <td>{{$order->email}}</td>
                             </tr>
                             <tr>
-                                <th>Line1</th>
+                                <th>Address</th>
                                 <td>{{$order->line1}}</td>
-                                <th>Line2</th>
+                                <th>Street-Appertment No</th>
                                 <td>{{$order->line2}}</td>
                             </tr>
                             <tr>
@@ -166,9 +166,9 @@
                                 <td>{{$order->shipping->email}}</td>
                             </tr>
                             <tr>
-                                <th>Line1</th>
+                                <th>Address</th>
                                 <td>{{$order->shipping->line1}}</td>
-                                <th>Line2</th>
+                                <th>Street-Appertment No</th>
                                 <td>{{$order->shipping->line2}}</td>
                             </tr>
                             <tr>

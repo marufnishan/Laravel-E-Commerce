@@ -1,5 +1,8 @@
 <div class="content">
     <style>
+        #dashboard::-webkit-scrollbar {
+            display: none;
+        }
           .content {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -41,6 +44,7 @@
                 <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
                         onclick="openNav()">☰ DASHBOARD</button></div>
                 <x-sidebar />
+                <div class="col-md-12" id="dashboard" style="height:70vh; overflow-y: scroll;margin:0;padding:0">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         <div class="row" >
@@ -107,6 +111,7 @@
                             {{$categories->links()}}
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

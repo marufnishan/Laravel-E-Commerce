@@ -25,8 +25,8 @@
                             <p><b>Email : </b>{{$email}}</p>
                             <p><b>Phone : </b><input type="text" class="form-control" wire:model="mobile"></p>
                             <hr>
-                            <p><b>Line1 : </b><input type="text" class="form-control" wire:model="line1"></p>
-                            <p><b>Line2 : </b><input type="text" class="form-control" wire:model="line2"></p>
+                            <p><b>Address : </b><input type="text" class="form-control" wire:model="line1"></p>
+                            <p><b>Street-House No : </b><input type="text" class="form-control" wire:model="line2"></p>
                             <p><b>City : </b><input type="text" class="form-control" wire:model="city"></p>
                             <p><b>Province : </b><input type="text" class="form-control" wire:model="province"></p>
                             <p><b>Country : </b><input type="text" class="form-control" wire:model="country"></p>
