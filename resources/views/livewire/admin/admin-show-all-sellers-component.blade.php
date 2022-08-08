@@ -53,7 +53,9 @@
                                     <tr style="background:#009688;color: white;">
                                         <th>SellerId</th>
                                         <th>Name</th>
-                                        <th>Image</th>
+                                        <th>Profile Image</th>
+                                        <th>Shop Name</th>
+                                        <th>Shop Thumbnail</th>
                                         <th>Email</th>
                                         <th>Mobile</th>
                                         <th>NID</th>
@@ -73,6 +75,8 @@
                                         <td>{{$seller->seller_id}}</td>
                                         <td>{{$seller->user->name}}</td>
                                         <td><img src="{{asset('assets/images/sellers')}}/{{$seller->image}}" width="60" /></td>
+                                        <td>{{$seller->shop_name}}</td>
+                                        <td><img src="{{asset('assets/images/shops')}}/{{$seller->shop_thumbnail}}" width="60" /></td>
                                         <td>{{$seller->user->email}}</td>
                                         <td>{{$seller->mobile}}</td>
                                         <td>{{$seller->nid}}</td>

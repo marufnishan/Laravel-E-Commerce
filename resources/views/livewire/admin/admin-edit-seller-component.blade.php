@@ -21,6 +21,22 @@
                         <h3>Name : {{$name}}</h3>
                             <p><b>Email : </b>{{$email}}</p>
                             <hr>
+                            <label>Shop Name : </label>
+                            <input type="text" class="form-control" wire:model="shop_name"></p>
+                            @error('shop_name') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
+                            <label>Shop Thumbnail : </label>
+                            <input type="file" class="form-control" wire:model="newshop_thumbnail"></p>
+                            @error('newshop_thumbnail') 
+                            <p class="text-danger">{{$message}}</p>
+                            @enderror
+                            @if($newshop_thumbnail)
+                                <img src="{{$newshop_thumbnail->temporaryUrl()}}" width="120" height="120" class="my-3" />
+                            @elseif($shop_thumbnail)
+                                <img src="{{asset('assets/images/shops')}}/{{$shop_thumbnail}}" width="120" height="120" class="my-3"  />
+                            @endif
+                            <br>
                         <label>Phone</label>
                         <input type="text" placeholder="Phone" class="form-control" wire:model="mobile" />
                         @error('mobile') 

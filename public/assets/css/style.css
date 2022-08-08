@@ -8001,7 +8001,11 @@ table.shop_attributes tbody {
 @media (max-width: 500px) {
     .mcol-6{
         width: 50% !important;
-        height: 250px !important;
+        height: 200px !important;
+    }
+
+    .shopthmnl{
+        height:15rem !important;
     }
     .smcol-6{
         width: 50% !important;

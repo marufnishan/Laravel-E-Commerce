@@ -12,6 +12,8 @@ class AdminEditSellerComponent extends Component
 {
     use WithFileUploads;
     public $name;
+    public $shop_name;
+    public $shop_thumbnail;
     public $email;
     public $image;
     public $mobile;
@@ -26,6 +28,7 @@ class AdminEditSellerComponent extends Component
 
 
     public $newimage;
+    public $newshop_thumbnail;
 
 
 
@@ -34,6 +37,8 @@ class AdminEditSellerComponent extends Component
         $seller = User::where('id',$seller_id)->first();
         $this->seller_id = $seller->seller->seller_id;
         $this->name = $seller->name;
+        $this->shop_name = $seller->seller->shop_name;
+        $this->shop_thumbnail = $seller->seller->shop_thumbnail;
         $this->email = $seller->email;
         $this->mobile = $seller->phone;
         $this->nid = $seller->seller->nid;
@@ -50,6 +55,7 @@ class AdminEditSellerComponent extends Component
     {
         $this->validateOnly($fields,[
             'seller_id' => 'required',
+            'shop_name' => 'required',
             'mobile' => 'required',
             'nid' => 'required',
             'address' => 'required',
@@ -65,6 +71,7 @@ class AdminEditSellerComponent extends Component
     {
         $this->validate([
             'seller_id' => 'required',
+            'shop_name' => 'required',
             'mobile' => 'required',
             'nid' => 'required',
             'address' => 'required',
@@ -87,6 +94,17 @@ class AdminEditSellerComponent extends Component
             $this->newimage->storeAs('sellers',$imageName);
             $seller->image = $imageName;
         }
+        if($this->newshop_thumbnail)
+        {
+            if($this->shop_thumbnail)
+            {
+                unlink('assets/images/shops/'.$this->shop_thumbnail);
+            }
+            $imageName = Carbon::now()->timestamp . '.' . $this->newshop_thumbnail->extension();
+            $this->newshop_thumbnail->storeAs('shops',$imageName);
+            $seller->shop_thumbnail = $imageName;
+        }
+        $seller->shop_name = $this->shop_name;
         $seller->mobile = $this->mobile;
         $seller->nid = $this->nid;
         $seller->address = $this->address;
