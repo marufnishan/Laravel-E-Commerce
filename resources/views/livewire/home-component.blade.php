@@ -1,4 +1,11 @@
 <main id="main">
+    <style>
+        .box{
+            border: 1px solid #feefef;
+                padding: 5px;
+                border-radius: 10px;
+        }
+    </style>
     <div class="container-fluid" id="banner">
 
         <!--MAIN SLIDE-->
@@ -128,28 +135,31 @@
                             <div class="tab-content-item active" id="digital_1a">
 
                                 @foreach($lproducts as $lproduct)
-                                <div class="mcol-6 col-md-2 col-sm-6 product product-style-2 equal-elem " style="height: 300px;">
-                                    <div class="product-thumnail">
-                                        <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
-                                            title="{{$lproduct->name}}">
-                                            <figure><img
-                                                    src="{{ asset('assets/images/products') }}/{{$lproduct->image}}"
-                                                    width="800" height="800" alt="{{$lproduct->name}}"></figure>
-                                        </a>
-                                        <div class="wrap-btn">
+                                <div class="mcol-6 col-md-2 col-sm-6 product product-style-2 equal-elem " style="height: 280px;">
+                                    <div class="box">
+                                        <div class="product-thumnail">
                                             <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
-                                                class="function-link">quick view</a>
+                                                title="{{$lproduct->name}}">
+                                                <figure><img
+                                                        src="{{ asset('assets/images/products') }}/{{$lproduct->image}}"
+                                                        width="800" height="800" alt="{{$lproduct->name}}"></figure>
+                                            </a>
+                                            <div class="wrap-btn">
+                                                <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
+                                                    class="function-link">quick view</a>
+                                            </div>
+                                            <div class="group-flash">
+                                                <span class="flash-item new-label">new</span>
+                                            </div>
                                         </div>
-                                        <div class="group-flash">
-                                            <span class="flash-item new-label">new</span>
+                                        <div class="product-info">
+                                            <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
+                                                class="product-name"><span>{{$lproduct->name}}</span></a>
+                                            <div class="wrap-price"><span
+                                                    class="product-price">৳{{$lproduct->regular_price}}</span></div>
                                         </div>
                                     </div>
-                                    <div class="product-info">
-                                        <a href="{{route('product.details',['slug'=>$lproduct->slug])}}"
-                                            class="product-name"><span>{{$lproduct->name}}</span></a>
-                                        <div class="wrap-price"><span
-                                                class="product-price">৳{{$lproduct->regular_price}}</span></div>
-                                    </div>
+                                    
                                 </div>
                                 @endforeach
                             </div>
@@ -165,30 +175,33 @@
             <div class="wrap-show-advance-info-box style-1">
                 <h3 class="title-box">On Sale</h3>
                 @foreach($sproducts as $sproduct)
-                <div class="mcol-6 col-md-2 col-sm-6 product product-style-2 equal-elem " style="height: 300px;">
-                    <div class="product-thumnail">
-                        <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" title="{{$sproduct->name}}">
-                            <figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}" width="800"
-                                    height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                            </figure>
-                        </a>
-                        <div class="wrap-btn">
-                            <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" class="function-link">quick
-                                view</a>
-                        </div>
-                        <div class="group-flash">
-                            <span class="flash-item sale-label">sale</span>
-                        </div>
+                <div class="mcol-6 col-md-2 col-sm-6 product product-style-2 equal-elem" style="height: 280px;">
+                <div class="box">
+                <div class="product-thumnail">
+                    <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" title="{{$sproduct->name}}">
+                        <figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}" width="800"
+                                height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                        </figure>
+                    </a>
+                    <div class="wrap-btn">
+                        <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" class="function-link">quick
+                            view</a>
                     </div>
-                    <div class="product-info">
-                        <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
-                            class="product-name"><span>{{$sproduct->name}}</span></a>
-                        <div class="wrap-price"><ins>
-                                <p class="product-price">৳{{$sproduct->sale_price}}</p>
-                            </ins> <del>
-                                <p class="product-price">৳{{$sproduct->regular_price}}</p>
-                            </del></div>
+                    <div class="group-flash">
+                        <span class="flash-item sale-label">sale</span>
                     </div>
+                </div>
+                <div class="product-info">
+                    <a href="{{route('product.details',['slug'=>$sproduct->slug])}}"
+                        class="product-name"><span>{{$sproduct->name}}</span></a>
+                    <div class="wrap-price"><ins>
+                            <p class="product-price">৳{{$sproduct->sale_price}}</p>
+                        </ins> <del>
+                            <p class="product-price">৳{{$sproduct->regular_price}}</p>
+                        </del></div>
+                </div>
+                </div>
+                    
                 </div>
                 @endforeach
             </div>

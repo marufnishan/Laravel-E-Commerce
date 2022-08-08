@@ -3,7 +3,9 @@
         <div class="row">
             
     <div class="wrap-show-advance-info-box style-1">
-        <h3 class="title-box">Seller Products</h3>
+        <img src="{{asset('assets/images/shops')}}/{{$seller->shop_thumbnail}}"
+                            alt="Shop Thumbnail" class="shopthmnl" style="width: 100%; height:30rem;border-radius: 5px;">
+        <h3 class="title-box"><span style="color: aqua">Shop Name : </span><span >{{$seller->shop_name}}</span> <b class=" pull-right"><i class="fa fa-comment" style="margin-right: 10px;"> <a href="https://t.me/+88{{$seller->mobile}}" style="color:white">Chat</a> </i><i class="fa fa-phone" style="margin-right: 5px;" aria-hidden="true"></i><a href="https://wa.me/+88{{$seller->mobile}}" style="color:white">{{$seller->mobile}}</a></b> </h3>
         <div class="wrap-products">
             <div class="wrap-product-tab tab-style-1">
                 <div class="tab-contents">

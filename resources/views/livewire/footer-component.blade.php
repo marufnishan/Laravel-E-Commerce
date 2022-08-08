@@ -11,7 +11,7 @@
                                     <p><i class="fa fa-map-marker" style="margin-right: 10px; margin-left:0 px;"
                                             aria-hidden="true"></i>{{$setting->address}}</p>
                                     <p><i class="fa fa-phone" style="margin-right: 10px;" aria-hidden="true"></i>
-                                        {{$setting->phone}}</p>
+                                       <a href="https://wa.me/+88{{$setting->phone}}">{{$setting->phone}}</a></p>
                                     <p><i class="fa fa-envelope" style="margin-right: 10px;"
                                             aria-hidden="true"></i>{{$setting->email}}</p>
                                 
@@ -35,7 +35,7 @@
                                 <h3>Hot Line</h3>
                                 <span class="desc">Call Us Any Time</span>
                                 <br>
-                                <b class="phone-number">{{$setting->phone2}}</b>
+                                <b class="phone-number"><a href="https://wa.me/+88{{$setting->phone2}}">{{$setting->phone2}}</a></b>
                             </div>
                             <div class="col-md-6 text-center">
                                 <h3>Leave A Message</h3>
