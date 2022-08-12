@@ -7,6 +7,7 @@ use App\Models\HomeCategory;
 use App\Models\HomeSlider;
 use App\Models\Product;
 use App\Models\Sale;
+use App\Models\Seller;
 use Cart;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
@@ -26,12 +27,13 @@ class HomeComponent extends Component
         $no_of_products = $category->no_of_products;
         $sproducts = Product::where('sale_price','>',0)->orderBy('created_at','ASC')->get()->take(12);
         $sale = Sale::find(1);
+        $shops = Seller::inRandomOrder()->get();
         if(Auth::check())
         {
             Cart::instance('cart')->restore(Auth::user()->email);
             Cart::instance('wishlist')->restore(Auth::user()->email);
             
         }
-        return view('livewire.home-component',['sliders'=>$sliders,'lproducts'=>$lproducts,'pproducts'=>$pproducts,'categories'=>$categories,'no_of_products'=>$no_of_products,'sproducts'=>$sproducts,'sale'=>$sale])->layout('layouts.base');
+        return view('livewire.home-component',['sliders'=>$sliders,'shops'=>$shops,'lproducts'=>$lproducts,'pproducts'=>$pproducts,'categories'=>$categories,'no_of_products'=>$no_of_products,'sproducts'=>$sproducts,'sale'=>$sale])->layout('layouts.base');
     }
 }

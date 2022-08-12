@@ -8482,4 +8482,9 @@ svg {
     margin-top: -10px;
 
 }
+.box {
+    border: 1px solid #feefef;
+    padding: 5px;
+    border-radius: 10px;
+}
 
