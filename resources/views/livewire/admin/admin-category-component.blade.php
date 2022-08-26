@@ -1,50 +1,12 @@
 <div class="content">
-    <style>
-        #dashboard::-webkit-scrollbar {
-            display: none;
-        }
-          .content {
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-        nav svg {
-            height: 20px;
-        }
-
-        nav .hidden {
-            display: block !important;
-        }
-
-        .sclist {
-            list-style: none;
-        }
-
-        .sclist li {
-            line-height: 33px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .slink i {
-            font-size: 16px;
-            margin-left: 12px;
-        }
-        .sidebar {
-            height: 80vh;
-        }
-        @media screen and (max-height: 700px) {
-            .sidebar {
-            height: 80vh !important;
-        }
-        }
-
-    </style>
     <div class="container-fluid" style="background: #FFFFFF;height: 80vh;">
         <div class="row ">
+            <x-sidebar />
             <div id="main">
                 <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
                         onclick="openNav()">☰ DASHBOARD</button></div>
-                <x-sidebar />
-                <div class="col-md-12" id="dashboard" style="height:70vh; overflow-y: scroll;margin:0;padding:0">
+                
+                <div class="col-md-12" id="dashboard" style="margin:0;padding:0">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         <div class="row" >

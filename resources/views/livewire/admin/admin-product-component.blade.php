@@ -1,32 +1,12 @@
 <div class="content">
-    <style>
-          .content {
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-        nav svg {
-            height: 20px;
-        }
-
-        nav .hidden {
-            display: block !important;
-        }
-        .sidebar {
-            height: 100vh;
-        }
-        #dashboard::-webkit-scrollbar {
-            display: none;
-        }
-
-    </style>
-
     <div class="container-fluid">
         <div class="row ">
+            <x-sidebar />
             <div id="main">
                 <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
                         onclick="openNav()">☰ DASHBOARD</button></div>
-                <x-sidebar />
-            <div class="col-md-12" id="dashboard" style="height:100vh; overflow-y: scroll;margin:0;padding:0">
+                
+            <div class="col-md-12" id="dashboard" style="height:90vh; overflow-y: scroll;margin:0;padding:0">
                 <div class="panel panel-default">
                     <div class="panel-heading"  style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
                         <div class="row">

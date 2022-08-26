@@ -40,6 +40,6 @@ class AdminDashboardComponent extends Component
             'todaySales'=>$todaySales, 
             'todayRevenue'=>$todayRevenue,  
             'productVisits'=>$productVisits  
-        ])->layout('layouts.base');
+        ])->layout('layouts.dashboard');
     }
 }

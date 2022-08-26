@@ -18,6 +18,6 @@ class AdminAttributeComponent extends Component
     public function render()
     {
         $pattributes = ProductAttribute::paginate(10);
-        return view('livewire.admin.admin-attribute-component',['pattributes'=>$pattributes])->layout('layouts.base');
+        return view('livewire.admin.admin-attribute-component',['pattributes'=>$pattributes])->layout('layouts.dashboard');
     }
 }

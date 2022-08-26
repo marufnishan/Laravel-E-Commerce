@@ -34,6 +34,6 @@ class ShowAllUsersComponent extends Component
         ->orwhere('phone','LIKE',$search)
         ->orwhere('id','LIKE',$search)
         ->orderBy('created_at','DESC')->paginate(10);
-        return view('livewire.admin.show-all-users-component',['users'=>$users])->layout('layouts.base');
+        return view('livewire.admin.show-all-users-component',['users'=>$users])->layout('layouts.dashboard');
     }
 }

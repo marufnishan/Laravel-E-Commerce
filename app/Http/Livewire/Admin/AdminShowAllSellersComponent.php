@@ -26,6 +26,6 @@ class AdminShowAllSellersComponent extends Component
         ->orwhere('mobile','LIKE',$search)
         ->orwhere('seller_id','LIKE',$search)
         ->orderBy('created_at','DESC')->paginate(10);
-        return view('livewire.admin.admin-show-all-sellers-component',['sellers'=>$sellers])->layout('layouts.base');
+        return view('livewire.admin.admin-show-all-sellers-component',['sellers'=>$sellers])->layout('layouts.dashboard');
     }
 }

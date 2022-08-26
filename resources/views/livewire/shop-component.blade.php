@@ -235,7 +235,7 @@
                         </ul>
                     </div>
                     @if ($loadAmount >= $totalRecords)
-                    <h1 class="text-warning font-bold text-center my-10">No Remaining Records!</h1>
+                    <h1 class="text-warning font-bold text-center my-10">Opps!! No Remaining Products!</h1>
                 @endif
                 <script>
                     const lastRecord = document.getElementById('last_record');
@@ -270,11 +270,11 @@
 <script>
     var slider = document.getElementById('slider');
     noUiSlider.create(slider, {
-        start: [0, 1000],
+        start: [0, 100000],
         connect: true,
         range: {
             'min': 0,
-            'max': 1000
+            'max': 100000
         },
         pips: {
             mode: 'steps',

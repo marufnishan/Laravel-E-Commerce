@@ -1,8 +1,5 @@
 <div>
     <style>
-        .sidebar::-webkit-scrollbar {
-            display: none;
-        }
 
         .sidebar {
             width: 0;
@@ -58,11 +55,6 @@
 
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         @media screen and (max-height: 700px) {
-            .sidebar {
-                margin-top: -76px;
-                height: 112vh;
-            }
-
             .sidebar a {
                 font-size: 18px;
             }
@@ -70,12 +62,18 @@
 
     </style>
 
-    <div id="mySidebar" class="sidebar">
+    <div id="mySidebar" class="sidebar"{{--  style="width: 250px" --}}>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times fa-2x"></i></a>
+        <a class="dname"> <img class="h-12 w-12 rounded-full object-cover" src="{{Auth::user()->profile_photo_url}}"
+            alt="{{ Auth::user()->name }}" /> {{Auth::user()->name}}</a>
         @if(Route::has('login'))
         @auth
         @if(Auth::user()->utype === 'ADM')
         <hr>
+        <a href="/" class="list-group-item  second-text fw-bold"
+            style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Home</a>
+        <a href="{{ route('admin.dashboard')}}" class="list-group-item  second-text fw-bold"
+            style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Dashboard</a>
         <a href="{{ route('admin.show_users')}}" class="list-group-item  second-text fw-bold"
             style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Users</a>
         <a href="{{ route('admin.show_sellers')}}" class="list-group-item  second-text fw-bold"
@@ -103,6 +101,14 @@
             Messages</a>
         <a href="{{ route('admin.settings')}}" class="list-group-item  second-text fw-bold"
             style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Settings</a>
+            <a href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+            class="list-group-item  second-text fw-bold"
+            style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Logout</a>
+        <form id="logout-form" method="POST" action="{{ route('logout') }}">
+            @csrf
+
+        </form>
 
         @elseif(Auth::user()->utype === 'VNDR')
         <a href="{{ route('seller.dashboard')}}" class="list-group-item  second-text fw-bold"

@@ -46,6 +46,6 @@ class AdminOrderComponent extends Component
         ->orwhere('id','LIKE',$search)
         ->orwhere('status','LIKE',$search)
         ->orderBy('created_at','DESC')->paginate(10);
-        return view('livewire.admin.admin-order-component',['orders'=>$orders])->layout('layouts.base');
+        return view('livewire.admin.admin-order-component',['orders'=>$orders])->layout('layouts.dashboard');
     }
 }

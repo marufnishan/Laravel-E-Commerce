@@ -33,7 +33,7 @@ class ShopComponent extends Component
         $this->sale_paginate = 12;
 
         $this->min_price = 0;
-        $this->max_price = 1000;
+        $this->max_price = 100000;
 
 
     }
