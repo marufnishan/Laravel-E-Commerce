@@ -19,6 +19,6 @@ class SellerProfileComponent extends Component
             $seller->save();
         }
         $seller = User::find(Auth::user()->id);
-        return view('livewire.seller.seller-profile-component',['seller'=>$seller])->layout('layouts.base');
+        return view('livewire.seller.seller-profile-component',['seller'=>$seller])->layout('layouts.dashboard');
     }
 }

@@ -40,6 +40,6 @@ class SellerProductComponent extends Component
         ->orwhere('seller_id',Auth::user()->id)->where('regular_price','LIKE',$search)
         ->orwhere('seller_id',Auth::user()->id)->where('sale_price','LIKE',$search)
         ->orwhere('seller_id',Auth::user()->id)->where('id','LIKE',$search)->paginate(10);
-        return view('livewire.seller.seller-product-component',['products'=>$products])->layout('layouts.base');
+        return view('livewire.seller.seller-product-component',['products'=>$products])->layout('layouts.dashboard');
     }
 }

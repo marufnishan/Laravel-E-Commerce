@@ -41,6 +41,6 @@ class SellerChangePasswordComponent extends Component
     }
     public function render()
     {
-        return view('livewire.seller.seller-change-password-component')->layout('layouts.base');
+        return view('livewire.seller.seller-change-password-component')->layout('layouts.dashboard');
     }
 }

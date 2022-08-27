@@ -88,6 +88,6 @@ class SellerDashboardComponent extends Component
             'deliveredOrders'=> $deliveredOrders,
             'pendingOrders'=> $pendingOrders,
             'returnOrders'=> $returnOrders,
-        ])->layout('layouts.base');
+        ])->layout('layouts.dashboard');
     }
 }

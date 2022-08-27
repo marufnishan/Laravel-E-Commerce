@@ -53,6 +53,6 @@ class SellerOrderComponent extends Component
         ->orWhere('products.seller_id',Auth::user()->id)
         ->where('products.id','LIKE',$search)
         ->orderBy('order_items.created_at','DESC')->paginate(10);
-    return view('livewire.seller.seller-order-component',['orders'=>$orders])->layout('layouts.base');
+    return view('livewire.seller.seller-order-component',['orders'=>$orders])->layout('layouts.dashboard');
     }
 }

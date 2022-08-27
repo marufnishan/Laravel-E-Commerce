@@ -6,7 +6,7 @@
                 <div class="col-md-12" style="margin: 0; padding:0; background:black ">
                     <div class="col-md-6"><button class="openbtn"
                         onclick="openNav()">☰ DASHBOARD</button></div>
-                    <div class="col-md-6" id="dhome"><a href="/">
+                    <div class="col-md-6" id="dhome">
                         <a href="/"><button class="openbtn pull-right">
                             <img src="{{ asset('assets/images/logo-top-1.png') }}"
                                 style="height:32px; width:32px">HOME</button></a></div>
