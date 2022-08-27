@@ -2,18 +2,27 @@
     <div class="container-fluid" style="background: #FFFFFF;height: 80vh;">
         <div class="row ">
             <x-sidebar />
-            <div id="main">
-                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
-                        onclick="openNav()">☰ DASHBOARD</button></div>
+            <div id="main" class="smain">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black ">
+                    <div class="col-md-6"><button class="openbtn" onclick="openNav()">☰ DASHBOARD</button></div>
+                    <div class="col-md-6" id="dhome">
+                        <a href="/">
+                            <button class="openbtn pull-right">
+                                <img src="{{ asset('assets/images/logo-top-1.png') }}"
+                                    style="height:32px; width:32px">HOME
+                            </button>
+                        </a>
+                    </div>
+                </div>
                 
                 <div class="col-md-12" id="dashboard" style="margin:0;padding:0">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background: linear-gradient(to right, #74ebd5, #acb6e5);">
-                        <div class="row" >
-                            <div class="col-md-6" style="padding-top: 10px ;">
+                    <div class="panel-heading">
+                        <div class="row" style="padding-top: 5px ;">
+                            <div class="col-md-6">
                                 All Categories
                             </div>
-                            <div class="col-md-6" style="padding-top: 10px ;">
+                            <div class="col-md-6">
                                 <a href="{{route('admin.addcategory')}}" class="btn btn-success pull-right">Add New</a>
                             </div>
                         </div>

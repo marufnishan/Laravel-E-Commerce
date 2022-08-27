@@ -94,7 +94,7 @@
         <div class="container">
             <!--Product Categories-->
             <div class="wrap-show-advance-info-box style-1">
-                <h3 class="title-box">Product Categories</h3>
+                <h3 class="title-box">Popular Categories</h3>
                 <div class="wrap-products">
                     <div class="wrap-product-tab tab-style-1">
                         <div class="tab-control">

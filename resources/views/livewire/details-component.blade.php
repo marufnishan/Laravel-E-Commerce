@@ -116,6 +116,20 @@
                             </div>
                         </div>
                         <div class="wrap-butons">
+                            @php
+                            $witems = Cart::instance('wishlist')->content()->pluck('id') ;
+                            @endphp
+                            
+                            <div class="wrap-btn" style="margin: 20px">
+                                @if($witems->contains($product->id))
+                                            <a href="#" wire:click.prevent="removeFromWishlist({{$product->id}})"><i
+                                                    class="fa fa-heart fill-heart fs-xl"></i>Remove From Wishlist</a>
+                                            @else
+                                            <a href="#"
+                                                wire:click.prevent="addToWishlist({{$product->id}},'{{$product->name}}',{{$product->regular_price}})"><i
+                                                    class="fa fa-heart"></i>Add Wishlist</a>
+                                            @endif
+                            </div>
                             @if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date >
                             Carbon\Carbon::now())
                             <a href="#" class="btn add-to-cart"
@@ -126,9 +140,6 @@
                                 wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add
                                 to Cart</a>
                             @endif
-                            <div class="wrap-btn">
-                                <a href="#" class="btn btn-wishlist">Add Wishlist</a>
-                            </div>
                         </div>
                     </div>
                     <div class="advance-info">

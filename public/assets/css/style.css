@@ -7143,12 +7143,12 @@ table.shop_attributes tbody {
     }
 
     .primary>.menu-item:not(.home-icon)>a {
-        padding: 11px 11px;
+        padding: 12px 12px;
         font-size: 12px;
     }
 
     .primary .menu-item.home-icon>a {
-        padding: 10px;
+        padding: 9px;
     }
 
     .wrap-shop-control {
@@ -8590,11 +8590,16 @@ svg {
         .panel-body::-webkit-scrollbar {
             display: none;
             }
-            /* #main{
-                margin-left: "250px";
-            } */
             .dname{
                 font-size: 36px;
             }
+
+            .panel-heading{
+                color: #222222;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            text-align-last: left;
+            font-size: 20px;
+            padding-left: 32px;
+            font-weight: bold;}
             
 
