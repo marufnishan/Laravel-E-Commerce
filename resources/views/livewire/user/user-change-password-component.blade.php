@@ -1,32 +1,21 @@
 <div>
-<style>
-        #dashboard::-webkit-scrollbar {
-  display: none;
-}
-
-#sidebar::-webkit-scrollbar {
-  display: none;
-}
-.sidebar {
-            height: 82vh;
-        }
-
-        @media screen and (max-height: 700px) {
-            .sidebar {
-                height: 82vh !important;
-            }
-        }
-
-    </style>
-
     <div class="container-fluid">
         <div class="row ">
-            <div id="main">
-                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
-                        onclick="openNav()">☰ DASHBOARD</button></div>
-                <x-sidebar />
+            <x-sidebar />
+            <div id="main" class="smain">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black ">
+                    <div class="col-md-6"><button class="openbtn" onclick="openNav()">☰ DASHBOARD</button></div>
+                    <div class="col-md-6" id="dhome">
+                        <a href="/">
+                            <button class="openbtn pull-right">
+                                <img src="{{ asset('assets/images/logo-top-1.png') }}"
+                                    style="height:32px; width:32px">HOME
+                            </button>
+                        </a>
+                    </div>
+                </div>
 
-                <div class="col-md-12" id="dashboard" style="height:80vh; overflow-y: scroll; padding:0px; margin:0; ">
+                <div class="col-md-12" id="dashboard" style="height:90vh; overflow-y: scroll; padding:0px; margin:0; ">
                 <div class="panel panel-default">
                     <div class="panel-heading"style="background: linear-gradient(to right, #74ebd5, #acb6e5); padding: 13px 31px;">
                          Change Password

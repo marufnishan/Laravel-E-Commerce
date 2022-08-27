@@ -27,6 +27,6 @@ class UserOrdersComponent extends Component
         ->orWhere('user_id',Auth::user()->id)
         ->where('mobile','LIKE',$search)
         ->paginate(12);
-        return view('livewire.user.user-orders-component',['orders'=>$orders])->layout('layouts.base');
+        return view('livewire.user.user-orders-component',['orders'=>$orders])->layout('layouts.dashboard');
     }
 }

@@ -1,90 +1,22 @@
 
 <div class="content">
-    <style>
-        #dashboard::-webkit-scrollbar {
-  display: none;
-}
-
-#sidebar::-webkit-scrollbar {
-  display: none;
-}
-        .content {
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-
-        .icon-stat {
-            display: block;
-            overflow: hidden;
-            position: relative;
-            padding: 15px;
-            margin-bottom: 1em;
-            background-color: #fff;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-
-        .icon-stat-label {
-            display: block;
-            color: #999;
-            font-size: 13px;
-        }
-
-        .icon-stat-value {
-            display: block;
-            font-size: 28px;
-            font-weight: 600;
-        }
-
-        .icon-stat-visual {
-            position: relative;
-            top: 22px;
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            border-radius: 4px;
-            text-align: center;
-            font-size: 16px;
-            line-height: 30px;
-        }
-
-        .bg-primary {
-            color: #fff;
-            background: #d74b4b;
-        }
-
-        .bg-secondary {
-            color: #fff;
-            background: #6685a4;
-        }
-
-        .icon-stat-footer {
-            padding: 10px 0 0;
-            margin-top: 10px;
-            color: #aaa;
-            font-size: 12px;
-            border-top: 1px solid #eee;
-        }
-
-        .sidebar {
-            height: 87vh;
-        }
-
-        @media screen and (max-height: 700px) {
-            .sidebar {
-                height: 92vh !important;
-            }
-        }
-
-    </style>
+    
 
     <div class="container-fluid">
         <div class="row ">
-            <div id="main">
-                <div class="col-md-12" style="margin: 0; padding:0; background:black "><button class="openbtn"
+            <x-sidebar />
+            <div id="main" class="smain">
+                <div class="col-md-12" style="margin: 0; padding:0; background:black ">
+                    <div class="col-md-6"><button class="openbtn"
                         onclick="openNav()">☰ DASHBOARD</button></div>
-                <x-sidebar />
-                <div class="col-md-12" id="dashboard" style="background:#46B974;height:80vh; overflow-y: scroll; ">
+                    <div class="col-md-6" id="dhome"><a href="/">
+                        <a href="/"><button class="openbtn pull-right">
+                            <img src="{{ asset('assets/images/logo-top-1.png') }}"
+                                style="height:32px; width:32px">HOME</button></a></div>
+                    
+                </div>
+                
+                <div class="col-md-12" id="dashboard" style="background:#46B974;height:90vh; overflow-y: scroll; ">
                     <div class="row" style="padding-top:20px">
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-stat">

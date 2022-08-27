@@ -15,6 +15,6 @@ class UserDashboardComponent extends Component
         $totalPurchase = Order::where('status','ordered')->where('user_id',Auth::user()->id)->count();
         $totalDeliverd = Order::where('status','delivered')->where('user_id',Auth::user()->id)->count();
         $totalCanceled = Order::where('status','canceled')->where('user_id',Auth::user()->id)->count();
-        return view('livewire.user.user-dashboard-component',['orders'=>$orders,'totalCost'=>$totalCost,'totalPurchase'=>$totalPurchase,'totalDeliverd'=>$totalDeliverd,'totalCanceled'=>$totalCanceled])->layout('layouts.base');
+        return view('livewire.user.user-dashboard-component',['orders'=>$orders,'totalCost'=>$totalCost,'totalPurchase'=>$totalPurchase,'totalDeliverd'=>$totalDeliverd,'totalCanceled'=>$totalCanceled])->layout('layouts.dashboard');
     }
 }

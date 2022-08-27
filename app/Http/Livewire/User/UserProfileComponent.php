@@ -19,6 +19,6 @@ class UserProfileComponent extends Component
             $profile->save();
         }
         $user = User::find(Auth::user()->id);
-        return view('livewire.user.user-profile-component',['user'=>$user])->layout('layouts.base');
+        return view('livewire.user.user-profile-component',['user'=>$user])->layout('layouts.dashboard');
     }
 }

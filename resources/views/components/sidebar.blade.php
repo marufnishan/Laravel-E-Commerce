@@ -111,6 +111,8 @@
         </form>
 
         @elseif(Auth::user()->utype === 'VNDR')
+        <a href="/" class="list-group-item  second-text fw-bold"
+            style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Home</a>
         <a href="{{ route('seller.dashboard')}}" class="list-group-item  second-text fw-bold"
             style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Dashboard</a>
         <a href="{{ route('seller.profile')}}" class="list-group-item  second-text fw-bold"
@@ -134,6 +136,8 @@
 
 
         @else
+        <a href="/" class="list-group-item  second-text fw-bold"
+            style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Home</a>
         <a href="{{ route('user.dashboard')}}" class="list-group-item  second-text fw-bold"
             style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Dashboard</a>
         <a href="{{ route('user.profile')}}" class="list-group-item  second-text fw-bold"
