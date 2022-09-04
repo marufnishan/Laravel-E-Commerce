@@ -24,7 +24,7 @@ class SearchComponent extends Component
         $this->sorting = "default";
         $this->pagesize = 12;
         $this->min_price = 0;
-        $this->max_price = 1000;
+        $this->max_price = 100000;
         $this->fill(request()->only('search','product_cat','product_cat_id'));
     }
     public function store($product_id,$product_name,$product_price)

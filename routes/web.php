@@ -42,6 +42,7 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ContactComponent;
+use App\Http\Livewire\HeaderSearchComponent;
 use App\Http\Livewire\Seller\SellerAddProductComponent;
 use App\Http\Livewire\Seller\SellerChangePasswordComponent;
 use App\Http\Livewire\Seller\SellerDashboardComponent;
@@ -89,6 +90,7 @@ use Illuminate\Support\Facades\Route;
    Route::get('/product-category/{category_slug}/{scategory_slug?}',CategoryComponent::class)->name('product.category');
 
    Route::get('/search',SearchComponent::class)->name('product.search');
+   Route::get('/autocomplete-search', [HeaderSearchComponent::class, 'autocompleteSearch']);
 
    Route::get('/wishlist',WishlistComponent::class)->name('product.wishlist');
    Route::get('/thank-you',ThankyouComponent::class)->name('thankyou');
