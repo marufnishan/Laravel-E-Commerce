@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Seller;
 
 use App\Models\OrderItem;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -21,6 +22,22 @@ class SellerOrderComponent extends Component
         if($status == "delivered")
         {
             $order->delivered_date = DB::raw('CURRENT_DATE');
+
+            $product = Product::find($order->product_id);
+            if($product->quantity <= 0 )
+            {
+                $product->stock_status = 'outofstock';
+            }else{
+                if($product->quantity >= $order->quantity){
+                    $product->quantity = $product->quantity-$order->quantity;
+                }else{
+                    return session()->flash('order_message','Out of stock quantity!');  
+                }
+                      
+            }
+            $product->save();
+            
+
         }
         else if($status == 'canceled')
         {

@@ -37,6 +37,9 @@
                             <div class="panel-body">
                                 <table class="table table-striped">
                                     <thead>
+                                        @if(Session::has('order_message'))
+                                <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
+                                @endif
                                         <tr>
                                             <th>Orders</th>
                                             <th>Product Id</th>

@@ -66,10 +66,10 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times fa-2x"></i></a>
         <a class="dname"> <img class="h-12 w-12 rounded-full object-cover" src="{{Auth::user()->profile_photo_url}}"
             alt="{{ Auth::user()->name }}" /> {{Auth::user()->name}}</a>
+            <hr>
         @if(Route::has('login'))
         @auth
-        @if(Auth::user()->utype === 'ADM')
-        <hr>
+        @if(Auth::user()->utype === 'ADM')        
         <a href="/" class="list-group-item  second-text fw-bold"
             style="background: #009688;color:white;margin-top:5px;font-weight: bold;font-size: 2rem;">Home</a>
         <a href="{{ route('admin.dashboard')}}" class="list-group-item  second-text fw-bold"

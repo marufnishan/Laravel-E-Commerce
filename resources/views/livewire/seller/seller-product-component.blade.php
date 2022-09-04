@@ -44,6 +44,7 @@
                                                 <th>Id</th>
                                                 <th>Image</th>
                                                 <th>Name</th>
+                                                <th>Quantity</th>
                                                 <th>Stock</th>
                                                 <th>Price</th>
                                                 <th>Sale Price</th>
@@ -59,6 +60,7 @@
                                                 <td><img src="{{asset('assets/images/products')}}/{{$product->image}}"
                                                         width="60" /></td>
                                                 <td>{{$product->name}}</td>
+                                                <td>{{$product->quantity}}</td>
                                                 <td>{{$product->stock_status}}</td>
                                                 <td>৳{{$product->regular_price}}</td>
                                                 <td>৳{{$product->sale_price}}</td>

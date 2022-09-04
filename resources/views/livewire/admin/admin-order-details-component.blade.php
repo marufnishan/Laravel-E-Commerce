@@ -69,8 +69,11 @@
                                     <div class="price-field produtc-price">
                                         <p class="price">৳{{$item->price}}</p>
                                     </div>
-                                    <div class="quantity">
+                                    <div class="price-field produtc-price">
                                         <h5>{{$item->quantity}}</h5>
+                                    </div>
+                                    <div class="price-field produtc-price">
+                                        <h5> <button class="btn btn-info">{{$item->status}}</button></h5>
                                     </div>
                                     <div class="price-field sub-total">
                                         <p class="price">৳{{$item->price * $item->quantity}}</p>
