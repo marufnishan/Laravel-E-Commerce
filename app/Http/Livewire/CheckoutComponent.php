@@ -51,6 +51,7 @@ class CheckoutComponent extends Component
     public $cvc;
 
     public function mount(){
+        if(Auth::user()){
         $user = User::find(Auth::user()->id);
         $this->firstname = $user->name;
         $this->email = $user->email;
@@ -63,6 +64,7 @@ class CheckoutComponent extends Component
         $this->province = $profile->province;
         $this->country = $profile->country;
         $this->zipcode = $profile->zipcode;
+        }
 
     }
 
